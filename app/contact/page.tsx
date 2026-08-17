@@ -38,7 +38,7 @@ export default function ContactPage() {
           </svg>
           <h1 className="font-display mb-6 text-3xl">Get in Touch</h1>
           <p className="mb-8 text-sm opacity-90">
-            Whether you&apos;re booking a stay or planning a botanical event,
+            Whether you&apos;re booking a stay or planning a Jardin Coffee event,
             we&apos;re here to help.
           </p>
 
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   Select a category
                 </option>
                 <option value="room">Room Reservation</option>
-                <option value="cafe">Café Event / Table Booking</option>
+                <option value="cafe">Jardin Coffee Event / Table Booking</option>
                 <option value="other">General Inquiry</option>
               </select>
             </div>

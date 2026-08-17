@@ -25,60 +25,23 @@ export type Room = {
 
 export const rooms: Room[] = [
   {
-    slug: "botanical-suite",
-    name: "The Botanical Suite",
-    tag: "Botanical Suite",
-    detailTitle: "The Emerald Sanctuary",
-    badge: "Most Popular",
-    size: "45 sqm",
-    guests: "2 Adults",
-    bed: "King",
-    description:
-      "Our signature suite featuring floor-to-ceiling windows overlooking the private garden and premium organic linens.",
-    detailDescription:
-      "Experience the ultimate blend of luxury and nature. Our Emerald Sanctuary suite is designed with floor-to-ceiling windows overlooking our private botanical garden. The room features sustainable bamboo flooring, hand-crafted wooden furniture, and a private balcony where you can enjoy your morning botanical brew from our café.",
-    amenities: ["Free WiFi", "Mini Bar", "AC", "Garden View"],
-    detailAmenities: [
-      { icon: "☕", label: "Botanical Mini Bar" },
-      { icon: "📶", label: "High-speed WiFi" },
-      { icon: "🛁", label: "Rainfall Shower" },
-      { icon: "❄️", label: "Climate Control" },
-      { icon: "📺", label: 'Smart TV 55"' },
-      { icon: "🧴", label: "Organic Toiletries" },
-    ],
-    features: [
-      "45 sqm Living Space",
-      "King Size Orthopedic Bed",
-      "Garden View Balcony",
-      "Dedicated Workspace",
-    ],
-    price: 120,
-    priceRupiah: 1850000,
-    image:
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
-    carousel: [
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  {
-    slug: "garden-studio",
-    name: "The Garden Studio",
-    tag: "Garden Studio",
-    detailTitle: "The Garden Studio",
+    slug: "leaf",
+    name: "The Leaf Room",
+    tag: "Leaf Room",
+    detailTitle: "The Leaf Room",
+    badge: "Cozy & Green",
     size: "30 sqm",
     guests: "2 Adults",
     bed: "Queen",
     description:
-      "A cozy and intimate space perfect for solo travelers or couples, featuring direct access to the café courtyard.",
+      "A cozy green retreat wrapped in natural textures, perfect for a peaceful night surrounded by garden views.",
     detailDescription:
-      "A cozy and intimate space perfect for solo travelers or couples. Wake up to the scent of fresh coffee from our café courtyard, step outside to lush greenery, and settle into a thoughtfully designed room with warm wooden textures and organic cotton bedding.",
-    amenities: ["Free WiFi", "Work Desk", "AC", "Coffee Maker"],
+      "The Leaf Room is our cozy green retreat. Wake up to soft morning light filtering through the plants, step out to a quiet garden corner, and settle into a room designed with warm wooden textures, organic cotton bedding, and everything you need for a restful stay.",
+    amenities: ["Free WiFi", "Work Desk", "AC", "Garden View"],
     detailAmenities: [
-      { icon: "☕", label: "Espresso Maker" },
+      { icon: "🌿", label: "Garden Access" },
       { icon: "📶", label: "High-speed WiFi" },
-      { icon: "🌿", label: "Courtyard Access" },
+      { icon: "☕", label: "Espresso Maker" },
       { icon: "❄️", label: "Climate Control" },
       { icon: "📺", label: 'Smart TV 43"' },
       { icon: "🧴", label: "Organic Toiletries" },
@@ -86,7 +49,7 @@ export const rooms: Room[] = [
     features: [
       "30 sqm Living Space",
       "Queen Size Bed",
-      "Café Courtyard Access",
+      "Garden View",
       "Dedicated Workspace",
     ],
     price: 85,
@@ -97,6 +60,44 @@ export const rooms: Room[] = [
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
+    ],
+  },
+  {
+    slug: "oase",
+    name: "The Oase Room",
+    tag: "Oase Room",
+    detailTitle: "The Oase Room",
+    badge: "Best View",
+    size: "45 sqm",
+    guests: "2 Adults",
+    bed: "King",
+    description:
+      "Our most spacious room with a breathtaking panoramic view — more room to breathe, and the best scenery in the house.",
+    detailDescription:
+      "The Oase Room is our largest and most scenic accommodation. With 45 sqm of space and a sweeping panoramic view, it is designed for guests who want extra room to relax. Floor-to-ceiling windows frame the landscape, while the king-size orthopedic bed and premium organic linens ensure a deeply restful night.",
+    amenities: ["Free WiFi", "Mini Bar", "AC", "Panoramic View"],
+    detailAmenities: [
+      { icon: "🌄", label: "Panoramic View" },
+      { icon: "📶", label: "High-speed WiFi" },
+      { icon: "🛁", label: "Rainfall Shower" },
+      { icon: "❄️", label: "Climate Control" },
+      { icon: "📺", label: 'Smart TV 55"' },
+      { icon: "🧴", label: "Organic Toiletries" },
+    ],
+    features: [
+      "45 sqm Living Space",
+      "King Size Orthopedic Bed",
+      "Panoramic View Balcony",
+      "Dedicated Workspace",
+    ],
+    price: 120,
+    priceRupiah: 1850000,
+    image:
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
+    carousel: [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
     ],
   },
 ];
@@ -210,7 +211,7 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const contactInfo = {
-  address: "Jl. Botanical Green No. 12, Bandung",
-  phone: "+62 22 1234 5678",
+  address: "JL. Ruhui Rahayu",
+  phone: "+6281241087024",
   email: "hello@qafotel.com",
 };
