@@ -1,174 +1,102 @@
-"use client";
-
-import { Card } from "@/components/ui/card";
-import {
-  Code,
-  Database,
-  Shield,
-  Zap,
-  Globe,
-  Palette,
-  Package,
-} from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { AuthButtons, HeroAuthButtons } from "@/components/auth-buttons";
 import Image from "next/image";
+import Link from "next/link";
+import { QafotelHeader } from "@/components/qafotel-header";
+import { QafotelFooter } from "@/components/qafotel-footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Hero Section */}
-      <div className="text-center py-12 sm:py-16 relative px-4">
-        <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <AuthButtons />
-            <ThemeToggle />
-          </div>
-        </div>
+    <div className="min-h-screen bg-cream font-body text-olive">
+      <QafotelHeader />
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4">
-          <Image
-            src="/codeguide-logo.png"
-            alt="CodeGuide Logo"
-            width={50}
-            height={50}
-            className="rounded-xl sm:w-[60px] sm:h-[60px]"
-          />
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent font-parkinsans">
-            Codeguide Starter Fullstack
+      {/* Hero */}
+      <section className="relative flex h-[500px] flex-col items-center justify-center text-center text-cream">
+        <Image
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
+          alt="Qafotel interior"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative px-6">
+          <h1 className="font-display text-5xl md:text-6xl">
+            Where Nature Meets Comfort
           </h1>
+          <p className="mt-3 font-hand text-3xl">
+            A sanctuary of rest and botanical delights
+          </p>
+          <Link
+            href="/rooms"
+            className="mt-8 inline-block rounded-full bg-olive px-10 py-4 font-bold text-cream transition-transform hover:scale-105"
+          >
+            Book Your Stay
+          </Link>
         </div>
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 mb-8">
-          A modern full-stack TypeScript starter with authentication, database, and UI components
+      </section>
+
+      {/* Intro */}
+      <section className="mx-auto max-w-3xl px-6 py-20 text-center md:px-12">
+        <h2 className="font-display mb-5 text-4xl">Welcome to Qafotel</h2>
+        <p className="text-lg leading-relaxed text-[#444]">
+          Experience the unique harmony between a boutique hotel and a lush
+          botanical café. Whether you&apos;re seeking a peaceful night&apos;s
+          rest in our curated rooms or a vibrant workspace surrounded by
+          greenery, Qafotel is your home in the heart of the city.
         </p>
-        
-        <HeroAuthButtons />
-      </div>
+      </section>
 
-      <main className="container mx-auto px-4 sm:px-6 pb-12 sm:pb-8 max-w-5xl">
-        {/* Project Overview */}
-        <div className="text-center mb-8">
-          <div className="text-4xl sm:text-5xl mb-2">🚀</div>
-          <div className="font-bold text-lg sm:text-xl mb-2">Modern Full-Stack Starter</div>
-          <div className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            This project includes everything you need to build a modern web application with TypeScript, 
-            authentication, database integration, and a beautiful UI component library.
+      {/* Feature grid */}
+      <section className="grid gap-10 bg-white px-6 py-12 md:grid-cols-2 md:px-12">
+        <div className="overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(85,99,43,0.1)]">
+          <div className="relative h-[350px]">
+            <Image
+              src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+              alt="Hotel Room"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="bg-white p-8">
+            <h3 className="font-display mb-3 text-2xl">Curated Living</h3>
+            <p className="mb-4 text-[#444]">
+              Discover our two signature room types, designed for ultimate
+              relaxation with organic textures and modern amenities.
+            </p>
+            <Link
+              href="/rooms"
+              className="font-bold text-olive hover:text-olive-light"
+            >
+              Explore Rooms &rarr;
+            </Link>
           </div>
         </div>
 
-        {/* Tech Stack Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          {/* Frontend */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 border-blue-200/50 dark:border-blue-700/30">
-            <div className="flex items-center gap-3 mb-3">
-              <Globe className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              <h3 className="font-semibold text-lg">Frontend</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• <strong>Next.js 15</strong> - React framework with App Router</li>
-              <li>• <strong>React 19</strong> - Latest React with concurrent features</li>
-              <li>• <strong>TypeScript</strong> - Type-safe development</li>
-              <li>• <strong>Turbopack</strong> - Fast bundling and dev server</li>
-            </ul>
-          </Card>
-
-          {/* UI & Styling */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10 border-purple-200/50 dark:border-purple-700/30">
-            <div className="flex items-center gap-3 mb-3">
-              <Palette className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-              <h3 className="font-semibold text-lg">UI & Styling</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• <strong>Tailwind CSS 4</strong> - Utility-first CSS framework</li>
-              <li>• <strong>Radix UI</strong> - Accessible component primitives</li>
-              <li>• <strong>Lucide Icons</strong> - Beautiful icon library</li>
-              <li>• <strong>Dark Mode</strong> - Built-in theme switching</li>
-            </ul>
-          </Card>
-
-          {/* Authentication */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 border-green-200/50 dark:border-green-700/30">
-            <div className="flex items-center gap-3 mb-3">
-              <Shield className="w-6 h-6 text-green-600 dark:text-green-400" />
-              <h3 className="font-semibold text-lg">Authentication</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• <strong>Better Auth</strong> - Modern auth solution</li>
-              <li>• <strong>Session Management</strong> - Secure user sessions</li>
-              <li>• <strong>Type Safety</strong> - Fully typed auth hooks</li>
-              <li>• <strong>Multiple Providers</strong> - Social login support</li>
-            </ul>
-          </Card>
-
-          {/* Database */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border-cyan-200/50 dark:border-cyan-700/30">
-            <div className="flex items-center gap-3 mb-3">
-              <Database className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
-              <h3 className="font-semibold text-lg">Database</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• <strong>PostgreSQL</strong> - Robust relational database</li>
-              <li>• <strong>Drizzle ORM</strong> - Type-safe database toolkit</li>
-              <li>• <strong>Docker Setup</strong> - Containerized development</li>
-              <li>• <strong>Migrations</strong> - Schema version control</li>
-            </ul>
-          </Card>
-
-          {/* Development */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10 border-orange-200/50 dark:border-orange-700/30">
-            <div className="flex items-center gap-3 mb-3">
-              <Code className="w-6 h-6 text-orange-600 dark:text-orange-400" />
-              <h3 className="font-semibold text-lg">Development</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• <strong>ESLint</strong> - Code linting and formatting</li>
-              <li>• <strong>Hot Reload</strong> - Instant development feedback</li>
-              <li>• <strong>Docker</strong> - Consistent dev environment</li>
-              <li>• <strong>npm Scripts</strong> - Automated workflows</li>
-            </ul>
-          </Card>
-
-          {/* Components */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/10 dark:to-purple-900/10 border-indigo-200/50 dark:border-indigo-700/30">
-            <div className="flex items-center gap-3 mb-3">
-              <Package className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-              <h3 className="font-semibold text-lg">Components</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• <strong>Form Handling</strong> - React Hook Form + Zod</li>
-              <li>• <strong>Data Visualization</strong> - Recharts integration</li>
-              <li>• <strong>Date Pickers</strong> - Beautiful date components</li>
-              <li>• <strong>Notifications</strong> - Toast and alert systems</li>
-            </ul>
-          </Card>
-        </div>
-
-        {/* Getting Started */}
-        <Card className="p-6 bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-900/50 dark:to-gray-900/50">
-          <h3 className="font-bold text-xl mb-4 flex items-center gap-2">
-            <Zap className="w-5 h-5 text-yellow-500" />
-            Quick Start
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-semibold mb-2">Development</h4>
-              <div className="bg-black/5 dark:bg-white/5 rounded-lg p-3 font-mono text-sm">
-                <div>npm install</div>
-                <div>npm run db:dev</div>
-                <div>npm run dev</div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2">Production</h4>
-              <div className="bg-black/5 dark:bg-white/5 rounded-lg p-3 font-mono text-sm">
-                <div>npm run build</div>
-                <div>npm run start</div>
-                <div>npm run docker:up</div>
-              </div>
-            </div>
+        <div className="overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(85,99,43,0.1)]">
+          <div className="relative h-[350px]">
+            <Image
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+              alt="Botanical Cafe"
+              fill
+              className="object-cover"
+            />
           </div>
-        </Card>
-      </main>
+          <div className="bg-white p-8">
+            <h3 className="font-display mb-3 text-2xl">Botanical Café</h3>
+            <p className="mb-4 text-[#444]">
+              Sip on artisan coffee and enjoy fresh pastries in our
+              greenhouse-inspired café, the perfect spot for work or leisure.
+            </p>
+            <Link
+              href="/cafe"
+              className="font-bold text-olive hover:text-olive-light"
+            >
+              View Menu &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <QafotelFooter />
     </div>
   );
 }

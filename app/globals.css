@@ -3,7 +3,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Qafotel brand theme (Hotel & Botanical Café) */
+@theme {
+  --color-olive: #55632b;
+  --color-olive-dark: #3f4c20;
+  --color-olive-light: #8a9a5b;
+  --color-cream: #fdf8dd;
+  --color-cream-dark: #efe9c9;
+}
+
 @theme inline {
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-quicksand);
+  --font-hand: var(--font-caveat);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
