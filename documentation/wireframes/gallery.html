@@ -1,0 +1,70 @@
+<div style="width: 800px; height: 600px; overflow-y: auto; background-color: #FDF8DD; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; margin: 0 auto; position: relative;">
+  <!-- Navigation -->
+  <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #55632B; color: #FDF8DD;">
+    <div style="font-size: 20px; font-weight: bold; border: 2px solid #FDF8DD; padding: 2px 8px; border-radius: 8px;">QAFOTEL</div>
+    <div style="display: flex; gap: 20px; font-size: 14px;">
+      <span>Rooms</span>
+      <span>Café</span>
+      <span style="text-decoration: underline;">Gallery</span>
+      <span>Contact</span>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header style="text-align: center; padding: 40px 20px;">
+    <h1 style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #55632B; font-size: 32px; margin-bottom: 10px;">Visual Sanctuary</h1>
+    <p style="max-width: 500px; margin: 0 auto; color: #666; font-size: 14px;">Explore the intersection of luxury living and botanical serenity. Every corner of Qafotel is designed for peace.</p>
+  </header>
+
+  <!-- Category Filters -->
+  <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
+    <button style="padding: 8px 16px; border-radius: 20px; border: 1px solid #55632B; background-color: #55632B; color: white; cursor: pointer;">All Spaces</button>
+    <button style="padding: 8px 16px; border-radius: 20px; border: 1px solid #55632B; background-color: transparent; color: #55632B; cursor: pointer;">Hotel Rooms</button>
+    <button style="padding: 8px 16px; border-radius: 20px; border: 1px solid #55632B; background-color: transparent; color: #55632B; cursor: pointer;">Botanical Café</button>
+    <button style="padding: 8px 16px; border-radius: 20px; border: 1px solid #55632B; background-color: transparent; color: #55632B; cursor: pointer;">Gardens</button>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 30px 40px 30px;">
+    <!-- Item 1 -->
+    <div style="position: relative; height: 180px; background-color: #e0e0e0; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid #ddd;">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Hotel Exterior" style="width: 100%; height: 100%; object-fit: cover;" />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px; background: rgba(85, 99, 43, 0.8); color: white; font-size: 12px; transform: translateY(100%); transition: transform 0.3s;">Main Entrance</div>
+    </div>
+    <!-- Item 2 (Active/Hover State Simulation) -->
+    <div style="position: relative; height: 180px; background-color: #e0e0e0; border-radius: 12px; overflow: hidden; cursor: pointer; border: 3px solid #55632B;">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="Café Interior" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" />
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 4px; font-size: 10px; color: #55632B;">VIEW LARGE</div>
+    </div>
+    <!-- Item 3 -->
+    <div style="position: relative; height: 180px; background-color: #e0e0e0; border-radius: 12px; overflow: hidden; cursor: pointer;">
+      <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=400&q=80" alt="Room Detail" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+    <!-- Item 4 -->
+    <div style="position: relative; height: 180px; background-color: #e0e0e0; border-radius: 12px; overflow: hidden; cursor: pointer;">
+      <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400&q=80" alt="Coffee" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+    <!-- Item 5 -->
+    <div style="position: relative; height: 180px; background-color: #e0e0e0; border-radius: 12px; overflow: hidden; cursor: pointer;">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Botanical Plants" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+    <!-- Item 6 -->
+    <div style="position: relative; height: 180px; background-color: #e0e0e0; border-radius: 12px; overflow: hidden; cursor: pointer;">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Evening Lighting" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+  </div>
+
+  <!-- Lightbox Preview Simulation (Fixed Overlay) -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: none; justify-content: center; align-items: center; z-index: 100;">
+    <div style="background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 80%;">
+        <div style="position: absolute; top: -10px; right: -10px; background: #55632B; color: white; width: 25px; height: 25px; border-radius: 50%; text-align: center; line-height: 25px; cursor: pointer;">×</div>
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" style="width: 100%; border-radius: 4px;" />
+        <p style="margin-top: 10px; font-size: 14px; color: #55632B; font-weight: bold;">The Botanical Sunroom</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background-color: #55632B; color: #FDF8DD; padding: 20px; text-align: center; font-size: 12px;">
+    <p>&copy; 2023 Qafotel & Botanical Café. All rights reserved.</p>
+  </footer>
+</div>
