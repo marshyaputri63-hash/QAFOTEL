@@ -1,6 +1,6 @@
 # Tech Stack Document
 
-This document explains the technology choices for the Qafotel company profile website in clear, everyday language. It shows how each part of the stack works together to deliver a fast, reliable, and easy-to-manage site that features both your boutique hotel and botanical café.
+This document explains the technology choices for the Qafotel company profile website in clear, everyday language. It shows how each part of the stack works together to deliver a fast, reliable, and easy-to-manage site that features both your boutique hotel and Jardin Coffee.
 
 ## Frontend Technologies
 

@@ -1,6 +1,6 @@
 # Security Guidelines for Qafotel Company Profile Website
 
-Dokumen ini merangkum prinsip-prinsip, kebijakan, dan praktik terbaik keamanan yang harus diterapkan saat membangun dan menjalankan situs profil perusahaan Qafotel—sebuah hotel butik dengan kafe botanical—menggunakan Next.js, TypeScript, dan PostgreSQL (Drizzle ORM).
+Dokumen ini merangkum prinsip-prinsip, kebijakan, dan praktik terbaik keamanan yang harus diterapkan saat membangun dan menjalankan situs profil perusahaan Qafotel—sebuah hotel butik dengan Jardin Coffee—menggunakan Next.js, TypeScript, dan PostgreSQL (Drizzle ORM).
 
 ---
 

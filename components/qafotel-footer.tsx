@@ -17,7 +17,7 @@ export function QafotelFooter() {
         ))}
       </div>
       <p className="text-sm opacity-90">
-        &copy; {new Date().getFullYear()} Qafotel &amp; Botanical Café. All
+        &copy; {new Date().getFullYear()} Qafotel &amp; Jardin Coffee. All
         rights reserved.
       </p>
     </footer>

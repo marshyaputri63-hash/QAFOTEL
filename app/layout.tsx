@@ -44,9 +44,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Qafotel | Hotel & Botanical Café",
+  title: "Qafotel | Hotel & Jardin Coffee",
   description:
-    "A sanctuary of rest and botanical delights — boutique hotel rooms and a lush botanical café in the heart of the city.",
+    "A sanctuary of rest and botanical delights — boutique hotel rooms and Jardin Coffee in the heart of the city.",
 };
 
 export default function RootLayout({

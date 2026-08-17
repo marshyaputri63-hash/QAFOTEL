@@ -10,7 +10,7 @@ export default function CafePage() {
 
       {/* Hero */}
       <section className="flex h-[250px] flex-col items-center justify-center bg-olive px-5 text-center text-cream">
-        <h1 className="font-display text-4xl md:text-5xl">Botanical Café</h1>
+        <h1 className="font-display text-4xl md:text-5xl">Jardin Coffee</h1>
         <p className="mt-2.5 italic opacity-90">
           Sip, Snack, and Work amidst the greenery.
         </p>

@@ -2,9 +2,9 @@
 
 ## 1. Project Overview
 
-We are building a company profile website for Qafotel, a boutique hotel with an on-site botanical café. The website will showcase the hotel’s rooms, amenities, brand story, and café menu in a cohesive, visually appealing way. It will use Next.js (React framework) with TypeScript for strong typing, server-side rendering (SSR), and static site generation (SSG) where appropriate. The data store will be PostgreSQL accessed via Drizzle ORM, making content structured and easy to manage.
+We are building a company profile website for Qafotel, a boutique hotel with an on-site Jardin Coffee. The website will showcase the hotel’s rooms, amenities, brand story, and café menu in a cohesive, visually appealing way. It will use Next.js (React framework) with TypeScript for strong typing, server-side rendering (SSR), and static site generation (SSG) where appropriate. The data store will be PostgreSQL accessed via Drizzle ORM, making content structured and easy to manage.
 
-The primary goal is to create a polished online presence that highlights both the hotel experience and its unique botanical café. Success means: fast page loads (under 2s), responsive design across devices, an intuitive navigation bar, and a lightweight CMS for staff to update room details, café menu items, images, and text without touching code. We will deploy on Vercel and use placeholder assets until final photography and copy are ready.
+The primary goal is to create a polished online presence that highlights both the hotel experience and its unique Jardin Coffee. Success means: fast page loads (under 2s), responsive design across devices, an intuitive navigation bar, and a lightweight CMS for staff to update room details, café menu items, images, and text without touching code. We will deploy on Vercel and use placeholder assets until final photography and copy are ready.
 
 ## 2. In-Scope vs. Out-of-Scope
 
@@ -15,7 +15,7 @@ The primary goal is to create a polished online presence that highlights both th
   • About Us (hotel story, mission, brand colors/style).  
   • Rooms (two room types: Standard & Deluxe, with placeholder descriptions, features, pricing).  
   • Gallery (image grid with placeholder images).  
-  • Botanical Café (drinks, pastries, workspace categories).  
+  • Jardin Coffee (drinks, pastries, workspace categories).  
   • Contact (display email, phone number, basic contact info).
 - Responsive design (mobile, tablet, desktop).
 - Basic SEO metadata (page titles, descriptions).
@@ -49,7 +49,7 @@ On the Rooms page, placeholder cards for the Standard Room and Deluxe Room displ
 - **Rooms Module**:
   • Two room types (Standard, Deluxe) with attributes: size, occupancy, amenities, description, price.
 - **Gallery Module**: Responsive grid layout with placeholders.
-- **Botanical Café Module**:
+- **Jardin Coffee Module**:
   • Categories: Drinks, Pastries, Workspace.
   • Menu items with name, description, price; updatable via CMS.
 - **Contact Page**: Display hotel email and phone number.

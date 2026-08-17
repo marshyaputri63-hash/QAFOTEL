@@ -38,8 +38,7 @@ export default function Home() {
       <section className="mx-auto max-w-3xl px-6 py-20 text-center md:px-12">
         <h2 className="font-display mb-5 text-4xl">Welcome to Qafotel</h2>
         <p className="text-lg leading-relaxed text-[#444]">
-          Experience the unique harmony between a boutique hotel and a lush
-          botanical café. Whether you&apos;re seeking a peaceful night&apos;s
+          Experience the unique harmony between a boutique hotel and Jardin Coffee. Whether you&apos;re seeking a peaceful night&apos;s
           rest in our curated rooms or a vibrant workspace surrounded by
           greenery, Qafotel is your home in the heart of the city.
         </p>
@@ -75,13 +74,13 @@ export default function Home() {
           <div className="relative h-[350px]">
             <Image
               src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
-              alt="Botanical Cafe"
+              alt="Jardin Coffee"
               fill
               className="object-cover"
             />
           </div>
           <div className="bg-white p-8">
-            <h3 className="font-display mb-3 text-2xl">Botanical Café</h3>
+            <h3 className="font-display mb-3 text-2xl">Jardin Coffee</h3>
             <p className="mb-4 text-[#444]">
               Sip on artisan coffee and enjoy fresh pastries in our
               greenhouse-inspired café, the perfect spot for work or leisure.

@@ -172,7 +172,7 @@ export type GalleryItem = {
 export const galleryCategories = [
   { id: "all", label: "All Spaces" },
   { id: "hotel", label: "Hotel Rooms" },
-  { id: "cafe", label: "Botanical Café" },
+  { id: "cafe", label: "Jardin Coffee" },
   { id: "garden", label: "Gardens" },
 ] as const;
 

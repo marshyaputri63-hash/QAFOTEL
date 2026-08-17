@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Qafotel brand theme (Hotel & Botanical Café) */
+/* Qafotel brand theme (Hotel & Jardin Coffee) */
 @theme {
   --color-olive: #55632b;
   --color-olive-dark: #3f4c20;
