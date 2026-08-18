@@ -1,19 +1,28 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
-import { cafeMenu } from "@/lib/qafotel-data";
+import { getCafeMenu } from "@/lib/qafotel-data";
 
-export default function CafePage() {
+export default async function CafePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "cafe" });
+  const cafeMenu = getCafeMenu(locale as "en" | "id");
+
   return (
     <div className="min-h-screen bg-cream font-body text-olive">
       <QafotelHeader />
 
       {/* Hero */}
       <section className="flex h-[250px] flex-col items-center justify-center bg-olive px-5 text-center text-cream">
-        <h1 className="font-display text-4xl md:text-5xl">Jardin Coffee</h1>
-        <p className="mt-2.5 italic opacity-90">
-          Sip, Snack, and Work amidst the greenery.
-        </p>
+        <h1 className="font-display text-4xl md:text-5xl">
+          {t("heroTitle")}
+        </h1>
+        <p className="mt-2.5 italic opacity-90">{t("heroSubtitle")}</p>
       </section>
 
       <div className="mx-auto max-w-[1000px] px-5 py-10 md:px-8">
@@ -70,9 +79,9 @@ export default function CafePage() {
 
         <div className="my-14 rounded-[15px] border border-dashed border-olive bg-olive/5 p-5 text-center text-sm text-olive">
           <p>
-            ✨ <strong>Note for Staff:</strong> This menu is powered by our CMS.
-            Prices and seasonal items can be updated in the dashboard to reflect
-            real-time availability.
+            {t.rich("staffNote", {
+              bold: (chunks) => <strong>{chunks}</strong>,
+            })}
           </p>
         </div>
       </div>

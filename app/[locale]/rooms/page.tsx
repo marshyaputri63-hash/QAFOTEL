@@ -1,10 +1,19 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
-import { rooms } from "@/lib/qafotel-data";
+import { getRooms } from "@/lib/qafotel-data";
+import { Link } from "@/i18n/navigation";
 
-export default function RoomsPage() {
+export default async function RoomsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "rooms" });
+  const rooms = getRooms(locale as "en" | "id");
+
   return (
     <div className="min-h-screen bg-cream font-body text-olive">
       <QafotelHeader />
@@ -12,11 +21,10 @@ export default function RoomsPage() {
       <div className="mx-auto max-w-4xl px-5 py-10 md:px-8">
         <div className="mb-10 text-center">
           <h1 className="font-display mb-2.5 text-4xl text-olive">
-            Our Sanctuary
+            {t("title")}
           </h1>
           <p className="mx-auto max-w-[500px] text-base text-[#666]">
-            Rest and rejuvenate in our thoughtfully designed spaces blending
-            modern comfort with botanical charm.
+            {t("intro")}
           </p>
         </div>
 
@@ -65,14 +73,14 @@ export default function RoomsPage() {
                   <div className="text-lg font-bold text-olive">
                     ${room.price}
                     <span className="text-xs font-normal text-[#888]">
-                      /night
+                      {t("perNight")}
                     </span>
                   </div>
                   <Link
                     href={`/rooms/${room.slug}`}
                     className="rounded-full bg-olive px-4.5 py-2.5 text-[13px] font-semibold text-cream transition-opacity hover:opacity-90"
                   >
-                    View Details
+                    {t("viewDetails")}
                   </Link>
                 </div>
               </div>

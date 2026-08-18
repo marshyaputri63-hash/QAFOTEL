@@ -2,27 +2,33 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import {
-  galleryCategories,
-  galleryItems,
+  getGalleryCategories,
+  getGalleryItems,
 } from "@/lib/qafotel-data";
 
-type CategoryId = (typeof galleryCategories)[number]["id"];
-
 export function GalleryGrid() {
+  const t = useTranslations("gallery");
+  const locale = useLocale() as "en" | "id";
+  const categories = getGalleryCategories(locale);
+  const items = getGalleryItems(locale);
+
+  type CategoryId = (typeof categories)[number]["id"];
+
   const [category, setCategory] = useState<CategoryId>("all");
   const [selected, setSelected] = useState<number | null>(null);
 
-  const items =
+  const visibleItems =
     category === "all"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === category);
+      ? items
+      : items.filter((item) => item.category === category);
 
   return (
     <>
       {/* Category filters */}
       <div className="mb-8 flex flex-wrap justify-center gap-2.5">
-        {galleryCategories.map((cat) => (
+        {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setCategory(cat.id)}
@@ -39,7 +45,7 @@ export function GalleryGrid() {
 
       {/* Gallery grid */}
       <div className="grid grid-cols-1 gap-2.5 pb-10 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, index) => (
+        {visibleItems.map((item, index) => (
           <button
             key={item.src}
             onClick={() => setSelected(index)}
@@ -58,7 +64,7 @@ export function GalleryGrid() {
             </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
               <span className="rounded bg-white/90 px-2.5 py-1 text-[10px] text-olive">
-                VIEW LARGE
+                {t("viewLarge")}
               </span>
             </div>
           </button>
@@ -66,7 +72,7 @@ export function GalleryGrid() {
       </div>
 
       {/* Lightbox */}
-      {selected !== null && (
+      {selected !== null && visibleItems[selected] && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-5"
           onClick={() => setSelected(null)}
@@ -76,21 +82,21 @@ export function GalleryGrid() {
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              aria-label="Close"
+              aria-label={t("close")}
               onClick={() => setSelected(null)}
               className="absolute -right-2.5 -top-2.5 flex h-6 w-6 items-center justify-center rounded-full bg-olive text-sm text-white"
             >
               ×
             </button>
             <Image
-              src={items[selected].src.replace("w=600", "w=1200")}
-              alt={items[selected].caption}
+              src={visibleItems[selected].src.replace("w=600", "w=1200")}
+              alt={visibleItems[selected].caption}
               width={1200}
               height={800}
               className="h-auto w-full rounded"
             />
             <p className="mt-2.5 text-sm font-bold text-olive">
-              {items[selected].caption}
+              {visibleItems[selected].caption}
             </p>
           </div>
         </div>

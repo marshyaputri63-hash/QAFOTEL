@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function RoomCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const t = useTranslations("roomDetail");
   const [index, setIndex] = useState(0);
 
   return (
@@ -15,14 +17,14 @@ export function RoomCarousel({ images, alt }: { images: string[]; alt: string })
         className="object-cover"
       />
       <button
-        aria-label="Previous image"
+        aria-label={t("previousImage")}
         onClick={() => setIndex((index - 1 + images.length) % images.length)}
         className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-olive shadow transition-colors hover:bg-white"
       >
         ‹
       </button>
       <button
-        aria-label="Next image"
+        aria-label={t("nextImage")}
         onClick={() => setIndex((index + 1) % images.length)}
         className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-olive shadow transition-colors hover:bg-white"
       >
@@ -32,7 +34,7 @@ export function RoomCarousel({ images, alt }: { images: string[]; alt: string })
         {images.map((_, i) => (
           <button
             key={i}
-            aria-label={`Go to image ${i + 1}`}
+            aria-label={t("goToImage", { n: i + 1 })}
             onClick={() => setIndex(i)}
             className={`h-3 w-3 rounded-full transition-colors ${
               i === index ? "bg-olive" : "bg-white/50 hover:bg-white/80"

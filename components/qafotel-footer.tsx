@@ -1,8 +1,18 @@
-import Link from "next/link";
+"use client";
 
-const footerLinks = ["Privacy Policy", "Terms of Service", "FAQ"];
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export function QafotelFooter() {
+  const t = useTranslations("footer");
+  const year = new Date().getFullYear();
+
+  const footerLinks = [
+    t("privacyPolicy"),
+    t("termsOfService"),
+    t("faq"),
+  ];
+
   return (
     <footer className="bg-olive px-6 py-12 text-center text-cream md:px-12">
       <div className="mb-6 flex flex-wrap items-center justify-center gap-6">
@@ -16,10 +26,7 @@ export function QafotelFooter() {
           </Link>
         ))}
       </div>
-      <p className="text-sm opacity-90">
-        &copy; {new Date().getFullYear()} Qafotel &amp; Jardin Coffee. All
-        rights reserved.
-      </p>
+      <p className="text-sm opacity-90">{t("rights", { year })}</p>
     </footer>
   );
 }

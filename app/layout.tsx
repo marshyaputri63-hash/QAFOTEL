@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   Geist,
   Geist_Mono,
@@ -7,6 +6,7 @@ import {
   Quicksand,
   Caveat,
 } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
@@ -43,19 +43,14 @@ const caveat = Caveat({
   weight: ["600"],
 });
 
-export const metadata: Metadata = {
-  title: "Qafotel | Hotel & Jardin Coffee",
-  description:
-    "A sanctuary of rest and botanical delights — boutique hotel rooms and Jardin Coffee in the heart of the city.",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${parkinsans.variable} ${playfair.variable} ${quicksand.variable} ${caveat.variable} antialiased`}
       >

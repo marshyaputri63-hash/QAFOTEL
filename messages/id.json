@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "rooms": "Kamar",
+    "cafe": "Kafe",
+    "gallery": "Galeri",
+    "contact": "Kontak",
+    "signIn": "Masuk"
+  },
+  "footer": {
+    "privacyPolicy": "Kebijakan Privasi",
+    "termsOfService": "Syarat & Ketentuan",
+    "faq": "FAQ",
+    "rights": "© {year} Qafotel & Jardin Coffee. Hak cipta dilindungi."
+  },
+  "home": {
+    "heroTitle": "Di Mana Alam Bertemu Kenyamanan",
+    "heroSubtitle": "Tempat berlindung dari ketenangan dan keindahan alam",
+    "bookStay": "Pesan Kamar",
+    "welcomeTitle": "Selamat Datang di Qafotel",
+    "welcomeText": "Rasakan harmoni unik antara hotel butik dan Jardin Coffee. Baik Anda mencari istirahat malam yang damai di kamar kami yang terkurasi, atau ruang kerja yang hidup dikelilingi tanaman hijau, Qafotel adalah rumah Anda di jantung kota.",
+    "feature1Title": "Hidup Terkurasi",
+    "feature1Text": "Temukan dua tipe kamar khas kami, dirancang untuk relaksasi maksimal dengan tekstur organik dan fasilitas modern.",
+    "feature1Link": "Jelajahi Kamar →",
+    "feature2Title": "Jardin Coffee",
+    "feature2Text": "Nikmati kopi artisan dan pastry segar di kafe bergaya greenhouse kami, tempat yang sempurna untuk bekerja atau bersantai.",
+    "feature2Link": "Lihat Menu →"
+  },
+  "about": {
+    "heroTitle": "Di Mana Alam Bertemu Istirahat",
+    "heroText": "Temukan kisah di balik tempat berlindung alami kami, tempat setiap sudutnya dikurasi untuk kedamaian dan koneksi organik.",
+    "storyTitle": "Kisah Kami",
+    "storyText": "Didirikan pada tahun 2023, Qafotel lahir dari mimpi menggabungkan ketenangan rumah kaca yang rimbun dengan kenyamanan hotel butik. Kami percaya bahwa pelancong modern pantas mendapatkan lebih dari sekadar tempat tidur—mereka pantas mendapatkan udara segar. Ruang kami dirancang untuk mengaburkan batas antara dalam dan luar ruangan.",
+    "storyImageAlt": "Tampilan Interior Botanical",
+    "missionTitle": "Misi Kami",
+    "missionText": "“Menumbuhkan lingkungan tempat keramahtamahan dan alam hidup berdampingan, memberikan tamu kami tempat peristirahatan yang menyentuh jiwa yang merevitalisasi semangat melalui keindahan alam dan pelayanan yang penuh perhatian.”",
+    "styleTitle": "Gaya Botanical",
+    "styleText": "Estetika kami didefinisikan oleh 'Minimalisme Organik'. Kami menggunakan bahan mentah, warna tanah, dan ratusan tanaman hidup untuk menciptakan arsitektur yang hidup dan bernapas. Aksen gambar tangan dan tepian membulat dalam desain kami mencerminkan keindahan dunia alami yang cair dan tidak sempurna.",
+    "styleImageAlt": "Estetika Kafe",
+    "values": [
+      {
+        "title": "Keberlanjutan",
+        "desc": "Kami memprioritaskan praktik ramah lingkungan dalam operasional hotel dan kafe kami."
+      },
+      {
+        "title": "Komunitas",
+        "desc": "Pusat bagi seniman lokal, pecinta tanaman, dan pekerja digital."
+      },
+      {
+        "title": "Kenyamanan",
+        "desc": "Fasilitas kelas atas yang dibungkus suasana nyaman seperti taman."
+      }
+    ]
+  },
+  "cafe": {
+    "heroTitle": "Jardin Coffee",
+    "heroSubtitle": "Teguk, Ngemil, dan Bekerja di tengah kehijauan.",
+    "staffNote": "✨ <bold>Catatan untuk Staf:</bold> Menu ini didukung oleh CMS kami. Harga dan item musiman dapat diperbarui di dashboard agar mencerminkan ketersediaan terkini."
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "intro": "Apakah Anda memesan menginap atau merencanakan acara Jardin Coffee, kami siap membantu.",
+    "address": "Alamat",
+    "phone": "Telepon",
+    "email": "Email",
+    "fullName": "Nama Lengkap",
+    "emailAddress": "Alamat Email",
+    "inquiryType": "Jenis Pertanyaan",
+    "selectCategory": "Pilih kategori",
+    "optionRoom": "Reservasi Kamar",
+    "optionCafe": "Acara Jardin Coffee / Reservasi Meja",
+    "optionGeneral": "Pertanyaan Umum",
+    "message": "Pesan",
+    "messagePlaceholder": "Bagaimana kami bisa membantu Anda?",
+    "sendMessage": "Kirim Pesan",
+    "submitted": "✓ Pesan berhasil dikirim. Tim kami akan menghubungi Anda segera.",
+    "toast": "Terima kasih, {name}! Pesan Anda sudah terkirim."
+  },
+  "gallery": {
+    "title": "Sanctuary Visual",
+    "intro": "Jelajahi perpaduan antara kemewahan dan ketenangan alami. Setiap sudut Qafotel dirancang untuk kedamaian.",
+    "viewLarge": "LIHAT BESAR",
+    "close": "Tutup"
+  },
+  "rooms": {
+    "title": "Sanctuary Kami",
+    "intro": "Beristirahat dan pulihkan tenaga di ruang kami yang dirancang dengan cermat, memadukan kenyamanan modern dengan pesona alami.",
+    "perNight": "/malam",
+    "viewDetails": "Lihat Detail"
+  },
+  "roomDetail": {
+    "backToRooms": "Kembali ke Semua Kamar",
+    "amenities": "Fasilitas Kamar",
+    "features": "Fitur",
+    "perNight": "per malam (termasuk sarapan)",
+    "nightStay": "1 Malam Menginap",
+    "serviceCharge": "Biaya Layanan (5%)",
+    "tax": "Pajak (11%)",
+    "totalEstimate": "Estimasi Total",
+    "bookThisRoom": "Pesan Kamar Ini",
+    "bookingNote": "Mengklik akan mengarahkan Anda ke formulir pertanyaan kami.",
+    "previousImage": "Gambar sebelumnya",
+    "nextImage": "Gambar berikutnya",
+    "goToImage": "Ke gambar {n}"
+  },
+  "metadata": {
+    "title": "Qafotel | Hotel & Jardin Coffee",
+    "description": "Tempat berlindung dari ketenangan dan keindahan alam — kamar hotel butik dan Jardin Coffee di jantung kota."
+  }
+}

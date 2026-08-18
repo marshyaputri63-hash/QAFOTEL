@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
 import { RoomCarousel } from "@/components/room-carousel";
-import { rooms } from "@/lib/qafotel-data";
+import { getRooms } from "@/lib/qafotel-data";
+import { Link } from "@/i18n/navigation";
 
-export function generateStaticParams() {
-  return rooms.map((room) => ({ slug: room.slug }));
-}
-
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  return params.then(({ slug }) => {
-    const room = rooms.find((r) => r.slug === slug);
-    return { title: room ? `${room.detailTitle} | Qafotel` : "Qafotel" };
-  });
+  const { locale, slug } = await params;
+  const room = getRooms(locale as "en" | "id").find((r) => r.slug === slug);
+  return { title: room ? `${room.detailTitle} | Qafotel` : "Qafotel" };
 }
 
 function formatRupiah(value: number) {
@@ -28,10 +24,11 @@ function formatRupiah(value: number) {
 export default async function RoomDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const room = rooms.find((r) => r.slug === slug);
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "roomDetail" });
+  const room = getRooms(locale as "en" | "id").find((r) => r.slug === slug);
   if (!room) notFound();
 
   const service = Math.round(room.priceRupiah * 0.05);
@@ -47,7 +44,7 @@ export default async function RoomDetailPage({
           href="/rooms"
           className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-olive"
         >
-          <span aria-hidden>←</span> Back to All Rooms
+          <span aria-hidden>←</span> {t("backToRooms")}
         </Link>
 
         <RoomCarousel images={room.carousel} alt={room.detailTitle} />
@@ -66,7 +63,7 @@ export default async function RoomDetailPage({
 
             <div className="mt-10">
               <h3 className="mb-5 inline-block border-b-2 border-olive pb-1">
-                Room Amenities
+                {t("amenities")}
               </h3>
               <div className="grid grid-cols-2 gap-5 md:grid-cols-3">
                 {room.detailAmenities.map((a) => (
@@ -82,7 +79,7 @@ export default async function RoomDetailPage({
 
             <div className="mt-10">
               <h3 className="mb-5 inline-block border-b-2 border-olive pb-1">
-                Features
+                {t("features")}
               </h3>
               <ul className="space-y-2 pl-5">
                 {room.features.map((f) => (
@@ -100,24 +97,22 @@ export default async function RoomDetailPage({
               <div className="text-[28px] font-bold">
                 {formatRupiah(room.priceRupiah)}
               </div>
-              <div className="mb-5 text-sm opacity-70">
-                per night (incl. breakfast)
-              </div>
+              <div className="mb-5 text-sm opacity-70">{t("perNight")}</div>
               <div className="border-t border-dashed border-[#ccc] pt-5">
                 <div className="mb-2.5 flex justify-between text-sm">
-                  <span>1 Night Stay</span>
+                  <span>{t("nightStay")}</span>
                   <span>{formatRupiah(room.priceRupiah)}</span>
                 </div>
                 <div className="mb-2.5 flex justify-between text-sm">
-                  <span>Service Charge (5%)</span>
+                  <span>{t("serviceCharge")}</span>
                   <span>{formatRupiah(service)}</span>
                 </div>
                 <div className="mb-2.5 flex justify-between text-sm">
-                  <span>Tax (11%)</span>
+                  <span>{t("tax")}</span>
                   <span>{formatRupiah(tax)}</span>
                 </div>
                 <div className="mt-2.5 flex justify-between border-t border-[#eee] pt-2.5 text-lg font-bold">
-                  <span>Total Estimate</span>
+                  <span>{t("totalEstimate")}</span>
                   <span>{formatRupiah(total)}</span>
                 </div>
               </div>
@@ -125,10 +120,10 @@ export default async function RoomDetailPage({
                 href="/contact"
                 className="mt-6 block w-full rounded-xl bg-olive py-4 text-center font-bold text-cream transition-transform hover:-translate-y-0.5"
               >
-                Book This Room
+                {t("bookThisRoom")}
               </Link>
               <p className="mt-4 text-center text-xs opacity-60">
-                Clicking will redirect you to our inquiry form.
+                {t("bookingNote")}
               </p>
             </div>
           </aside>
