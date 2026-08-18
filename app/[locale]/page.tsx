@@ -27,10 +27,12 @@ export default async function HomePage({
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative px-6">
-          <h1 className="font-display text-5xl md:text-6xl">
+          <h1 className="font-display text-5xl text-[#F2F2EC] md:text-6xl">
             {t("heroTitle")}
           </h1>
-          <p className="mt-3 font-hand text-3xl">{t("heroSubtitle")}</p>
+          <p className="mt-3 font-hand text-3xl text-[#F2F2EC]">
+            {t("heroSubtitle")}
+          </p>
           <Link
             href="/rooms"
             className="mt-8 inline-block rounded-full bg-olive px-10 py-4 font-bold text-cream transition-transform hover:scale-105"
