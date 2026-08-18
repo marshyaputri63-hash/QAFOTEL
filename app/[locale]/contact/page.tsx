@@ -11,14 +11,40 @@ import { contactInfo } from "@/lib/qafotel-data";
 export default function ContactPage() {
   const t = useTranslations("contact");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    toast.success(t("toast", { name: (data.get("name") as string) || "" }));
-    setSubmitted(true);
-    form.reset();
+    const payload = {
+      name: (data.get("name") as string) || "",
+      email: (data.get("email") as string) || "",
+      inquiry: (data.get("inquiry") as string) || "",
+      message: (data.get("message") as string) || "",
+    };
+
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => null);
+        throw new Error(errData?.error || t("errorGeneral"));
+      }
+      toast.success(t("toast", { name: payload.name }));
+      setSubmitted(true);
+      form.reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t("errorGeneral"));
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -80,6 +106,11 @@ export default function ContactPage() {
 
         {/* Form */}
         <div className="rounded-[0_30px_0_30px] bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] md:p-10">
+          {error && (
+            <p className="mb-6 rounded-lg bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
+              {error}
+            </p>
+          )}
           {submitted && (
             <p className="mb-6 rounded-lg bg-olive/10 px-4 py-3 text-sm font-semibold text-olive">
               {t("submitted")}
@@ -158,9 +189,10 @@ export default function ContactPage() {
             </div>
             <button
               type="submit"
-              className="w-full rounded-full bg-olive py-4 font-semibold text-white transition-colors hover:bg-olive-light"
+              disabled={loading}
+              className="w-full rounded-full bg-olive py-4 font-semibold text-white transition-colors hover:bg-olive-light disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {t("sendMessage")}
+              {loading ? t("sending") : t("sendMessage")}
             </button>
           </form>
         </div>

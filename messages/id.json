@@ -31,7 +31,7 @@
     "heroTitle": "Di Mana Alam Bertemu Istirahat",
     "heroText": "Temukan kisah di balik tempat berlindung alami kami, tempat setiap sudutnya dikurasi untuk kedamaian dan koneksi organik.",
     "storyTitle": "Kisah Kami",
-    "storyText": "Didirikan pada tahun 2023, Qafotel lahir dari mimpi menggabungkan ketenangan rumah kaca yang rimbun dengan kenyamanan hotel butik. Kami percaya bahwa pelancong modern pantas mendapatkan lebih dari sekadar tempat tidur—mereka pantas mendapatkan udara segar. Ruang kami dirancang untuk mengaburkan batas antara dalam dan luar ruangan.",
+    "storyText": "Didirikan pada tahun 2026, Qafotel lahir dari mimpi menggabungkan ketenangan rumah kaca yang rimbun dengan kenyamanan hotel butik. Kami percaya bahwa pelancong modern pantas mendapatkan lebih dari sekadar tempat tidur—mereka pantas mendapatkan udara segar. Ruang kami dirancang untuk mengaburkan batas antara dalam dan luar ruangan.",
     "storyImageAlt": "Tampilan Interior Botanical",
     "missionTitle": "Misi Kami",
     "missionText": "“Menumbuhkan lingkungan tempat keramahtamahan dan alam hidup berdampingan, memberikan tamu kami tempat peristirahatan yang menyentuh jiwa yang merevitalisasi semangat melalui keindahan alam dan pelayanan yang penuh perhatian.”",
@@ -74,6 +74,8 @@
     "message": "Pesan",
     "messagePlaceholder": "Bagaimana kami bisa membantu Anda?",
     "sendMessage": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "errorGeneral": "Terjadi kesalahan. Silakan coba lagi.",
     "submitted": "✓ Pesan berhasil dikirim. Tim kami akan menghubungi Anda segera.",
     "toast": "Terima kasih, {name}! Pesan Anda sudah terkirim."
   },

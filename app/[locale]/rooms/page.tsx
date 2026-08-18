@@ -5,6 +5,10 @@ import { QafotelFooter } from "@/components/qafotel-footer";
 import { getRooms } from "@/lib/qafotel-data";
 import { Link } from "@/i18n/navigation";
 
+function formatRupiah(value: number) {
+  return `Rp ${value.toLocaleString("id-ID")}`;
+}
+
 export default async function RoomsPage({
   params,
 }: {
@@ -71,7 +75,7 @@ export default async function RoomsPage({
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="text-lg font-bold text-olive">
-                    ${room.price}
+                    {formatRupiah(room.priceRupiah)}
                     <span className="text-xs font-normal text-[#888]">
                       {t("perNight")}
                     </span>

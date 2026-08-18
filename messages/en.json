@@ -31,7 +31,7 @@
     "heroTitle": "Where Nature Meets Rest",
     "heroText": "Discover the story behind our botanical sanctuary, where every corner is curated for peace and organic connection.",
     "storyTitle": "Our Story",
-    "storyText": "Founded in 2023, Qafotel began as a dream to merge the tranquility of a lush greenhouse with the comfort of a boutique hotel. We believe that modern travelers deserve more than just a bed—they deserve a breath of fresh air. Our spaces are designed to blur the lines between indoors and outdoors.",
+    "storyText": "Founded in 2026, Qafotel began as a dream to merge the tranquility of a lush greenhouse with the comfort of a boutique hotel. We believe that modern travelers deserve more than just a bed—they deserve a breath of fresh air. Our spaces are designed to blur the lines between indoors and outdoors.",
     "storyImageAlt": "Botanical Interior View",
     "missionTitle": "Our Mission",
     "missionText": "“To cultivate an environment where hospitality and nature coexist, providing our guests with a soulful retreat that rejuvenates the spirit through botanical beauty and mindful service.”",
@@ -74,6 +74,8 @@
     "message": "Message",
     "messagePlaceholder": "How can we help you?",
     "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "errorGeneral": "Something went wrong. Please try again.",
     "submitted": "✓ Your message has been sent. Our team will get back to you soon.",
     "toast": "Thank you, {name}! Your message has been sent."
   },
