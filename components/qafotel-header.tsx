@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { Menu, X, Calendar, Globe } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "next-intl";
 
 const navLinks = [
-  { key: "home", href: "/home" },
+  { key: "home", href: "/" },
   { key: "about", href: "/about" },
   { key: "rooms", href: "/rooms" },
   { key: "facilities", href: "/facilities" },
@@ -18,7 +18,7 @@ const navLinks = [
 ];
 
 const bottomNavItems = [
-  { key: "home", href: "/home", icon: "home" },
+  { key: "home", href: "/", icon: "home" },
   { key: "rooms", href: "/rooms", icon: "bed" },
   { key: "cafe", href: "/cafe", icon: "coffee" },
   { key: "contact", href: "/contact", icon: "mail" },
@@ -34,11 +34,11 @@ export function QafotelHeader() {
   return (
     <>
       {/* ── Desktop / Mobile Top Header ── */}
-      <header className="glass-nav fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-16 py-4 border-none">
+      <header className="glass-nav fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-16 py-5 border-none">
         {/* Mobile: hamburger */}
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden p-2 text-olive hover:opacity-80 transition-opacity"
+          className="md:hidden p-2 text-olive-dark hover:opacity-80 transition-opacity"
           aria-label="Open menu"
         >
           <Menu className="w-6 h-6" />
@@ -46,8 +46,8 @@ export function QafotelHeader() {
 
         {/* Logo */}
         <Link
-          href="/home"
-          className="font-display text-lg md:text-xl font-semibold tracking-tight text-olive uppercase"
+          href="/"
+          className="font-display text-xl md:text-2xl font-bold tracking-wider text-olive-dark uppercase"
         >
           QAFOTEL
         </Link>
@@ -58,9 +58,9 @@ export function QafotelHeader() {
             <Link
               key={link.key}
               href={link.href}
-              className={`font-body text-sm font-semibold tracking-wider uppercase transition-colors hover:text-olive ${
+              className={`font-body text-xs font-semibold tracking-widest uppercase transition-colors hover:text-olive-dark ${
                 pathname === link.href
-                  ? "text-olive"
+                  ? "text-olive-dark"
                   : "text-on-surface-var"
               }`}
             >
@@ -70,11 +70,11 @@ export function QafotelHeader() {
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <Link
             href={pathname}
             locale={nextLocale}
-            className="flex items-center gap-1 text-sm font-semibold text-on-surface-var hover:text-olive transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold text-on-surface-var hover:text-olive-dark transition-colors"
           >
             <Globe className="w-4 h-4" />
             {nextLocale.toUpperCase()}
@@ -82,14 +82,11 @@ export function QafotelHeader() {
           <Link href="/sign-in">
             <Button
               variant="outline"
-              className="hidden md:flex border-olive text-olive hover:bg-olive hover:text-white rounded-full px-6 text-sm font-semibold tracking-wider uppercase"
+              className="hidden md:flex border-olive-dark/30 text-olive-dark hover:bg-olive-dark hover:text-white rounded-full px-6 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300"
             >
               {t("signIn")}
             </Button>
           </Link>
-          <button className="md:hidden p-2 text-olive hover:opacity-80 transition-opacity">
-            <Calendar className="w-5 h-5" />
-          </button>
         </div>
       </header>
 
@@ -97,17 +94,17 @@ export function QafotelHeader() {
       {open && (
         <div className="fixed inset-0 z-[60] md:hidden">
           <div
-            className="absolute inset-0 bg-on-surface/20 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <nav className="absolute inset-y-0 left-0 w-80 bg-surface shadow-2xl flex flex-col py-8 animate-in slide-in-from-left">
+          <nav className="absolute inset-y-0 left-0 w-80 bg-surface shadow-2xl flex flex-col py-8">
             <div className="px-6 pb-8 flex justify-between items-center">
-              <span className="font-display text-lg font-semibold text-olive uppercase">
+              <span className="font-display text-xl font-bold tracking-wider text-olive-dark uppercase">
                 QAFOTEL
               </span>
               <button
                 onClick={() => setOpen(false)}
-                className="p-2 text-on-surface-var hover:bg-surface-highest rounded-full transition-colors"
+                className="p-2 text-on-surface-var hover:bg-surface-mid rounded-full transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -120,8 +117,8 @@ export function QafotelHeader() {
                     onClick={() => setOpen(false)}
                     className={`flex items-center gap-4 mx-4 my-1 px-4 py-3 rounded-xl transition-colors font-medium ${
                       pathname === link.href
-                        ? "bg-olive-container text-olive-on"
-                        : "text-on-surface-var hover:bg-surface-highest"
+                        ? "bg-olive/10 text-olive-dark"
+                        : "text-on-surface-var hover:bg-surface-mid"
                     }`}
                   >
                     {t(link.key)}
@@ -134,7 +131,7 @@ export function QafotelHeader() {
       )}
 
       {/* ── Mobile Bottom Nav ── */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-lowest/95 backdrop-blur-md border-t border-outline-var/30">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-t border-outline-var/30">
         <div className="flex justify-around items-center px-4 pt-3 pb-[env(safe-area-inset-bottom,16px)]">
           {bottomNavItems.map((item) => {
             const isActive = pathname === item.href;
@@ -144,8 +141,8 @@ export function QafotelHeader() {
                 href={item.href}
                 className={`flex flex-col items-center justify-center py-1 transition-colors ${
                   isActive
-                    ? "text-olive font-bold"
-                    : "text-on-surface-var hover:text-olive-container"
+                    ? "text-olive-dark font-bold"
+                    : "text-on-surface-var hover:text-olive"
                 }`}
               >
                 <span className="material-symbols-outlined text-[22px] mb-0.5" style={isActive ? { fontVariationSettings: "'FILL' 1" } : undefined}>
