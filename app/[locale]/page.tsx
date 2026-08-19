@@ -19,7 +19,7 @@ export default async function HomePage({
       {/* Hero */}
       <section className="relative flex h-[500px] flex-col items-center justify-center text-center text-cream">
         <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
+          src="/images/hero-home.jpeg"
           alt="Qafotel interior"
           fill
           priority
@@ -55,7 +55,7 @@ export default async function HomePage({
         <div className="overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(85,99,43,0.1)]">
           <div className="relative h-[350px]">
             <Image
-              src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+              src="/images/room-oase.jpeg"
               alt="Hotel Room"
               fill
               className="object-cover"
@@ -78,7 +78,7 @@ export default async function HomePage({
         <div className="overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(85,99,43,0.1)]">
           <div className="relative h-[350px]">
             <Image
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+              src="/images/cafe-interior.jpeg"
               alt={t("feature2Title")}
               fill
               className="object-cover"

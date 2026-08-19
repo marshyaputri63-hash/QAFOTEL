@@ -57,11 +57,11 @@ const roomsEn: Room[] = [
     price: 85,
     priceRupiah: 1300000,
     image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "/images/leaf.jpeg",
     carousel: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
+      "/images/leaf.jpeg",
+      "/images/leaf.jpeg",
+      "/images/leaf.jpeg",
     ],
   },
   {
@@ -95,11 +95,11 @@ const roomsEn: Room[] = [
     price: 120,
     priceRupiah: 1850000,
     image:
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
+      "/images/room-oase.jpeg",
     carousel: [
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
+      "/images/room-oase.jpeg",
+      "/images/room-oase.jpeg",
+      "/images/leaf.jpeg",
     ],
   },
 ];
@@ -136,11 +136,11 @@ const roomsId: Room[] = [
     price: 85,
     priceRupiah: 1300000,
     image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "/images/leaf.jpeg",
     carousel: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
+      "/images/leaf.jpeg",
+      "/images/leaf.jpeg",
+      "/images/leaf.jpeg",
     ],
   },
   {
@@ -174,11 +174,11 @@ const roomsId: Room[] = [
     price: 120,
     priceRupiah: 1850000,
     image:
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
+      "/images/room-oase.jpeg",
     carousel: [
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
+      "/images/room-oase.jpeg",
+      "/images/room-oase.jpeg",
+      "/images/leaf.jpeg",
     ],
   },
 ];
@@ -203,14 +203,14 @@ const cafeMenuEn: MenuSection[] = [
         price: "$5.50",
         desc: "Premium ceremonial grade matcha with house-made lavender syrup and oat milk.",
         image:
-          "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
       {
         name: "Rosemary Cold Brew",
         price: "$4.75",
         desc: "12-hour cold brew infused with fresh rosemary and a touch of organic honey.",
         image:
-          "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
     ],
   },
@@ -223,14 +223,14 @@ const cafeMenuEn: MenuSection[] = [
         price: "$3.50",
         desc: "Flaky, buttery scone glazed with local honey and wild mountain thyme.",
         image:
-          "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
       {
         name: "Pistachio Rose Roll",
         price: "$4.25",
         desc: "Soft dough filled with crushed pistachios and a delicate rosewater icing.",
         image:
-          "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
     ],
   },
@@ -243,7 +243,7 @@ const cafeMenuEn: MenuSection[] = [
         price: "$15/day",
         desc: "A quiet, plant-filled corner with high-speed WiFi, power outlets, and one complimentary drink.",
         image:
-          "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
     ],
   },
@@ -259,14 +259,14 @@ const cafeMenuId: MenuSection[] = [
         price: "$5.50",
         desc: "Matcha kelas upacara premium dengan sirup lavender buatan rumah dan susu oat.",
         image:
-          "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
       {
         name: "Rosemary Cold Brew",
         price: "$4.75",
         desc: "Cold brew 12 jam yang diinfus rosemary segar dan sedikit madu organik.",
         image:
-          "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
     ],
   },
@@ -279,14 +279,14 @@ const cafeMenuId: MenuSection[] = [
         price: "$3.50",
         desc: "Scone renyah dan mentega dengan glasir madu lokal dan thyme gunung liar.",
         image:
-          "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
       {
         name: "Pistachio Rose Roll",
         price: "$4.25",
         desc: "Adonan lembut berisi pistachio cincang dan icing air mawar yang halus.",
         image:
-          "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
     ],
   },
@@ -299,7 +299,7 @@ const cafeMenuId: MenuSection[] = [
         price: "$15/hari",
         desc: "Sudut tenang penuh tanaman dengan WiFi cepat, stopkontak, dan satu minuman gratis.",
         image:
-          "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80",
+          "/images/cafe-interior.jpeg",
       },
     ],
   },
@@ -335,32 +335,32 @@ export function getGalleryCategories(locale: Locale) {
 
 const galleryItemsEn: GalleryItem[] = [
   {
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-room.jpeg",
     caption: "Main Entrance",
     category: "hotel",
   },
   {
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-sunroom.jpeg",
     caption: "The Botanical Sunroom",
     category: "cafe",
   },
   {
-    src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-room.jpeg",
     caption: "Room Detail",
     category: "hotel",
   },
   {
-    src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    src: "/images/cafe-interior.jpeg",
     caption: "Morning Brew",
     category: "cafe",
   },
   {
-    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+    src: "/images/cafe-interior.jpeg",
     caption: "Botanical Plants",
     category: "garden",
   },
   {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-room.jpeg",
     caption: "Evening Lighting",
     category: "garden",
   },
@@ -368,32 +368,32 @@ const galleryItemsEn: GalleryItem[] = [
 
 const galleryItemsId: GalleryItem[] = [
   {
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-room.jpeg",
     caption: "Pintu Masuk Utama",
     category: "hotel",
   },
   {
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-sunroom.jpeg",
     caption: "Ruang Kaca Botanical",
     category: "cafe",
   },
   {
-    src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-room.jpeg",
     caption: "Detail Kamar",
     category: "hotel",
   },
   {
-    src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    src: "/images/cafe-interior.jpeg",
     caption: "Kopi Pagi",
     category: "cafe",
   },
   {
-    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+    src: "/images/cafe-interior.jpeg",
     caption: "Tanaman Botanical",
     category: "garden",
   },
   {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+    src: "/images/gallery-room.jpeg",
     caption: "Pencahayaan Sore",
     category: "garden",
   },

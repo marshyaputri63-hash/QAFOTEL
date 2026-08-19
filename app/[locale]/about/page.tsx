@@ -36,7 +36,7 @@ export default async function AboutPage({
         </div>
         <div className="relative h-[260px] w-full max-w-[400px] rounded-[40px] bg-olive md:h-[300px]">
           <Image
-            src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80"
+            src="/images/hero-home.jpeg"
             alt={t("storyImageAlt")}
             fill
             className="rounded-[40px] object-cover"
@@ -58,7 +58,7 @@ export default async function AboutPage({
       <section className="flex flex-col-reverse items-center gap-10 px-5 py-14 md:flex-row md:px-10">
         <div className="relative h-[260px] w-full max-w-[400px] rounded-[40px] bg-olive md:h-[300px]">
           <Image
-            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+            src="/images/gallery-sunroom.jpeg"
             alt={t("styleImageAlt")}
             fill
             className="rounded-[40px] object-cover"
