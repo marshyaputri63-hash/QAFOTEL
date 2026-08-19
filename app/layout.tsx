@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Manrope,
   Bodoni_Moda,
@@ -6,6 +7,14 @@ import {
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Qafotel | Hotel & Jardin Coffee",
+  description: "Quiet luxury boutique hotel & organic coffee house",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -34,6 +43,9 @@ export default async function RootLayout({
   const locale = await getLocale();
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.png" />
+      </head>
       <body
         className={`${manrope.variable} ${bodoni.variable} ${cinzelDecorative.variable} antialiased`}
       >
