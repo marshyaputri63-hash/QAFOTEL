@@ -1,47 +1,57 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export function RoomCarousel({ images, alt }: { images: string[]; alt: string }) {
-  const t = useTranslations("roomDetail");
+export function RoomCarousel({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0);
+  const t = useTranslations();
+
+  if (images.length === 0) return null;
+
+  const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
+  const next = () => setIndex((i) => (i + 1) % images.length);
 
   return (
-    <div className="relative mb-8 h-[300px] overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.1)] md:h-[450px]">
+    <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden ambient-shadow">
       <Image
         src={images[index]}
-        alt={alt}
+        alt={`Room image ${index + 1}`}
         fill
-        className="object-cover"
+        className="object-cover transition-opacity duration-500"
       />
-      <button
-        aria-label={t("previousImage")}
-        onClick={() => setIndex((index - 1 + images.length) % images.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-olive shadow transition-colors hover:bg-white"
-      >
-        ‹
-      </button>
-      <button
-        aria-label={t("nextImage")}
-        onClick={() => setIndex((index + 1) % images.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-olive shadow transition-colors hover:bg-white"
-      >
-        ›
-      </button>
-      <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2.5">
-        {images.map((_, i) => (
+      {images.length > 1 && (
+        <>
           <button
-            key={i}
-            aria-label={t("goToImage", { n: i + 1 })}
-            onClick={() => setIndex(i)}
-            className={`h-3 w-3 rounded-full transition-colors ${
-              i === index ? "bg-olive" : "bg-white/50 hover:bg-white/80"
-            }`}
-          />
-        ))}
-      </div>
+            onClick={prev}
+            aria-label={t("previousImage")}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-lowest/80 backdrop-blur-sm flex items-center justify-center text-on-surface hover:bg-white transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={next}
+            aria-label={t("nextImage")}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-lowest/80 backdrop-blur-sm flex items-center justify-center text-on-surface hover:bg-white transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                aria-label={t("goToImage", { n: i + 1 })}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  i === index ? "bg-olive" : "bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -2,7 +2,9 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
-import { getCafeMenu } from "@/lib/qafotel-data";
+import { getCafeMenu, cafeMenuLink } from "@/lib/qafotel-data";
+import type { Locale } from "@/i18n/routing";
+import { ExternalLink } from "lucide-react";
 
 export default async function CafePage({
   params,
@@ -11,80 +13,72 @@ export default async function CafePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "cafe" });
-  const cafeMenu = getCafeMenu(locale as "en" | "id");
+  const menu = getCafeMenu(locale as Locale);
 
   return (
-    <div className="min-h-screen bg-cream font-body text-olive">
+    <div className="min-h-screen bg-surface font-body text-on-surface">
       <QafotelHeader />
 
-      {/* Hero */}
-      <section className="flex h-[250px] flex-col items-center justify-center bg-olive px-5 text-center text-cream">
-        <h1 className="font-display text-4xl md:text-5xl">
-          {t("heroTitle")}
-        </h1>
-        <p className="mt-2.5 italic opacity-90">{t("heroSubtitle")}</p>
+      {/* ── Hero ── */}
+      <section className="relative w-full min-h-[60vh] flex items-center justify-center px-5 pt-24 pb-16 overflow-hidden bg-surface-low rounded-b-[40px] md:rounded-b-[80px] mb-[80px]">
+        <div className="relative z-10 text-center">
+          <h1 className="font-display text-5xl md:text-7xl text-olive mb-4">
+            {t("heroTitle")}
+          </h1>
+          <p className="text-lg text-on-surface-var max-w-lg mx-auto mb-6">
+            {t("heroSubtitle")}
+          </p>
+          <p className="text-sm text-oak font-semibold tracking-wider uppercase mb-8">
+            {t("tagline")}
+          </p>
+          <a
+            href={cafeMenuLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-olive text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-olive-tint transition-colors ambient-shadow"
+          >
+            {t("menuBtn")} <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
       </section>
 
-      <div className="mx-auto max-w-[1000px] px-5 py-10 md:px-8">
-        {/* Category nav */}
-        <div className="sticky top-[76px] z-40 mb-10 flex justify-center gap-5 bg-cream p-2.5">
-          {cafeMenu.map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className="rounded-full border-2 border-olive bg-white px-6 py-2.5 font-semibold text-olive transition-all hover:bg-olive hover:text-cream"
-            >
-              {section.title.split(" ")[0]}
-            </a>
-          ))}
-        </div>
-
-        {cafeMenu.map((section) => (
-          <section key={section.id} id={section.id} className="scroll-mt-40">
-            <h2 className="font-display mb-8 mt-12 inline-block border-b-2 border-olive pb-1 text-3xl text-olive">
-              {section.title}
-            </h2>
-            <div className="grid gap-7 sm:grid-cols-2">
-              {section.items.map((item) => (
-                <div
-                  key={item.name}
-                  className="overflow-hidden rounded-[20px] border border-olive/10 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.05)] transition-transform hover:-translate-y-1.5"
-                >
-                  <div className="relative h-[180px]">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <div className="mb-2.5 flex items-baseline justify-between">
-                      <h3 className="font-display text-xl text-olive">
-                        {item.name}
-                      </h3>
-                      <span className="font-bold text-olive">
-                        {item.price}
-                      </span>
+      {/* ── Menu Sections ── */}
+      <section className="max-w-7xl mx-auto px-5 md:px-16 mb-[120px]">
+        <div className="space-y-16">
+          {menu.map((section) => (
+            <div key={section.id}>
+              <h2 className="font-display text-3xl text-olive mb-8 text-center">
+                {section.title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {section.items.map((item) => (
+                  <div key={item.name} className="bg-surface-low rounded-2xl p-6 ambient-shadow">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="font-display text-lg text-on-surface">{item.name}</h3>
+                      <span className="font-semibold text-sm text-oak">{item.price}</span>
                     </div>
-                    <p className="text-sm leading-relaxed text-[#666]">
+                    <p className="text-sm text-on-surface-var leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </section>
-        ))}
-
-        <div className="my-14 rounded-[15px] border border-dashed border-olive bg-olive/5 p-5 text-center text-sm text-olive">
-          <p>
-            {t.rich("staffNote", {
-              bold: (chunks) => <strong>{chunks}</strong>,
-            })}
-          </p>
+          ))}
         </div>
-      </div>
+
+        {/* View Full Menu CTA */}
+        <div className="text-center mt-16">
+          <a
+            href={cafeMenuLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-olive text-olive font-semibold text-sm tracking-wider uppercase rounded-full hover:bg-olive hover:text-white transition-all duration-200"
+          >
+            {t("menuBtn")} <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
 
       <QafotelFooter />
     </div>

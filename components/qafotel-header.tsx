@@ -1,133 +1,164 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import NextLink from "next/link";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import { Menu, X, Calendar, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLocale } from "next-intl";
+
+const navLinks = [
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "rooms", href: "/rooms" },
+  { key: "facilities", href: "/facilities" },
+  { key: "cafe", href: "/cafe" },
+  { key: "gallery", href: "/gallery" },
+  { key: "contact", href: "/contact" },
+];
+
+const bottomNavItems = [
+  { key: "home", href: "/", icon: "home" },
+  { key: "rooms", href: "/rooms", icon: "bed" },
+  { key: "cafe", href: "/cafe", icon: "coffee" },
+  { key: "contact", href: "/contact", icon: "mail" },
+];
 
 export function QafotelHeader() {
-  const t = useTranslations("nav");
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
   const [open, setOpen] = useState(false);
-
-  const otherLocale = locale === "en" ? "id" : "en";
-  const switchLabel = locale === "en" ? "ID" : "EN";
-
-  const navLinks = [
-    { href: "/", label: t("home") },
-    { href: "/about", label: t("about") },
-    { href: "/rooms", label: t("rooms") },
-    { href: "/cafe", label: t("cafe") },
-    { href: "/gallery", label: t("gallery") },
-    { href: "/contact", label: t("contact") },
-  ];
-
-  function switchLocale() {
-    setOpen(false);
-    router.replace(pathname, { locale: otherLocale });
-  }
+  const t = useTranslations("nav");
+  const pathname = usePathname();
+  const locale = useLocale();
+  const nextLocale = locale === "id" ? "en" : "id";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-olive/10 bg-cream/95 backdrop-blur">
-      <div className="flex items-center justify-between px-6 py-5 md:px-12">
+    <>
+      {/* ── Desktop / Mobile Top Header ── */}
+      <header className="glass-nav fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-16 py-4 border-none">
+        {/* Mobile: hamburger */}
+        <button
+          onClick={() => setOpen(true)}
+          className="md:hidden p-2 text-olive hover:opacity-80 transition-opacity"
+          aria-label="Open menu"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+
+        {/* Logo */}
         <Link
           href="/"
-          className="font-display text-2xl font-bold tracking-tight text-olive"
+          className="font-display text-lg md:text-xl font-semibold tracking-tight text-olive uppercase"
         >
-          Qafotel
+          QAFOTEL
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.key}
+              href={link.href}
+              className={`font-body text-sm font-semibold tracking-wider uppercase transition-colors hover:text-olive ${
+                pathname === link.href
+                  ? "text-olive"
+                  : "text-on-surface-var"
+              }`}
+            >
+              {t(link.key)}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right side */}
+        <div className="flex items-center gap-3">
+          <Link
+            href={pathname}
+            locale={nextLocale}
+            className="flex items-center gap-1 text-sm font-semibold text-on-surface-var hover:text-olive transition-colors"
+          >
+            <Globe className="w-4 h-4" />
+            {nextLocale.toUpperCase()}
+          </Link>
+          <Link href="/sign-in">
+            <Button
+              variant="outline"
+              className="hidden md:flex border-olive text-olive hover:bg-olive hover:text-white rounded-full px-6 text-sm font-semibold tracking-wider uppercase"
+            >
+              {t("signIn")}
+            </Button>
+          </Link>
+          <button className="md:hidden p-2 text-olive hover:opacity-80 transition-opacity">
+            <Calendar className="w-5 h-5" />
+          </button>
+        </div>
+      </header>
+
+      {/* ── Mobile Drawer ── */}
+      {open && (
+        <div className="fixed inset-0 z-[60] md:hidden">
+          <div
+            className="absolute inset-0 bg-on-surface/20 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <nav className="absolute inset-y-0 left-0 w-80 bg-surface shadow-2xl flex flex-col py-8 animate-in slide-in-from-left">
+            <div className="px-6 pb-8 flex justify-between items-center">
+              <span className="font-display text-lg font-semibold text-olive uppercase">
+                QAFOTEL
+              </span>
+              <button
+                onClick={() => setOpen(false)}
+                className="p-2 text-on-surface-var hover:bg-surface-highest rounded-full transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <ul className="flex-1 overflow-y-auto">
+              {navLinks.map((link) => (
+                <li key={link.key}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`flex items-center gap-4 mx-4 my-1 px-4 py-3 rounded-xl transition-colors font-medium ${
+                      pathname === link.href
+                        ? "bg-olive-container text-olive-on"
+                        : "text-on-surface-var hover:bg-surface-highest"
+                    }`}
+                  >
+                    {t(link.key)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
+
+      {/* ── Mobile Bottom Nav ── */}
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-lowest/95 backdrop-blur-md border-t border-outline-var/30">
+        <div className="flex justify-around items-center px-4 pt-3 pb-[env(safe-area-inset-bottom,16px)]">
+          {bottomNavItems.map((item) => {
+            const isActive = pathname === item.href;
             return (
               <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                key={item.key}
+                href={item.href}
+                className={`flex flex-col items-center justify-center py-1 transition-colors ${
                   isActive
-                    ? "text-olive underline underline-offset-8"
-                    : "text-olive/80 hover:text-olive-light"
+                    ? "text-olive font-bold"
+                    : "text-on-surface-var hover:text-olive-container"
                 }`}
               >
-                {link.label}
+                <span className="material-symbols-outlined text-[22px] mb-0.5" style={isActive ? { fontVariationSettings: "'FILL' 1" } : undefined}>
+                  {item.icon}
+                </span>
+                <span className="text-[10px] font-semibold tracking-wider uppercase">
+                  {t(item.key)}
+                </span>
               </Link>
             );
           })}
-        </nav>
-
-        <div className="flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={switchLocale}
-            aria-label={otherLocale === "id" ? "Switch to Indonesian" : "Switch to English"}
-            className="rounded-full border border-olive/40 px-3 py-1.5 text-xs font-bold tracking-wide text-olive transition-colors hover:bg-olive hover:text-cream"
-          >
-            {switchLabel}
-          </button>
-
-          <NextLink
-            href="/sign-in"
-            className="hidden rounded-full border-2 border-olive px-4 py-1.5 text-sm font-bold text-olive transition-colors hover:bg-olive hover:text-cream sm:inline-block"
-          >
-            {t("signIn")}
-          </NextLink>
-
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((prev) => !prev)}
-            className="rounded-md p-2 text-olive transition-colors hover:bg-olive/10 md:hidden"
-          >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
-      </div>
-
-      {/* Mobile nav */}
-      {open && (
-        <nav className="border-t border-olive/10 bg-cream px-6 pb-6 pt-3 md:hidden">
-          <div className="flex flex-col gap-1">
-            {navLinks.map((link) => {
-              const isActive =
-                link.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(link.href);
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`rounded-lg px-3 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
-                    isActive
-                      ? "bg-olive/10 text-olive"
-                      : "text-olive/80 hover:bg-olive/5 hover:text-olive-light"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-            <NextLink
-              href="/sign-in"
-              onClick={() => setOpen(false)}
-              className="mt-3 rounded-full border-2 border-olive px-4 py-2.5 text-center text-sm font-bold text-olive transition-colors hover:bg-olive hover:text-cream"
-            >
-              {t("signIn")}
-            </NextLink>
-          </div>
-        </nav>
-      )}
-    </header>
+      </nav>
+    </>
   );
 }
