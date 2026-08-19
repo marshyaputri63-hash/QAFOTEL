@@ -43,7 +43,7 @@ export default async function FacilitiesPage({
           <div className="col-span-1 md:col-span-6 relative h-[60vh] min-h-[400px] w-full mt-12 md:mt-0">
             <div className="absolute inset-0 organic-shape bg-surface-highest overflow-hidden transform rotate-3 scale-105 transition-transform duration-1000 hover:rotate-0 hover:scale-100">
               <Image
-                src="/images/hero-home.jpeg"
+                src="/images/hero-v2.jpeg"
                 alt="Qafotel facilities"
                 fill
                 className="object-cover"
@@ -195,7 +195,7 @@ export default async function FacilitiesPage({
             <div className="lg:col-span-7 order-1 lg:order-2 relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden ambient-shadow">
                 <Image
-                  src="/images/hero-home.jpeg"
+                  src="/images/hero-v2.jpeg"
                   alt="City View Terrace"
                   fill
                   className="object-cover"

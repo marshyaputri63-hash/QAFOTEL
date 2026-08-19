@@ -35,7 +35,7 @@ export default async function AboutPage({
           <div className="md:col-span-6 relative">
             <div className="aspect-[4/5] rounded-[40px] overflow-hidden bg-surface-mid relative">
               <Image
-                src="/images/hero-home.jpeg"
+                src="/images/hero-v2.jpeg"
                 alt={t("storyImageAlt")}
                 fill
                 className="object-cover"
