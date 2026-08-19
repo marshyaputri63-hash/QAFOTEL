@@ -4,6 +4,8 @@ import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import { getRooms } from "@/lib/qafotel-data";
+import type { Locale } from "@/i18n/routing";
 
 export default async function HomePage({
   params,
@@ -12,6 +14,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home" });
+  const rooms = getRooms(locale as Locale);
 
   return (
     <div className="min-h-screen bg-surface font-body text-on-surface">
@@ -135,7 +138,7 @@ export default async function HomePage({
                 <span className="font-semibold text-sm text-oak">Rp 1.300.000</span>
               </div>
               <p className="text-sm text-on-surface-var mb-6 line-clamp-2">
-                {t("rooms.leaf.description")}
+                {rooms[0].description}
               </p>
               <div className="w-full h-[0.5px] bg-oak/30 mb-4" />
               <Link
@@ -163,7 +166,7 @@ export default async function HomePage({
                 <span className="font-semibold text-sm text-oak">Rp 1.850.000</span>
               </div>
               <p className="text-sm text-on-surface-var mb-6 line-clamp-2">
-                {t("rooms.oase.description")}
+                {rooms[1].description}
               </p>
               <div className="w-full h-[0.5px] bg-oak/30 mb-4" />
               <Link
