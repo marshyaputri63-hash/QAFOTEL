@@ -1,113 +1,174 @@
 {
+  "metadata": {
+    "title": "QAFOTEL — Tempat Berlindung dari Ketenangan",
+    "description": "Rasakan kemewahan alami yang tenang. Hotel butik dan Jardin Coffee di jantung kota."
+  },
   "nav": {
     "home": "Beranda",
     "about": "Tentang",
     "rooms": "Kamar",
-    "cafe": "Kafe",
+    "facilities": "Fasilitas",
+    "cafe": "Jardin Coffee",
     "gallery": "Galeri",
     "contact": "Kontak",
     "signIn": "Masuk"
   },
-  "footer": {
-    "privacyPolicy": "Kebijakan Privasi",
-    "termsOfService": "Syarat & Ketentuan",
-    "faq": "FAQ",
-    "rights": "© {year} Qafotel & Jardin Coffee. Hak cipta dilindungi."
-  },
   "home": {
-    "heroTitle": "Di Mana Alam Bertemu Kenyamanan",
-    "heroSubtitle": "Tempat berlindung dari ketenangan dan keindahan alam",
+    "heroTitle": "Tempat Berlindung dari Ketenangan",
+    "heroSubtitle": "Rasakan kemewahan alami yang tenang. Tempat peristirahatan digital untuk menenangkan diri.",
     "bookStay": "Pesan Kamar",
-    "welcomeTitle": "Selamat Datang di Qafotel",
-    "welcomeText": "Rasakan harmoni unik antara hotel butik dan Jardin Coffee. Baik Anda mencari istirahat malam yang damai di kamar kami yang terkurasi, atau ruang kerja yang hidup dikelilingi tanaman hijau, Qafotel adalah rumah Anda di jantung kota.",
-    "feature1Title": "Hidup Terkurasi",
-    "feature1Text": "Temukan dua tipe kamar khas kami, dirancang untuk relaksasi maksimal dengan tekstur organik dan fasilitas modern.",
-    "feature1Link": "Jelajahi Kamar →",
-    "feature2Title": "Jardin Coffee",
-    "feature2Text": "Nikmati kopi artisan dan pastry segar di kafe bergaya greenhouse kami, tempat yang sempurna untuk bekerja atau bersantai.",
-    "feature2Link": "Lihat Menu →"
+    "welcomeTitle": "Selamat Datang di QAFOTEL",
+    "welcomeText": "Berakar dari filosofi kemewahan yang tenang, QAFOTEL menawarkan perjalanan yang memadukan keberlanjutan, ketenangan, dan kerajinan yang halus. Ruang kami dirancang untuk terasa setelus dan senyaman seprai linen, memadukan minimalis dengan keindahan alam.",
+    "discoverPhilosophy": "Temukan Filosofi Kami",
+    "jardinCoffeeTag": "Organik",
+    "jardinCoffeeTitle": "Secangkir Alam",
+    "jardinCoffeeText": "Nikmati Jardin Coffee, di mana setiap tegukan adalah momen ketenangan. Kami menggunakan biji kopi berkelanjutan dan fair-trade untuk menciptakan minuman yang menenangkan, dikelilingi oleh interior kami yang hijau dan alami.",
+    "viewMenu": "Lihat Menu",
+    "roomsTitle": "Tempat Peristirahatan Anda Menanti",
+    "roomsSubtitle": "Ruang yang elegan untuk pelancong yang sadar.",
+    "exploreRoom": "Lihat Kamar",
+    "exploreSuite": "Lihat Suite"
   },
   "about": {
-    "heroTitle": "Di Mana Alam Bertemu Istirahat",
-    "heroText": "Temukan kisah di balik tempat berlindung alami kami, tempat setiap sudutnya dikurasi untuk kedamaian dan koneksi organik.",
-    "storyTitle": "Kisah Kami",
-    "storyText": "Didirikan pada tahun 2026, Qafotel lahir dari mimpi menggabungkan ketenangan rumah kaca yang rimbun dengan kenyamanan hotel butik. Kami percaya bahwa pelancong modern pantas mendapatkan lebih dari sekadar tempat tidur—mereka pantas mendapatkan udara segar. Ruang kami dirancang untuk mengaburkan batas antara dalam dan luar ruangan.",
-    "storyImageAlt": "Tampilan Interior Botanical",
+    "storyTitle": "Cerita Kami",
+    "storyText": "Didirikan pada tahun 2026, QAFOTEL lahir dari keyakinan sederhana: kemewahan harus terasa alami. Terletak di bekas estate botani, hotel kami memadukan desain kontemporer dengan keindahan alam yang abadi. Setiap detail, dari linen organik yang dipilih tangan hingga Jardin Coffee lokal, mencerminkan komitmen kami terhadap keberlanjutan dan kerajinan yang halus.",
+    "storyImageAlt": "Detail interior Qafotel",
     "missionTitle": "Misi Kami",
-    "missionText": "“Menumbuhkan lingkungan tempat keramahtamahan dan alam hidup berdampingan, memberikan tamu kami tempat peristirahatan yang menyentuh jiwa yang merevitalisasi semangat melalui keindahan alam dan pelayanan yang penuh perhatian.”",
-    "styleTitle": "Gaya Botanical",
-    "styleText": "Estetika kami didefinisikan oleh 'Minimalisme Organik'. Kami menggunakan bahan mentah, warna tanah, dan ratusan tanaman hidup untuk menciptakan arsitektur yang hidup dan bernapas. Aksen gambar tangan dan tepian membulat dalam desain kami mencerminkan keindahan dunia alami yang cair dan tidak sempurna.",
-    "styleImageAlt": "Estetika Kafe",
-    "values": [
-      {
-        "title": "Keberlanjutan",
-        "desc": "Kami memprioritaskan praktik ramah lingkungan dalam operasional hotel dan kafe kami."
-      },
-      {
-        "title": "Komunitas",
-        "desc": "Pusat bagi seniman lokal, pecinta tanaman, dan pekerja digital."
-      },
-      {
-        "title": "Kenyamanan",
-        "desc": "Fasilitas kelas atas yang dibungkus suasana nyaman seperti taman."
-      }
-    ]
+    "missionText": "Menciptakan tempat peristirahatan di mana kemewahan modern dan alam berdampingan dalam harmoni yang sempurna. Kami percaya pada perjalanan lambat, keramahan yang sadar, dan kekuatan transformatif ruang yang tenang.",
+    "styleTitle": "Jiwa Botani",
+    "styleText": "Filosofi desain kami terinspirasi dari tekstur alami dunia. Kayu oak mentah, keramik buatan tangan, dan tekstil linen menciptakan suasana yang elegan sekaligus mendalam.",
+    "styleImageAlt": "Detail desain botani",
+    "foundedYear": "Didirikan pada tahun 2026"
+  },
+  "facilities": {
+    "heroTag": "Pengalaman Terpilih",
+    "heroTitle": "Tempat Berlindung dari Ketenangan",
+    "heroText": "Temukan ruang yang dirancang untuk menenangkan Anda di alam sekaligus meningkatkan indra Anda.",
+    "exploreBtn": "Jelajahi Fasilitas",
+    "jardinCoffee": {
+      "tag": "Organik & Fair Trade",
+      "title": "Jardin Coffee",
+      "text": "Kafe yang intim namun ramai, menyajikan kopi single-origin yang etis dan pastry artisan yang dipanggang segar setiap hari menggunakan bahan dari kebun kami.",
+      "viewMenu": "Lihat Menu Lengkap"
+    },
+    "meetingRoom": {
+      "tag": "Profesional",
+      "title": "Ruang Meeting",
+      "text": "Ruang pertemuan yang elegan dan lengkap, dirancang untuk gathering yang produktif. Cahaya alami, furnitur ergonomis, dan konektivitas tanpa hingga untuk hingga 30 tamu.",
+      "features": ["Cahaya Alami", "Peralatan AV", "WiFi Cepat", "Layanan Kopi"]
+    },
+    "outdoorGarden": {
+      "tag": "Pengalaman Eco",
+      "title": "Taman Outdoor",
+      "text": "Berjalan-jalan melalui taman outdoor kami yang hijau dan asri. Ruang yang tenang untuk jalan pagi, membaca, atau sekadar terhubung kembali dengan alam.",
+      "features": ["Tanaman Tropis", "Jalur Berjalan", "Sudut Membaca", "Pengamatan Burung"]
+    },
+    "cityView": {
+      "tag": "Panorama",
+      "title": "Teras Pemandangan Kota",
+      "pemandangan": "Pemandangan kota yang luas dari teras atap kami. Sempurna untuk koktail senja, relaksasi malam, atau sekadar menikmati panorama.",
+      "features": ["Pemandangan 360°", "Lounge Senja", "Bar Koktail", "Bintang"]
+    }
+  },
+  "rooms": {
+    "heroTitle": "Tempat Peristirahatan Anda Menanti",
+    "heroSubtitle": "Ruang yang elegan untuk pelancong yang sadar.",
+    "bookWhatsApp": "Pesan via WhatsApp",
+    "perNight": "/ malam",
+    "guests": "Tamu",
+    "bed": "Tempat Tidur",
+    "view": "Pemandangan",
+    "amenities": "Fasilitas",
+    "gallery": "Galeri",
+    "leaf": {
+      "name": "The Leaf Room",
+      "tag": "Nyaman & Hijau",
+      "description": "Retret hijau yang nyaman dengan tekstur alami, cocok untuk malam yang tenang dengan pemandangan taman."
+    },
+    "oase": {
+      "name": "The Oase Room",
+      "tag": "Pemandangan Terbaik",
+      "description": "Kamar kami yang paling luas dengan pemandangan panorama yang menakjubkan — lebih banyak ruang untuk bernapas, dan pemandangan terbaik di rumah."
+    }
+  },
+  "booking": {
+    "title": "Pesan Kamar Anda",
+    "subtitle": "Isi detail di bawah ini dan kami akan konfirmasi via WhatsApp.",
+    "fullName": "Nama Lengkap",
+    "phone": "Nomor WhatsApp",
+    "checkIn": "Tanggal Check-in",
+    "checkOut": "Tanggal Check-out",
+    "roomType": "Tipe Kamar",
+    "selectRoom": "Pilih kamar",
+    "guests": "Jumlah Tamu",
+    "message": "Permintaan Khusus",
+    "messagePlaceholder": "Ada permintaan khusus? Beri tahu kami...",
+    "sendBtn": "Pesan via WhatsApp",
+    "sending": "Membuka WhatsApp..."
   },
   "cafe": {
     "heroTitle": "Jardin Coffee",
-    "heroSubtitle": "Teguk, Ngemil, dan Bekerja di tengah kehijauan.",
-    "staffNote": "✨ <bold>Catatan untuk Staf:</bold> Menu ini didukung oleh CMS kami. Harga dan item musiman dapat diperbarui di dashboard agar mencerminkan ketersediaan terkini."
-  },
-  "contact": {
-    "title": "Hubungi Kami",
-    "intro": "Apakah Anda memesan menginap atau merencanakan acara Jardin Coffee, kami siap membantu.",
-    "address": "Alamat",
-    "phone": "Telepon",
-    "email": "Email",
-    "fullName": "Nama Lengkap",
-    "emailAddress": "Alamat Email",
-    "inquiryType": "Jenis Pertanyaan",
-    "selectCategory": "Pilih kategori",
-    "optionRoom": "Reservasi Kamar",
-    "optionCafe": "Acara Jardin Coffee / Reservasi Meja",
-    "optionGeneral": "Pertanyaan Umum",
-    "message": "Pesan",
-    "messagePlaceholder": "Bagaimana kami bisa membantu Anda?",
-    "sendMessage": "Kirim Pesan",
-    "sending": "Mengirim...",
-    "errorGeneral": "Terjadi kesalahan. Silakan coba lagi.",
-    "submitted": "✓ Pesan berhasil dikirim. Tim kami akan menghubungi Anda segera.",
-    "toast": "Terima kasih, {name}! Pesan Anda sudah terkirim."
+    "heroSubtitle": "Di mana setiap tegukan adalah momen ketenangan.",
+    "menuBtn": "Menu Kami",
+    "tagline": "Biji etis. Panggang segar. Terinspirasi kebun.",
+    "drinks": "Minuman Spesial",
+    "pastries": "Pastry Artisan",
+    "workspace": "Akses Ruang Kerja"
   },
   "gallery": {
-    "title": "Sanctuary Visual",
-    "intro": "Jelajahi perpaduan antara kemewahan dan ketenangan alami. Setiap sudut Qafotel dirancang untuk kedamaian.",
-    "viewLarge": "LIHAT BESAR",
-    "close": "Tutup"
+    "heroTitle": "Galeri",
+    "heroSubtitle": "Perjalanan visual melalui QAFOTEL.",
+    "all": "Semua Ruang",
+    "hotel": "Kamar Hotel",
+    "cafe": "Jardin Coffee",
+    "garden": "Taman"
   },
-  "rooms": {
-    "title": "Sanctuary Kami",
-    "intro": "Beristirahat dan pulihkan tenaga di ruang kami yang dirancang dengan cermat, memadukan kenyamanan modern dengan pesona alami.",
-    "perNight": "/malam",
-    "viewDetails": "Lihat Detail"
+  "contact": {
+    "heroTitle": "Hubungi Kami",
+    "heroSubtitle": "Kami senang mendengar dari Anda.",
+    "name": "Nama Anda",
+    "email": "Alamat Email",
+    "inquiry": "Jenis Pertanyaan",
+    "selectInquiry": "Pilih jenis pertanyaan",
+    "general": "Pertanyaan Umum",
+    "booking": "Inquiry Booking",
+    "feedback": "Umpan Balik",
+    "partnership": "Kerjasama",
+    "message": "Pesan Anda",
+    "messagePlaceholder": "Ceritakan bagaimana kami bisa membantu...",
+    "sendBtn": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "successTitle": "Pesan Terkirim!",
+    "successText": "Terima kasih telah menghubungi kami. Kami akan segera merespons.",
+    "errorText": "Terjadi kesalahan. Silakan coba lagi.",
+    "address": "Alamat",
+    "phone": "Telepon",
+    "emailLabel": "Email",
+    "whatsapp": "WhatsApp"
   },
-  "roomDetail": {
-    "backToRooms": "Kembali ke Semua Kamar",
-    "amenities": "Fasilitas Kamar",
-    "features": "Fitur",
-    "perNight": "per malam (termasuk sarapan)",
-    "nightStay": "1 Malam Menginap",
-    "serviceCharge": "Biaya Layanan (5%)",
-    "tax": "Pajak (11%)",
-    "totalEstimate": "Estimasi Total",
-    "bookThisRoom": "Pesan Kamar Ini",
-    "bookingNote": "Mengklik akan mengarahkan Anda ke formulir pertanyaan kami.",
-    "previousImage": "Gambar sebelumnya",
-    "nextImage": "Gambar berikutnya",
-    "goToImage": "Ke gambar {n}"
+  "footer": {
+    "rooms": "Kamar",
+    "jardinCoffee": "Jardin Coffee",
+    "sustainability": "Keberlanjutan",
+    "contact": "Kontak",
+    "tagline": "Dibuat untuk pelancong yang sadar."
   },
-  "metadata": {
-    "title": "Qafotel | Hotel & Jardin Coffee",
-    "description": "Tempat berlindung dari ketenangan dan keindahan alam — kamar hotel butik dan Jardin Coffee di jantung kota."
+  "previousImage": "Gambar sebelumnya",
+  "nextImage": "Gambar berikutnya",
+  "goToImage": "Ke gambar {{n}}",
+  "landing": {
+    "tagline": "Di Mana Alam Bertemu Kenyamanan",
+    "subtitle": "Tempat berlindung dari ketenangan dan keindahan alam",
+    "enterBtn": "Masuk",
+    "bookBtn": "Pesan Kamar",
+    "scroll": "Gulir untuk menjelajahi",
+    "previewTitle": "Jelajahi QAFOTEL",
+    "previewText": "Hotel butik dan kedai kopi organik yang dirancang untuk pelancong yang sadar.",
+    "hotel": "Hotel",
+    "hotelDesc": "Kamar Leaf & Oase",
+    "cafeDesc": "Kopi organik & pastry",
+    "facilities": "Fasilitas",
+    "facilitiesDesc": "Kolam, spa, taman & lainnya",
+    "exploreBtn": "Jelajahi Semua"
   }
 }

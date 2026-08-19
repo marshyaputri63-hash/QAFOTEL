@@ -1,202 +1,157 @@
 "use client";
 
 import { useState } from "react";
-import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
-import { Toaster } from "@/components/ui/sonner";
 import { contactInfo } from "@/lib/qafotel-data";
+import { MapPin, Phone, Mail, MessageCircle, Send } from "lucide-react";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const payload = {
-      name: (data.get("name") as string) || "",
-      email: (data.get("email") as string) || "",
-      inquiry: (data.get("inquiry") as string) || "",
-      message: (data.get("message") as string) || "",
+    setSending(true);
+    setSuccess(false);
+    setError(false);
+
+    const form = new FormData(e.currentTarget);
+    const data = {
+      name: form.get("name") as string,
+      email: form.get("email") as string,
+      inquiry: form.get("inquiry") as string,
+      message: form.get("message") as string,
     };
 
-    setLoading(true);
-    setError(null);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data),
       });
-      if (!res.ok) {
-        const errData = await res.json().catch(() => null);
-        throw new Error(errData?.error || t("errorGeneral"));
+      if (res.ok) {
+        setSuccess(true);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setError(true);
       }
-      toast.success(t("toast", { name: payload.name }));
-      setSubmitted(true);
-      form.reset();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : t("errorGeneral"));
+    } catch {
+      setError(true);
     } finally {
-      setLoading(false);
+      setSending(false);
     }
   }
 
   return (
-    <div className="min-h-screen bg-cream font-body text-[#333]">
+    <div className="min-h-screen bg-surface font-body text-on-surface">
       <QafotelHeader />
-      <Toaster position="top-center" />
 
-      <main className="mx-auto grid max-w-[1000px] gap-10 px-5 py-14 md:grid-cols-[1fr_1.5fr]">
-        {/* Contact info */}
-        <div className="rounded-[30px_0_30px_0] bg-olive p-8 text-white">
-          <svg
-            className="mb-5 h-10 w-10 fill-white"
-            viewBox="0 0 24 24"
-            aria-hidden
-          >
-            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
-          </svg>
-          <h1 className="font-display mb-6 text-3xl">{t("title")}</h1>
-          <p className="mb-8 text-sm opacity-90">{t("intro")}</p>
+      {/* ── Hero ── */}
+      <section className="relative w-full min-h-[50vh] flex items-center justify-center px-5 pt-24 pb-16 overflow-hidden bg-surface-low rounded-b-[40px] md:rounded-b-[80px] mb-[80px]">
+        <div className="relative z-10 text-center">
+          <h1 className="font-display text-5xl md:text-7xl text-olive mb-4">{t("heroTitle")}</h1>
+          <p className="text-lg text-on-surface-var max-w-lg mx-auto">{t("heroSubtitle")}</p>
+        </div>
+      </section>
 
-          <div className="space-y-6">
-            <div className="flex items-center gap-3.5">
-              <span aria-hidden>📍</span>
-              <div className="text-sm">
-                <strong>{t("address")}</strong>
-                <br />
-                {contactInfo.address}
+      <section className="max-w-7xl mx-auto px-5 md:px-16 mb-[120px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Left: Contact Info */}
+          <div className="flex flex-col gap-8">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-olive-container flex items-center justify-center text-olive-on shrink-0">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("address")}</h3>
+                <p className="text-on-surface-var">{contactInfo.address}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3.5">
-              <span aria-hidden>📞</span>
-              <div className="text-sm">
-                <strong>{t("phone")}</strong>
-                <br />
-                {contactInfo.phone}
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-olive-container flex items-center justify-center text-olive-on shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("phone")}</h3>
+                <p className="text-on-surface-var">{contactInfo.phone}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3.5">
-              <span aria-hidden>✉️</span>
-              <div className="text-sm">
-                <strong>{t("email")}</strong>
-                <br />
-                {contactInfo.email}
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-olive-container flex items-center justify-center text-olive-on shrink-0">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("emailLabel")}</h3>
+                <p className="text-on-surface-var">{contactInfo.email}</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <a
+                href={contactInfo.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-olive flex items-center justify-center text-white shrink-0 hover:bg-olive-tint transition-colors"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+              <div>
+                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("whatsapp")}</h3>
+                <a
+                  href={contactInfo.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-olive hover:text-olive-tint transition-colors"
+                >
+                  {contactInfo.phone}
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="mt-10 flex gap-3.5">
-            {["IG", "FB", "TW"].map((s) => (
-              <span
-                key={s}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-xs font-bold"
-              >
-                {s}
-              </span>
-            ))}
+          {/* Right: Form */}
+          <div className="bg-surface-highest rounded-3xl p-8">
+            {success ? (
+              <div className="text-center py-12">
+                <h2 className="font-display text-3xl text-olive mb-4">{t("successTitle")}</h2>
+                <p className="text-on-surface-var">{t("successText")}</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <div>
+                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("name")}</label>
+                  <input name="name" required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("email")}</label>
+                  <input name="email" type="email" required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("inquiry")}</label>
+                  <select name="inquiry" required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors">
+                    <option value="">{t("selectInquiry")}</option>
+                    <option value="general">{t("general")}</option>
+                    <option value="booking">{t("booking")}</option>
+                    <option value="feedback">{t("feedback")}</option>
+                    <option value="partnership">{t("partnership")}</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("message")}</label>
+                  <textarea name="message" rows={4} placeholder={t("messagePlaceholder")} required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors resize-none" />
+                </div>
+                {error && <p className="text-sm text-red-600">{t("errorText")}</p>}
+                <button type="submit" disabled={sending} className="w-full flex items-center justify-center gap-2 bg-olive text-white py-4 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-olive-tint transition-colors ambient-shadow disabled:opacity-70">
+                  {sending ? t("sending") : <><Send className="w-4 h-4" /> {t("sendBtn")}</>}
+                </button>
+              </form>
+            )}
           </div>
         </div>
-
-        {/* Form */}
-        <div className="rounded-[0_30px_0_30px] bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] md:p-10">
-          {error && (
-            <p className="mb-6 rounded-lg bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
-              {error}
-            </p>
-          )}
-          {submitted && (
-            <p className="mb-6 rounded-lg bg-olive/10 px-4 py-3 text-sm font-semibold text-olive">
-              {t("submitted")}
-            </p>
-          )}
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label
-                htmlFor="name"
-                className="mb-2 block font-semibold text-olive"
-              >
-                {t("fullName")}
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                placeholder={t("fullName")}
-                className="w-full rounded-lg border border-[#ddd] px-3 py-3 font-body outline-none transition-colors focus:border-olive"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="mb-2 block font-semibold text-olive"
-              >
-                {t("emailAddress")}
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="yourname@email.com"
-                className="w-full rounded-lg border border-[#ddd] px-3 py-3 font-body outline-none transition-colors focus:border-olive"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="inquiry"
-                className="mb-2 block font-semibold text-olive"
-              >
-                {t("inquiryType")}
-              </label>
-              <select
-                id="inquiry"
-                name="inquiry"
-                required
-                defaultValue=""
-                className="w-full rounded-lg border border-[#ddd] px-3 py-3 font-body outline-none transition-colors focus:border-olive"
-              >
-                <option value="" disabled>
-                  {t("selectCategory")}
-                </option>
-                <option value="room">{t("optionRoom")}</option>
-                <option value="cafe">{t("optionCafe")}</option>
-                <option value="other">{t("optionGeneral")}</option>
-              </select>
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="mb-2 block font-semibold text-olive"
-              >
-                {t("message")}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                placeholder={t("messagePlaceholder")}
-                className="w-full rounded-lg border border-[#ddd] px-3 py-3 font-body outline-none transition-colors focus:border-olive"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-full bg-olive py-4 font-semibold text-white transition-colors hover:bg-olive-light disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {loading ? t("sending") : t("sendMessage")}
-            </button>
-          </form>
-        </div>
-      </main>
+      </section>
 
       <QafotelFooter />
     </div>

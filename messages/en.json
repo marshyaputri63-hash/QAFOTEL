@@ -1,113 +1,174 @@
 {
+  "metadata": {
+    "title": "QAFOTEL — Sanctuary of Serenity",
+    "description": "Experience quiet luxury in nature. A boutique hotel and Jardin Coffee in the heart of the city."
+  },
   "nav": {
     "home": "Home",
     "about": "About",
     "rooms": "Rooms",
-    "cafe": "Café",
+    "facilities": "Facilities",
+    "cafe": "Jardin Coffee",
     "gallery": "Gallery",
     "contact": "Contact",
     "signIn": "Sign In"
   },
-  "footer": {
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "faq": "FAQ",
-    "rights": "© {year} Qafotel & Jardin Coffee. All rights reserved."
-  },
   "home": {
-    "heroTitle": "Where Nature Meets Comfort",
-    "heroSubtitle": "A sanctuary of rest and botanical delights",
+    "heroTitle": "Sanctuary of Serenity",
+    "heroSubtitle": "Experience quiet luxury in nature. A digital sanctuary designed for decompression.",
     "bookStay": "Book Your Stay",
-    "welcomeTitle": "Welcome to Qafotel",
-    "welcomeText": "Experience the unique harmony between a boutique hotel and Jardin Coffee. Whether you're seeking a peaceful night's rest in our curated rooms or a vibrant workspace surrounded by greenery, Qafotel is your home in the heart of the city.",
-    "feature1Title": "Curated Living",
-    "feature1Text": "Discover our two signature room types, designed for ultimate relaxation with organic textures and modern amenities.",
-    "feature1Link": "Explore Rooms →",
-    "feature2Title": "Jardin Coffee",
-    "feature2Text": "Sip on artisan coffee and enjoy fresh pastries in our greenhouse-inspired café, the perfect spot for work or leisure.",
-    "feature2Link": "View Menu →"
+    "welcomeTitle": "Welcome to QAFOTEL",
+    "welcomeText": "Rooted in the philosophy of quiet luxury, QAFOTEL offers a discerning traveler a sanctuary of sustainability, tranquility, and refined craftsmanship. Our spaces are designed to feel as warm and tactile as a linen sheet, blending minimalism with organic nature.",
+    "discoverPhilosophy": "Discover Our Philosophy",
+    "jardinCoffeeTag": "Organic",
+    "jardinCoffeeTitle": "A Sip of Nature",
+    "jardinCoffeeText": "Experience Jardin Coffee, where every cup is a moment of decompression. We source sustainable, fair-trade beans to craft beverages that ground you in the present moment, surrounded by our lush, earthy interiors.",
+    "viewMenu": "View Menu",
+    "roomsTitle": "Your Sanctuary Awaits",
+    "roomsSubtitle": "Refined spaces for the conscious traveler.",
+    "exploreRoom": "Explore Room",
+    "exploreSuite": "Explore Suite"
   },
   "about": {
-    "heroTitle": "Where Nature Meets Rest",
-    "heroText": "Discover the story behind our botanical sanctuary, where every corner is curated for peace and organic connection.",
     "storyTitle": "Our Story",
-    "storyText": "Founded in 2026, Qafotel began as a dream to merge the tranquility of a lush greenhouse with the comfort of a boutique hotel. We believe that modern travelers deserve more than just a bed—they deserve a breath of fresh air. Our spaces are designed to blur the lines between indoors and outdoors.",
-    "storyImageAlt": "Botanical Interior View",
+    "storyText": "Founded in 2026, QAFOTEL was born from a simple belief: luxury should feel natural. Nestled in a converted botanical estate, our hotel blends contemporary design with the timeless beauty of the natural world. Every detail, from our hand-selected organic linens to our locally sourced Jardin Coffee, reflects our commitment to sustainability and refined craftsmanship.",
+    "storyImageAlt": "Qafotel interior detail",
     "missionTitle": "Our Mission",
-    "missionText": "“To cultivate an environment where hospitality and nature coexist, providing our guests with a soulful retreat that rejuvenates the spirit through botanical beauty and mindful service.”",
-    "styleTitle": "The Botanical Style",
-    "styleText": "Our aesthetic is defined by 'Organic Minimalism'. We use raw materials, earth tones, and hundreds of living plants to create a living, breathing architecture. Hand-drawn accents and rounded edges in our design reflect the fluid, imperfect beauty of the natural world.",
-    "styleImageAlt": "Café Aesthetic",
-    "values": [
-      {
-        "title": "Sustainability",
-        "desc": "We prioritize eco-friendly practices in our hotel and café operations."
-      },
-      {
-        "title": "Community",
-        "desc": "A hub for local artists, plant lovers, and digital nomads alike."
-      },
-      {
-        "title": "Comfort",
-        "desc": "High-end amenities wrapped in a cozy, garden-like atmosphere."
-      }
-    ]
+    "missionText": "To create a sanctuary where modern luxury and nature coexist in perfect harmony. We believe in slow travel, conscious hospitality, and the transformative power of quiet spaces.",
+    "styleTitle": "A Botanical Soul",
+    "styleText": "Our design philosophy draws from the organic textures of the natural world. Raw oak, hand-thrown ceramics, and linen textiles create an atmosphere that is both elevated and deeply grounding.",
+    "styleImageAlt": "Botanical design detail",
+    "foundedYear": "Founded in 2026"
+  },
+  "facilities": {
+    "heroTag": "Curated Experiences",
+    "heroTitle": "Sanctuaries of Tranquility",
+    "heroText": "Discover spaces designed to ground you in nature while elevating your senses.",
+    "exploreBtn": "Explore Facilities",
+    "jardinCoffee": {
+      "tag": "Organic & Fair Trade",
+      "title": "Jardin Coffee",
+      "text": "A bustling yet intimate café offering ethically sourced, single-origin roasts and artisanal pastries baked fresh daily using ingredients from our garden.",
+      "viewMenu": "View Full Menu"
+    },
+    "meetingRoom": {
+      "tag": "Professional",
+      "title": "Meeting Rooms",
+      "text": "Elegant, fully equipped meeting spaces designed for productive gatherings. Natural light, ergonomic furniture, and seamless connectivity for up to 30 guests.",
+      "features": ["Natural Daylight", "AV Equipment", "High-speed WiFi", "Coffee Service"]
+    },
+    "outdoorGarden": {
+      "tag": "Eco-Experience",
+      "title": "Outdoor Garden",
+      "text": "Wander through our lush outdoor garden filled with tropical greenery. A serene space for morning walks, quiet reading, or simply reconnecting with nature.",
+      "features": ["Tropical Plants", "Walking Paths", "Reading Nooks", "Bird Watching"]
+    },
+    "cityView": {
+      "tag": "Panoramic",
+      "title": "City View Terrace",
+      "text": "Sweeping panoramic views of the city skyline from our rooftop terrace. Perfect for sunset cocktails, evening relaxation, or simply taking in the vista.",
+      "features": ["360° Views", "Sunset Lounge", "Cocktail Bar", "Stargazing"]
+    }
+  },
+  "rooms": {
+    "heroTitle": "Your Sanctuary Awaits",
+    "heroSubtitle": "Refined spaces for the conscious traveler.",
+    "bookWhatsApp": "Book via WhatsApp",
+    "perNight": "/ night",
+    "guests": "Guests",
+    "bed": "Bed",
+    "view": "View",
+    "amenities": "Amenities",
+    "gallery": "Gallery",
+    "leaf": {
+      "name": "The Leaf Room",
+      "tag": "Cozy & Green",
+      "description": "A cozy green retreat wrapped in natural textures, perfect for a peaceful night surrounded by garden views."
+    },
+    "oase": {
+      "name": "The Oase Room",
+      "tag": "Best View",
+      "description": "Our most spacious room with a breathtaking panoramic view — more room to breathe, and the best scenery in the house."
+    }
+  },
+  "booking": {
+    "title": "Book Your Stay",
+    "subtitle": "Fill in the details below and we'll confirm via WhatsApp.",
+    "fullName": "Full Name",
+    "phone": "WhatsApp Number",
+    "checkIn": "Check-in Date",
+    "checkOut": "Check-out Date",
+    "roomType": "Room Type",
+    "selectRoom": "Select a room",
+    "guests": "Number of Guests",
+    "message": "Special Requests",
+    "messagePlaceholder": "Any special requests? Let us know...",
+    "sendBtn": "Book via WhatsApp",
+    "sending": "Opening WhatsApp..."
   },
   "cafe": {
     "heroTitle": "Jardin Coffee",
-    "heroSubtitle": "Sip, Snack, and Work amidst the greenery.",
-    "staffNote": "✨ <bold>Note for Staff:</bold> This menu is powered by our CMS. Prices and seasonal items can be updated in the dashboard to reflect real-time availability."
-  },
-  "contact": {
-    "title": "Get in Touch",
-    "intro": "Whether you're booking a stay or planning a Jardin Coffee event, we're here to help.",
-    "address": "Address",
-    "phone": "Phone",
-    "email": "Email",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "inquiryType": "Inquiry Type",
-    "selectCategory": "Select a category",
-    "optionRoom": "Room Reservation",
-    "optionCafe": "Jardin Coffee Event / Table Booking",
-    "optionGeneral": "General Inquiry",
-    "message": "Message",
-    "messagePlaceholder": "How can we help you?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
-    "errorGeneral": "Something went wrong. Please try again.",
-    "submitted": "✓ Your message has been sent. Our team will get back to you soon.",
-    "toast": "Thank you, {name}! Your message has been sent."
+    "heroSubtitle": "Where every cup is a moment of decompression.",
+    "menuBtn": "Our Menu",
+    "tagline": "Ethically sourced. Freshly baked. Garden-inspired.",
+    "drinks": "Specialty Drinks",
+    "pastries": "Artisanal Pastries",
+    "workspace": "Workspace Access"
   },
   "gallery": {
-    "title": "Visual Sanctuary",
-    "intro": "Explore the intersection of luxury living and botanical serenity. Every corner of Qafotel is designed for peace.",
-    "viewLarge": "VIEW LARGE",
-    "close": "Close"
+    "heroTitle": "Gallery",
+    "heroSubtitle": "A visual journey through QAFOTEL.",
+    "all": "All Spaces",
+    "hotel": "Hotel Rooms",
+    "cafe": "Jardin Coffee",
+    "garden": "Gardens"
   },
-  "rooms": {
-    "title": "Our Sanctuary",
-    "intro": "Rest and rejuvenate in our thoughtfully designed spaces blending modern comfort with botanical charm.",
-    "perNight": "/night",
-    "viewDetails": "View Details"
+  "contact": {
+    "heroTitle": "Get in Touch",
+    "heroSubtitle": "We'd love to hear from you.",
+    "name": "Your Name",
+    "email": "Email Address",
+    "inquiry": "Type of Inquiry",
+    "selectInquiry": "Select an inquiry type",
+    "general": "General Question",
+    "booking": "Booking Inquiry",
+    "feedback": "Feedback",
+    "partnership": "Partnership",
+    "message": "Your Message",
+    "messagePlaceholder": "Tell us how we can help...",
+    "sendBtn": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent!",
+    "successText": "Thank you for reaching out. We'll get back to you soon.",
+    "errorText": "Something went wrong. Please try again.",
+    "address": "Address",
+    "phone": "Phone",
+    "emailLabel": "Email",
+    "whatsapp": "WhatsApp"
   },
-  "roomDetail": {
-    "backToRooms": "Back to All Rooms",
-    "amenities": "Room Amenities",
-    "features": "Features",
-    "perNight": "per night (incl. breakfast)",
-    "nightStay": "1 Night Stay",
-    "serviceCharge": "Service Charge (5%)",
-    "tax": "Tax (11%)",
-    "totalEstimate": "Total Estimate",
-    "bookThisRoom": "Book This Room",
-    "bookingNote": "Clicking will redirect you to our inquiry form.",
-    "previousImage": "Previous image",
-    "nextImage": "Next image",
-    "goToImage": "Go to image {n}"
+  "footer": {
+    "rooms": "Rooms",
+    "jardinCoffee": "Jardin Coffee",
+    "sustainability": "Sustainability",
+    "contact": "Contact",
+    "tagline": "Crafted for the conscious traveler."
   },
-  "metadata": {
-    "title": "Qafotel | Hotel & Jardin Coffee",
-    "description": "A sanctuary of rest and botanical delights — boutique hotel rooms and Jardin Coffee in the heart of the city."
+  "previousImage": "Previous image",
+  "nextImage": "Next image",
+  "goToImage": "Go to image {{n}}",
+  "landing": {
+    "tagline": "Where Nature Meets Comfort",
+    "subtitle": "A sanctuary from the tranquility and beauty of nature",
+    "enterBtn": "Enter",
+    "bookBtn": "Book a Room",
+    "scroll": "Scroll to explore",
+    "previewTitle": "Discover QAFOTEL",
+    "previewText": "A boutique hotel and organic coffee house designed for the conscious traveler.",
+    "hotel": "Hotel",
+    "hotelDesc": "Leaf & Oase Rooms",
+    "cafeDesc": "Organic coffee & pastries",
+    "facilities": "Facilities",
+    "facilitiesDesc": "Pool, spa, garden & more",
+    "exploreBtn": "Explore All"
   }
 }

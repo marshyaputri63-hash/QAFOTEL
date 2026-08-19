@@ -1,25 +1,31 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
-import { RoomCarousel } from "@/components/room-carousel";
 import { getRooms } from "@/lib/qafotel-data";
-import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
+import { notFound } from "next/navigation";
+import { WhatsAppBookingForm } from "@/components/whatsapp-booking-form";
+import { Wifi, Coffee, Thermometer, Tv, Droplets, Flower2 } from "lucide-react";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const room = getRooms(locale as "en" | "id").find((r) => r.slug === slug);
-  return { title: room ? `${room.detailTitle} | Qafotel` : "Qafotel" };
-}
-
-function formatRupiah(value: number) {
-  return `Rp ${value.toLocaleString("id-ID")}`;
-}
+const amenityIcons: Record<string, React.ReactNode> = {
+  "Garden Access": <Flower2 className="w-5 h-5" />,
+  "Akses Taman": <Flower2 className="w-5 h-5" />,
+  "High-speed WiFi": <Wifi className="w-5 h-5" />,
+  "WiFi Cepat": <Wifi className="w-5 h-5" />,
+  "Espresso Maker": <Coffee className="w-5 h-5" />,
+  "Pembuat Espresso": <Coffee className="w-5 h-5" />,
+  "Climate Control": <Thermometer className="w-5 h-5" />,
+  "Kontrol Suhu": <Thermometer className="w-5 h-5" />,
+  'Smart TV 43"': <Tv className="w-5 h-5" />,
+  'Smart TV 55"': <Tv className="w-5 h-5" />,
+  "Organic Toiletries": <Droplets className="w-5 h-5" />,
+  "Perlengkapan Mandi Organik": <Droplets className="w-5 h-5" />,
+  "Panoramic View": <Flower2 className="w-5 h-5" />,
+  "Pemandangan Panorama": <Flower2 className="w-5 h-5" />,
+  "Rainfall Shower": <Droplets className="w-5 h-5" />,
+  "Shower Hujan": <Droplets className="w-5 h-5" />,
+};
 
 export default async function RoomDetailPage({
   params,
@@ -27,108 +33,97 @@ export default async function RoomDetailPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  const t = await getTranslations({ locale, namespace: "roomDetail" });
-  const room = getRooms(locale as "en" | "id").find((r) => r.slug === slug);
-  if (!room) notFound();
+  const t = await getTranslations({ locale, namespace: "rooms" });
+  const rooms = getRooms(locale as Locale);
+  const room = rooms.find((r) => r.slug === slug);
 
-  const service = Math.round(room.priceRupiah * 0.05);
-  const tax = Math.round(room.priceRupiah * 0.11);
-  const total = room.priceRupiah + service + tax;
+  if (!room) return notFound();
 
   return (
-    <div className="min-h-screen bg-cream font-body text-olive">
+    <div className="min-h-screen bg-surface font-body text-on-surface">
       <QafotelHeader />
 
-      <div className="mx-auto max-w-[1100px] px-5 py-10 md:px-8">
-        <Link
-          href="/rooms"
-          className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-olive"
-        >
-          <span aria-hidden>←</span> {t("backToRooms")}
-        </Link>
+      {/* ── Hero Image ── */}
+      <section className="relative w-full h-[60vh] min-h-[400px]">
+        <Image
+          src={room.image}
+          alt={room.name}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent" />
+        <div className="absolute bottom-8 left-8 text-white">
+          <span className="bg-olive text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3 inline-block">
+            {room.tag}
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl">{room.name}</h1>
+        </div>
+      </section>
 
-        <RoomCarousel images={room.carousel} alt={room.detailTitle} />
-
-        <div className="grid gap-10 md:grid-cols-[2fr_1fr]">
-          <div>
-            <span className="mb-5 inline-block rounded-full bg-olive px-3 py-1 text-xs text-cream">
-              {room.tag}
-            </span>
-            <h1 className="font-display mb-2.5 text-3xl md:text-4xl">
-              {room.detailTitle}
-            </h1>
-            <p className="mb-8 text-base leading-relaxed opacity-90">
-              {room.detailDescription}
+      {/* ── Details ── */}
+      <section className="max-w-7xl mx-auto px-5 md:px-16 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left: Info */}
+          <div className="lg:col-span-7">
+            <p className="text-lg text-on-surface-var mb-8 leading-relaxed">
+              {room.description}
             </p>
 
-            <div className="mt-10">
-              <h3 className="mb-5 inline-block border-b-2 border-olive pb-1">
-                {t("amenities")}
-              </h3>
-              <div className="grid grid-cols-2 gap-5 md:grid-cols-3">
-                {room.detailAmenities.map((a) => (
-                  <div key={a.label} className="flex items-center gap-2.5 text-sm">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-olive/10">
-                      {a.icon}
-                    </span>
-                    {a.label}
-                  </div>
-                ))}
+            {/* Quick stats */}
+            <div className="grid grid-cols-3 gap-4 mb-10">
+              <div className="bg-surface-low rounded-2xl p-4 text-center">
+                <p className="text-xs font-semibold text-on-surface-var uppercase tracking-wider mb-1">{t("guests")}</p>
+                <p className="font-display text-lg text-olive">{room.guests}</p>
+              </div>
+              <div className="bg-surface-low rounded-2xl p-4 text-center">
+                <p className="text-xs font-semibold text-on-surface-var uppercase tracking-wider mb-1">{t("bed")}</p>
+                <p className="font-display text-lg text-olive">{room.bed}</p>
+              </div>
+              <div className="bg-surface-low rounded-2xl p-4 text-center">
+                <p className="text-xs font-semibold text-on-surface-var uppercase tracking-wider mb-1">{t("view")}</p>
+                <p className="font-display text-lg text-olive">{room.view}</p>
               </div>
             </div>
 
-            <div className="mt-10">
-              <h3 className="mb-5 inline-block border-b-2 border-olive pb-1">
-                {t("features")}
-              </h3>
-              <ul className="space-y-2 pl-5">
-                {room.features.map((f) => (
-                  <li key={f} className="text-sm">
-                    {f}
-                  </li>
-                ))}
-              </ul>
+            {/* Amenities */}
+            <h2 className="font-display text-2xl text-olive mb-6">{t("amenities")}</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {room.amenities.map((a) => (
+                <div key={a} className="flex items-center gap-3 bg-surface-low rounded-xl p-4">
+                  <span className="text-olive">{amenityIcons[a] || <Flower2 className="w-5 h-5" />}</span>
+                  <span className="text-sm font-medium">{a}</span>
+                </div>
+              ))}
             </div>
+
+            {/* Features */}
+            <h2 className="font-display text-2xl text-olive mt-10 mb-6">Features</h2>
+            <ul className="space-y-3">
+              {room.features.map((f) => (
+                <li key={f} className="flex items-center gap-3 text-on-surface-var">
+                  <span className="w-1.5 h-1.5 rounded-full bg-olive" />
+                  {f}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Booking card */}
-          <aside>
-            <div className="sticky top-24 h-fit rounded-[20px] border border-olive/20 bg-white p-7 shadow-[0_15px_35px_rgba(85,99,43,0.05)]">
-              <div className="text-[28px] font-bold">
-                {formatRupiah(room.priceRupiah)}
+          {/* Right: Booking */}
+          <div className="lg:col-span-5">
+            <div className="bg-surface-highest rounded-3xl p-8 sticky top-24">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-display text-2xl text-olive">{room.name}</h3>
+                <span className="font-display text-xl text-oak">
+                  Rp {room.priceRupiah.toLocaleString("id-ID")}
+                </span>
               </div>
-              <div className="mb-5 text-sm opacity-70">{t("perNight")}</div>
-              <div className="border-t border-dashed border-[#ccc] pt-5">
-                <div className="mb-2.5 flex justify-between text-sm">
-                  <span>{t("nightStay")}</span>
-                  <span>{formatRupiah(room.priceRupiah)}</span>
-                </div>
-                <div className="mb-2.5 flex justify-between text-sm">
-                  <span>{t("serviceCharge")}</span>
-                  <span>{formatRupiah(service)}</span>
-                </div>
-                <div className="mb-2.5 flex justify-between text-sm">
-                  <span>{t("tax")}</span>
-                  <span>{formatRupiah(tax)}</span>
-                </div>
-                <div className="mt-2.5 flex justify-between border-t border-[#eee] pt-2.5 text-lg font-bold">
-                  <span>{t("totalEstimate")}</span>
-                  <span>{formatRupiah(total)}</span>
-                </div>
-              </div>
-              <Link
-                href="/contact"
-                className="mt-6 block w-full rounded-xl bg-olive py-4 text-center font-bold text-cream transition-transform hover:-translate-y-0.5"
-              >
-                {t("bookThisRoom")}
-              </Link>
-              <p className="mt-4 text-center text-xs opacity-60">
-                {t("bookingNote")}
-              </p>
+              <p className="text-xs text-on-surface-var mb-6 uppercase tracking-wider">{t("perNight")}</p>
+              <WhatsAppBookingForm rooms={rooms} />
             </div>
-          </aside>
+          </div>
         </div>
-      </div>
+      </section>
 
       <QafotelFooter />
     </div>
