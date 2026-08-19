@@ -1,6 +1,7 @@
 import {
   Manrope,
   Bodoni_Moda,
+  Cinzel_Decorative,
 } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -19,6 +20,12 @@ const bodoni = Bodoni_Moda({
   style: ["normal", "italic"],
 });
 
+const cinzelDecorative = Cinzel_Decorative({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+});
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +35,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${bodoni.variable} antialiased`}
+        className={`${manrope.variable} ${bodoni.variable} ${cinzelDecorative.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
