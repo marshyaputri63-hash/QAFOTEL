@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useLocale } from "next-intl";
 
 const navLinks = [
-  { key: "home", href: "/" },
+  { key: "home", href: "/home" },
   { key: "about", href: "/about" },
   { key: "rooms", href: "/rooms" },
   { key: "facilities", href: "/facilities" },
@@ -18,7 +18,7 @@ const navLinks = [
 ];
 
 const bottomNavItems = [
-  { key: "home", href: "/", icon: "home" },
+  { key: "home", href: "/home", icon: "home" },
   { key: "rooms", href: "/rooms", icon: "bed" },
   { key: "cafe", href: "/cafe", icon: "coffee" },
   { key: "contact", href: "/contact", icon: "mail" },
@@ -46,7 +46,7 @@ export function QafotelHeader() {
 
         {/* Logo */}
         <Link
-          href="/"
+          href="/home"
           className="font-display text-lg md:text-xl font-semibold tracking-tight text-olive uppercase"
         >
           QAFOTEL
@@ -151,7 +151,7 @@ export function QafotelHeader() {
                 <span className="material-symbols-outlined text-[22px] mb-0.5" style={isActive ? { fontVariationSettings: "'FILL' 1" } : undefined}>
                   {item.icon}
                 </span>
-                <span className="text-[10px] font-semibold tracking-wider uppercase">
+                <span className="text-[9px] font-medium tracking-wide">
                   {t(item.key)}
                 </span>
               </Link>

@@ -155,5 +155,20 @@
   },
   "previousImage": "Gambar sebelumnya",
   "nextImage": "Gambar berikutnya",
-  "goToImage": "Ke gambar {{n}}"
+  "goToImage": "Ke gambar {{n}}",
+  "landing": {
+    "tagline": "Di Mana Alam Bertemu Kenyamanan",
+    "subtitle": "Tempat berlindung dari ketenangan dan keindahan alam",
+    "enterBtn": "Masuk",
+    "bookBtn": "Pesan Kamar",
+    "scroll": "Gulir untuk menjelajahi",
+    "previewTitle": "Jelajahi QAFOTEL",
+    "previewText": "Hotel butik dan kedai kopi organik yang dirancang untuk pelancong yang sadar.",
+    "hotel": "Hotel",
+    "hotelDesc": "Kamar Leaf & Oase",
+    "cafeDesc": "Kopi organik & pastry",
+    "facilities": "Fasilitas",
+    "facilitiesDesc": "Kolam, spa, taman & lainnya",
+    "exploreBtn": "Jelajahi Semua"
+  }
 }

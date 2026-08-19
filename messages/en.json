@@ -155,5 +155,20 @@
   },
   "previousImage": "Previous image",
   "nextImage": "Next image",
-  "goToImage": "Go to image {{n}}"
+  "goToImage": "Go to image {{n}}",
+  "landing": {
+    "tagline": "Where Nature Meets Comfort",
+    "subtitle": "A sanctuary from the tranquility and beauty of nature",
+    "enterBtn": "Enter",
+    "bookBtn": "Book a Room",
+    "scroll": "Scroll to explore",
+    "previewTitle": "Discover QAFOTEL",
+    "previewText": "A boutique hotel and organic coffee house designed for the conscious traveler.",
+    "hotel": "Hotel",
+    "hotelDesc": "Leaf & Oase Rooms",
+    "cafeDesc": "Organic coffee & pastries",
+    "facilities": "Facilities",
+    "facilitiesDesc": "Pool, spa, garden & more",
+    "exploreBtn": "Explore All"
+  }
 }
