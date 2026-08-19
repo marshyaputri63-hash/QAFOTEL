@@ -28,14 +28,14 @@ export default async function HomePage({
             alt="Qafotel interior"
             fill
             priority
-            className="object-cover opacity-80 mix-blend-multiply"
+            className="object-cover"
           />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center mt-20 md:mt-32">
           <h1 className="font-display text-5xl md:text-7xl text-olive mb-6 max-w-3xl drop-shadow-sm">
             {t("heroTitle")}
           </h1>
-          <p className="text-lg md:text-xl text-on-surface-var max-w-md mx-auto bg-surface-bright/60 backdrop-blur-md p-4 rounded-2xl">
+          <p className="text-lg md:text-xl text-on-surface-var max-w-md mx-auto bg-surface-bright/60 p-4 rounded-2xl">
             {t("heroSubtitle")}
           </p>
           <Link
@@ -73,7 +73,7 @@ export default async function HomePage({
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-oak-container/30 rounded-full blur-2xl -z-10" />
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-oak-container/30 rounded-full -z-10" />
           </div>
         </div>
       </section>
