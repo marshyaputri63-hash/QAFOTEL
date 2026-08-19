@@ -1,6 +1,6 @@
 import {
   Manrope,
-  Playfair_Display,
+  Chewy,
 } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -12,11 +12,10 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const chewy = Chewy({
+  variable: "--font-chewy",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: "400",
 });
 
 export default async function RootLayout({
@@ -28,7 +27,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${playfair.variable} antialiased`}
+        className={`${manrope.variable} ${chewy.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
