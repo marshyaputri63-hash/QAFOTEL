@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "QAFOTEL — Sanctuary of Serenity",
+    "title": "Qafotel | Hotel & Jardin Coffee",
     "description": "Experience quiet luxury in nature. A boutique hotel and Jardin Coffee in the heart of the city."
   },
   "nav": {
@@ -55,19 +55,34 @@
       "tag": "Professional",
       "title": "Meeting Rooms",
       "text": "Elegant, fully equipped meeting spaces designed for productive gatherings. Natural light, ergonomic furniture, and seamless connectivity for up to 30 guests.",
-      "features": ["Natural Daylight", "AV Equipment", "High-speed WiFi", "Coffee Service"]
+      "features": [
+        "Natural Daylight",
+        "AV Equipment",
+        "High-speed WiFi",
+        "Coffee Service"
+      ]
     },
     "outdoorGarden": {
       "tag": "Eco-Experience",
       "title": "Outdoor Garden",
       "text": "Wander through our lush outdoor garden filled with tropical greenery. A serene space for morning walks, quiet reading, or simply reconnecting with nature.",
-      "features": ["Tropical Plants", "Walking Paths", "Reading Nooks", "Bird Watching"]
+      "features": [
+        "Tropical Plants",
+        "Walking Paths",
+        "Reading Nooks",
+        "Bird Watching"
+      ]
     },
     "cityView": {
       "tag": "Panoramic",
       "title": "City View Terrace",
       "text": "Sweeping panoramic views of the city skyline from our rooftop terrace. Perfect for sunset cocktails, evening relaxation, or simply taking in the vista.",
-      "features": ["360° Views", "Sunset Lounge", "Cocktail Bar", "Stargazing"]
+      "features": [
+        "360° Views",
+        "Sunset Lounge",
+        "Cocktail Bar",
+        "Stargazing"
+      ]
     }
   },
   "rooms": {

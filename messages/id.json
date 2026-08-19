@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "QAFOTEL — Tempat Berlindung dari Ketenangan",
+    "title": "Qafotel | Hotel & Jardin Coffee",
     "description": "Rasakan kemewahan alami yang tenang. Hotel butik dan Jardin Coffee di jantung kota."
   },
   "nav": {
@@ -55,19 +55,34 @@
       "tag": "Profesional",
       "title": "Ruang Meeting",
       "text": "Ruang pertemuan yang elegan dan lengkap, dirancang untuk gathering yang produktif. Cahaya alami, furnitur ergonomis, dan konektivitas tanpa hingga untuk hingga 30 tamu.",
-      "features": ["Cahaya Alami", "Peralatan AV", "WiFi Cepat", "Layanan Kopi"]
+      "features": [
+        "Cahaya Alami",
+        "Peralatan AV",
+        "WiFi Cepat",
+        "Layanan Kopi"
+      ]
     },
     "outdoorGarden": {
       "tag": "Pengalaman Eco",
       "title": "Taman Outdoor",
       "text": "Berjalan-jalan melalui taman outdoor kami yang hijau dan asri. Ruang yang tenang untuk jalan pagi, membaca, atau sekadar terhubung kembali dengan alam.",
-      "features": ["Tanaman Tropis", "Jalur Berjalan", "Sudut Membaca", "Pengamatan Burung"]
+      "features": [
+        "Tanaman Tropis",
+        "Jalur Berjalan",
+        "Sudut Membaca",
+        "Pengamatan Burung"
+      ]
     },
     "cityView": {
       "tag": "Panorama",
       "title": "Teras Pemandangan Kota",
       "pemandangan": "Pemandangan kota yang luas dari teras atap kami. Sempurna untuk koktail senja, relaksasi malam, atau sekadar menikmati panorama.",
-      "features": ["Pemandangan 360°", "Lounge Senja", "Bar Koktail", "Bintang"]
+      "features": [
+        "Pemandangan 360°",
+        "Lounge Senja",
+        "Bar Koktail",
+        "Bintang"
+      ]
     }
   },
   "rooms": {
