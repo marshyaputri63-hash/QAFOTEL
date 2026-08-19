@@ -92,7 +92,7 @@ export default async function HomePage({
         <div className="max-w-6xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="order-2 md:order-1 aspect-square rounded-2xl overflow-hidden ambient-shadow">
             <Image
-              src="/images/cafe-interior.jpeg"
+              src="/images/home.jpeg"
               alt="Jardin Coffee"
               fill
               className="object-cover"
