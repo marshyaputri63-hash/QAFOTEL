@@ -36,7 +36,7 @@ export default async function HomePage({
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl">
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight drop-shadow-lg font-normal">
             {t("heroTitle")}
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-lg mx-auto mb-10 leading-relaxed">

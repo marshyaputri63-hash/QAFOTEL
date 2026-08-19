@@ -1,6 +1,6 @@
 import {
   Manrope,
-  Playfair_Display,
+  Bodoni_Moda,
 } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -12,8 +12,8 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
@@ -28,7 +28,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${playfair.variable} antialiased`}
+        className={`${manrope.variable} ${bodoni.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
