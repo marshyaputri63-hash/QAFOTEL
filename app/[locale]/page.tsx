@@ -25,7 +25,7 @@ export default async function HomePage({
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-home.jpeg"
+            src="/images/hero-v2.jpeg"
             alt="Qafotel interior"
             fill
             priority
