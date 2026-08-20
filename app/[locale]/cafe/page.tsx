@@ -33,14 +33,25 @@ export default async function CafePage({
           </div>
 
           <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-16 flex flex-col items-center text-center">
-            <div className="w-32 h-32 md:w-48 md:h-48 mb-8 rounded-full overflow-hidden bg-surface-lowest shadow-2xl p-2 md:p-4">
-              <Image
-                src="/images/qafotel.jpeg"
-                alt="Jardin Coffee logo"
-                width={192}
-                height={192}
-                className="w-full h-full object-contain"
-              />
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden bg-surface-lowest shadow-xl p-2">
+                <Image
+                  src="/images/qafotel.jpeg"
+                  alt="Qafotel logo"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden bg-surface-lowest shadow-2xl p-2">
+                <Image
+                  src="/images/jardincoffee.jpeg"
+                  alt="Jardin Coffee logo"
+                  width={112}
+                  height={112}
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
             </div>
             <p className="font-body text-xs uppercase tracking-widest text-secondary-container mb-4">
               An Oasis of Flavor at Qafotel

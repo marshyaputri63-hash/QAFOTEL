@@ -84,7 +84,7 @@ const roomsEn: Room[] = [
     view: "Garden View",
     description:
       "A cozy green retreat wrapped in natural textures, perfect for a peaceful night surrounded by garden views.",
-    amenities: ["Free WiFi", "Queen Bed", "Espresso Machine", "Garden View"],
+    amenities: ["Free WiFi", "Queen Bed", "Sofa Goyang Empuk", "Garden View"],
     features: [
       "32 sqm Living Space",
       "Queen Size Bed",
@@ -106,7 +106,7 @@ const roomsEn: Room[] = [
     view: "Private Terrace",
     description:
       "Wake up to garden views and fresh air. Features a private terrace for ultimate relaxation.",
-    amenities: ["Terrace", "Garden View", "Deep Tub", "King Bed"],
+    amenities: ["Terrace", "Garden View", "Deep Tub", "King Bed", "Sofa Goyang Empuk"],
     features: [
       "45 sqm Living Space",
       "King Size Bed",
@@ -131,7 +131,7 @@ const roomsId: Room[] = [
     view: "Pemandangan Taman",
     description:
       "Retret hijau yang nyaman dengan tekstur alami, cocok untuk malam yang tenang dengan pemandangan taman.",
-    amenities: ["WiFi Gratis", "Tempat Tidur Queen", "Mesin Espresso", "Pemandangan Taman"],
+    amenities: ["WiFi Gratis", "Tempat Tidur Queen", "Sofa Goyang Empuk", "Pemandangan Taman"],
     features: [
       "Ruang 32 sqm",
       "Tempat Tidur Queen",
@@ -153,7 +153,7 @@ const roomsId: Room[] = [
     view: "Teras Pribadi",
     description:
       "Bangun dengan pemandangan taman dan udara segar. Fitur teras pribadi untuk relaksasi maksimal.",
-    amenities: ["Teras", "Pemandangan Taman", "Bak Mandi Dalam", "Tempat Tidur King"],
+    amenities: ["Teras", "Pemandangan Taman", "Bak Mandi Dalam", "Tempat Tidur King", "Sofa Goyang Empuk"],
     features: [
       "Ruang 45 sqm",
       "Tempat Tidur King",
@@ -184,23 +184,37 @@ const cafeMenuEn: MenuSection[] = [
     title: "Our Brews & Bites",
     items: [
       {
-        name: "Botanical Matcha",
-        price: "$6.50",
-        desc: "Ceremonial grade matcha whisked with oat milk and a hint of house-made vanilla bean syrup.",
+        name: "Smashed Cheezy Burger",
+        price: "Rp 80.000",
+        desc: "Juicy smashed beef patty with melted cheese, fresh lettuce, tomato, and house-made special sauce.",
         image: images.cafeMatcha,
-        category: "Cold Beverage",
+        category: "Main Course",
         signature: true,
       },
       {
+        name: "Mont Blanc",
+        price: "Rp 30.000",
+        desc: "A classic Mont Blanc dessert with chestnut cream, whipped cream, and a touch of vanilla.",
+        image: images.cafePourOver,
+        category: "Dessert",
+      },
+      {
+        name: "Botanical Matcha",
+        price: "Rp 95.000",
+        desc: "Ceremonial grade matcha whisked with oat milk and a hint of house-made vanilla bean syrup.",
+        image: images.cafeMatcha,
+        category: "Cold Beverage",
+      },
+      {
         name: "Single Origin Pour Over",
-        price: "$5.00",
+        price: "Rp 75.000",
         desc: "Rotating selection of lightly roasted beans, meticulously brewed to highlight distinct flavor profiles.",
         image: images.cafePourOver,
         category: "Hot Beverage",
       },
       {
         name: "Artisan Avo Toast",
-        price: "$8.50",
+        price: "Rp 125.000",
         desc: "Smashed avocado on toasted sourdough, topped with microgreens, radish, and a drizzle of chili oil.",
         image: images.cafeAvotoast,
         category: "Light Bite",
@@ -215,12 +229,26 @@ const cafeMenuId: MenuSection[] = [
     title: "Kreasi Kami",
     items: [
       {
+        name: "Smashed Cheezy Burger",
+        price: "Rp 80.000",
+        desc: "Smashed beef patty juicy dengan keju meleleh, selada segar, tomat, dan saus spesial buatan rumah.",
+        image: images.cafeMatcha,
+        category: "Menu Utama",
+        signature: true,
+      },
+      {
+        name: "Mont Blanc",
+        price: "Rp 30.000",
+        desc: "Dessert klasik Mont Blanc dengan krim kastanye, whipped cream, dan sentuhan vanila.",
+        image: images.cafePourOver,
+        category: "Dessert",
+      },
+      {
         name: "Botanical Matcha",
         price: "Rp 95.000",
         desc: "Matcha kelas upacara premium dengan susu oat dan sedikit sirup vanila buatan rumah.",
         image: images.cafeMatcha,
         category: "Minuman Dingin",
-        signature: true,
       },
       {
         name: "Single Origin Pour Over",

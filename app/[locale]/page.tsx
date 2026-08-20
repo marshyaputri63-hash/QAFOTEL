@@ -33,7 +33,7 @@ export default async function HomePage({
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
           </div>
 
-          <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-32">
+          <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-24">
             <div className="max-w-2xl text-on-primary">
               <h1 className="font-display text-[40px] md:text-[64px] text-on-primary mb-6 leading-[1.2] md:leading-[72px] tracking-[-0.02em]">
                 {t("heroTitle").split("\n")[0]}
@@ -49,7 +49,7 @@ export default async function HomePage({
                 <span className="material-symbols-outlined text-[16px]">
                   location_on
                 </span>
-                <span>{t("heroLocation")}</span>
+                <span>JL. Ruhui Rahayu, Balikpapan</span>
               </div>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default async function HomePage({
                       {room.description}
                     </p>
                     <p className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-primary">
-                      {t("fromPrice")} ${room.priceUSD}{" "}
+                      Rp {(room.priceUSD * 15000).toLocaleString("id-ID")}{" "}
                       <span className="text-on-surface-variant lowercase">
                         {t("perNight")}
                       </span>
@@ -225,19 +225,19 @@ export default async function HomePage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "SOPHIA M.",
-                location: "New York, USA",
-                text: '"A hidden gem! Beautiful rooms, amazing service, and the perfect location. The attention to natural light and greenery made our stay incredibly relaxing."',
+                name: "RATNA S.",
+                location: "Jakarta",
+                text: '"Surga tersembunyi! Kamar cantik, pelayanan luar biasa, dan lokasi strategis. Perhatian terhadap cahaya alami dan pepohonan membuat menginap kami sangat santai."',
               },
               {
-                name: "JAMES T.",
-                location: "London, UK",
-                text: '"The attention to detail is unmatched. Felt like a personalized experience from start to finish. The coffee shop downstairs is also fantastic."',
+                name: "BUDI H.",
+                location: "Surabaya",
+                text: '"Perhatian terhadap detail tidak tertandingi. Terasa seperti pengalaman personal dari awal sampai akhir. Kafe di bawah juga luar biasa enak."',
               },
               {
-                name: "PRIYA K.",
-                location: "Dubai, UAE",
-                text: '"Peaceful, stylish, and exceptionally clean. We\'ll definitely be coming back! The architecture alone is worth the visit."',
+                name: "DIAN P.",
+                location: "Yogyakarta",
+                text: '"Tenang, bergaya, dan sangat bersih. Kami pasti akan kembali! Arsitektur dan desainnya saja sudah sepadan dengan perjalanan."',
               },
             ].map((review) => (
               <div
