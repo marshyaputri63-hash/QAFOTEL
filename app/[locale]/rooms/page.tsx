@@ -5,8 +5,6 @@ import { QafotelFooter } from "@/components/qafotel-footer";
 import { Link } from "@/i18n/navigation";
 import { getRooms, contactInfo } from "@/lib/qafotel-data";
 import type { Locale } from "@/i18n/routing";
-import { ArrowRight } from "lucide-react";
-import { WhatsAppBookingForm } from "@/components/whatsapp-booking-form";
 
 export default async function RoomsPage({
   params,
@@ -22,79 +20,93 @@ export default async function RoomsPage({
       <QafotelHeader />
 
       {/* ── Hero ── */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center px-5 pt-24 pb-16 overflow-hidden bg-surface-low rounded-b-[40px] md:rounded-b-[80px] mb-[80px]">
-        <div className="relative z-10 text-center">
-          <h1 className="font-display text-5xl md:text-7xl text-olive mb-4">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={rooms[0].carousel[1] || rooms[0].carousel[0]}
+            alt="Qafotel rooms"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/70" />
+        </div>
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-display text-[40px] md:text-[56px] text-on-primary mb-4 leading-[1.2]">
             {t("heroTitle")}
           </h1>
-          <p className="text-lg text-on-surface-var max-w-lg mx-auto">
+          <p className="font-body text-lg text-on-primary/80 max-w-lg mx-auto">
             {t("heroSubtitle")}
           </p>
         </div>
       </section>
 
-      {/* ── Room Cards ── */}
-      <section className="max-w-7xl mx-auto px-5 md:px-16 mb-[80px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {rooms.map((room) => (
-            <div key={room.slug} className="group bg-surface-highest rounded-3xl overflow-hidden">
-              <div className="aspect-[16/10] overflow-hidden relative">
-                <Image
-                  src={room.image}
-                  alt={room.name}
-                  width={800}
-                  height={500}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                {room.tag && (
-                  <span className="absolute top-4 left-4 bg-olive text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full">
-                    {room.tag}
-                  </span>
-                )}
-              </div>
-              <div className="p-8">
-                <h3 className="font-display text-2xl text-olive mb-2">{room.name}</h3>
-                <p className="text-sm text-on-surface-var mb-6 leading-relaxed">
-                  {room.description}
-                </p>
-                <div className="flex flex-wrap gap-4 mb-6 text-sm text-on-surface-var">
-                  <span>{room.guests}</span>
-                  <span>·</span>
-                  <span>{room.bed}</span>
-                  <span>·</span>
-                  <span>{room.view}</span>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {room.amenities.map((a) => (
-                    <span key={a} className="bg-surface-mid text-on-surface-var text-xs font-semibold px-3 py-1 rounded-full">
-                      {a}
-                    </span>
-                  ))}
-                </div>
-                <div className="w-full h-[0.5px] bg-oak/30 mb-6" />
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-2xl text-olive">
-                    Rp {room.priceRupiah.toLocaleString("id-ID")} <span className="text-sm font-body text-on-surface-var">{t("perNight")}</span>
-                  </span>
-                  <Link
-                    href={`/rooms/${room.slug}`}
-                    className="text-olive font-semibold text-sm flex items-center gap-2 hover:text-olive-tint transition-colors uppercase tracking-wider"
-                  >
-                    {t("exploreRoom")} <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
+      {/* ── Filter Bar ── */}
+      <section className="w-full max-w-[1280px] mx-auto px-6 py-12">
+        <div className="flex flex-wrap items-center gap-3">
+          {["All", "Deluxe", "Suite", "Standard", "Penthouse", "Family"].map(
+            (filter) => (
+              <button
+                key={filter}
+                className={`px-5 py-2.5 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] transition-all ${
+                  filter === "All"
+                    ? "bg-primary text-on-primary"
+                    : "bg-surface-container-high text-on-surface-variant hover:bg-primary hover:text-on-primary"
+                }`}
+              >
+                {filter}
+              </button>
+            )
+          )}
         </div>
       </section>
 
-      {/* ── WhatsApp Booking Form ── */}
-      <section className="max-w-2xl mx-auto px-5 md:px-16 mb-[120px]">
-        <div className="bg-surface-highest rounded-3xl p-8 md:p-12">
-          <h2 className="font-display text-3xl text-olive mb-2">{t("booking.title")}</h2>
-          <p className="text-sm text-on-surface-var mb-8">{t("booking.subtitle")}</p>
-          <WhatsAppBookingForm rooms={rooms} />
+      {/* ── Room Grid ── */}
+      <section className="w-full max-w-[1280px] mx-auto px-6 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rooms.map((room) => (
+            <Link
+              key={room.slug}
+              href={`/rooms/${room.slug}`}
+              className="group flex flex-col gap-4 cursor-pointer"
+            >
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high">
+                <Image
+                  src={room.carousel[0]}
+                  alt={room.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+              </div>
+              <div>
+                <h3 className="font-display text-[20px] leading-[28px] text-primary mb-1 group-hover:text-surface-tint transition-colors">
+                  {room.name}
+                </h3>
+                <p className="font-body text-[14px] leading-[20px] text-on-surface-variant mb-3 line-clamp-2">
+                  {room.description}
+                </p>
+                <div className="flex items-center gap-4 mb-3">
+                  <span className="font-body text-xs text-on-surface-variant">
+                    {room.size}
+                  </span>
+                  <span className="text-on-surface-variant">·</span>
+                  <span className="font-body text-xs text-on-surface-variant">
+                    {room.guests}
+                  </span>
+                  <span className="text-on-surface-variant">·</span>
+                  <span className="font-body text-xs text-on-surface-variant">
+                    {room.bed}
+                  </span>
+                </div>
+                <p className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-primary">
+                  From ${room.priceUSD}{" "}
+                  <span className="text-on-surface-variant lowercase">
+                    {t("perNight")}
+                  </span>
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

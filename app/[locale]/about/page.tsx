@@ -16,26 +16,41 @@ export default async function AboutPage({
       <QafotelHeader />
 
       {/* ── Hero ── */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center px-5 pt-24 pb-16 overflow-hidden bg-surface-low rounded-b-[40px] md:rounded-b-[80px] mb-[120px]">
-        <div className="relative z-10 text-center">
-          <h1 className="font-display text-5xl md:text-7xl text-olive mb-4">{t("storyTitle")}</h1>
-          <p className="text-sm text-on-surface-var uppercase tracking-widest">{t("foundedYear")}</p>
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQxwsKYDht56-Qpj4hZ05-pIGr8lFsdd9AEbQrouJb6jGRaieisSJiVQg9W1NLtotstwJL4O_knKgwuYYdXMCzFEkQFQa_OlLJVcFb1rHOIDNeILsR6ujRgwUltu1e8S3e_BbRbjdbbPQNyQZsg_JK_hk7XKI3vIY_hfHB3mCPlGUaHQaZpc6c9sY-EuUcgU99w0CUfBKdJ22mJ2SmHxfBeGcMwDh8kY8TL1KEIf28Hf-GoLKXKmBWg"
+            alt="Qafotel lobby"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/70" />
+        </div>
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-display text-[40px] md:text-[56px] text-on-primary mb-4">
+            {t("storyTitle")}
+          </h1>
+          <p className="font-body text-xs uppercase tracking-widest text-on-primary/80">
+            {t("foundedYear")}
+          </p>
         </div>
       </section>
 
       {/* ── Story ── */}
-      <section className="max-w-7xl mx-auto px-5 md:px-16 mb-[120px]">
+      <section className="max-w-[1280px] mx-auto px-6 py-16 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="font-display text-4xl text-olive mb-6">{t("storyTitle")}</h2>
-            <p className="text-base text-on-surface-var leading-relaxed mb-6">
+            <h2 className="font-display text-[32px] md:text-[40px] text-primary mb-6">
+              {t("storyTitle")}
+            </h2>
+            <p className="font-body text-base text-on-surface-variant leading-relaxed mb-6">
               {t("storyText")}
             </p>
           </div>
           <div className="md:col-span-6 relative">
-            <div className="aspect-[4/5] rounded-[40px] overflow-hidden bg-surface-mid relative">
+            <div className="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high relative">
               <Image
-                src="/images/hero-v2.jpeg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQxwsKYDht56-Qpj4hZ05-pIGr8lFsdd9AEbQrouJb6jGRaieisSJiVQg9W1NLtotstwJL4O_knKgwuYYdXMCzFEkQFQa_OlLJVcFb1rHOIDNeILsR6ujRgwUltu1e8S3e_BbRbjdbbPQNyQZsg_JK_hk7XKI3vIY_hfHB3mCPlGUaHQaZpc6c9sY-EuUcgU99w0CUfBKdJ22mJ2SmHxfBeGcMwDh8kY8TL1KEIf28Hf-GoLKXKmBWg"
                 alt={t("storyImageAlt")}
                 fill
                 className="object-cover"
@@ -46,26 +61,30 @@ export default async function AboutPage({
       </section>
 
       {/* ── Mission ── */}
-      <section className="mx-5 my-10 rounded-[100px_0_100px_0] bg-olive px-8 py-14 text-center text-white md:mx-10 mb-[120px]">
-        <h2 className="font-display mb-5 text-3xl md:text-4xl">{t("missionTitle")}</h2>
+      <section className="mx-6 my-10 rounded-xl bg-primary px-8 py-14 text-center text-on-primary md:mx-10">
+        <h2 className="font-display text-[32px] md:text-[40px] mb-5">
+          {t("missionTitle")}
+        </h2>
         <p className="mx-auto max-w-3xl text-lg italic leading-relaxed md:text-xl opacity-90">
           {t("missionText")}
         </p>
       </section>
 
       {/* ── Style ── */}
-      <section className="flex flex-col-reverse items-center gap-10 px-5 py-14 md:flex-row md:px-16 max-w-7xl mx-auto mb-[120px]">
-        <div className="relative w-full md:w-1/2 aspect-[4/5] rounded-[40px] overflow-hidden bg-surface-mid">
+      <section className="flex flex-col-reverse items-center gap-10 px-6 py-16 md:flex-row md:px-16 max-w-[1280px] mx-auto">
+        <div className="relative w-full md:w-1/2 aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high">
           <Image
-            src="/images/gallery-sunroom.jpeg"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmimwAYPwJY4PUSMXqkufpUY6KWF1OWOHqyuo_FcDvv_2WkKGqqdzJjQHJIV8fCNHz0HDSHDPPItrNoxgQLVHu58LlKusrCdODiQ1IIVvYmauwiCxBaGFPKdN3xiB7Oe96TnrALhaWOKoB5tbiVY4Jv3fIUNqezez6ufyhEKyqwI6gi0BktcbPeBYgX_SzgO-4AFA-wX75L0uN7pvPbAmk9pik8gR7jFze3AoXe5XHG3tN3-EqC6_f0A"
             alt={t("styleImageAlt")}
             fill
             className="object-cover"
           />
         </div>
         <div className="w-full md:w-1/2">
-          <h2 className="font-display text-4xl text-olive mb-6">{t("styleTitle")}</h2>
-          <p className="text-base text-on-surface-var leading-relaxed">
+          <h2 className="font-display text-[32px] md:text-[40px] text-primary mb-6">
+            {t("styleTitle")}
+          </h2>
+          <p className="font-body text-base text-on-surface-variant leading-relaxed">
             {t("styleText")}
           </p>
         </div>
