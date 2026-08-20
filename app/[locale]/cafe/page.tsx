@@ -20,7 +20,7 @@ export default async function CafePage({
 
       <main className="pt-20">
         {/* ── Hero Section ── */}
-        <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center -mt-20 overflow-hidden bg-surface">
+        <section className="relative w-full h-[90vh] min-h-[650px] flex items-center justify-center -mt-20 overflow-hidden bg-surface">
           <div className="absolute inset-0 z-0">
             <Image
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBFB4tKVb3ohUmRJM9XxKxyM7gOrWIgSU_uOCgCXf2AWQhsB119hEQZWMBSFePHh2UOZWRUuAEQ6iyy-bkHiTgwxIom5PTh5yaswebw1k43mkqhFdqH7C3ZpFXaQKr2PToQ9FKXeBnGXwEoHb7qjCPIg1JGz-kh8oMs4oZlU5P3ljtEyhaxAW5BSjF3QQAO1uBXtj4_Hq4Vp472utUJ9OO88mR3hP9v_cvroVtYAp7fRNWONnkXj_4uuwPMq6VTcQ7Y8"
@@ -32,7 +32,7 @@ export default async function CafePage({
             <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/30 to-primary/80" />
           </div>
 
-          <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-20 flex flex-col items-center text-center">
+          <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-16 flex flex-col items-center text-center">
             <div className="w-32 h-32 md:w-48 md:h-48 mb-8 rounded-full overflow-hidden bg-surface-lowest shadow-2xl p-2 md:p-4">
               <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYXAasmGiSN5SrTqAA3E9jWozElwNwlZsXuwSKJfBcDrklxFmzFh198w7o6ozuGnU4eWV_-fSWTgIA5FUmzCMe56-C9Pw1nInjQtII_AhuepVkiSP5tJ9DUDkauqbQ6kiHDbcjPNnybcP2KH5if5b3zcDKqyG8H4VoG7XdxClUnhflGbjDvRCGBJqKiLhYx7v_GHZ3KYQ-QWucbEIuO8zvA-71UAVzbXw0ZG8Qby2AC4SY0Y-m5rVrRQ"

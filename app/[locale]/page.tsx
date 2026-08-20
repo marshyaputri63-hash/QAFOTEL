@@ -21,7 +21,7 @@ export default async function HomePage({
 
       <main className="pt-20">
         {/* ── Hero Section ── */}
-        <section className="relative h-[85vh] w-full min-h-[600px] flex items-center justify-center overflow-hidden -mt-20">
+        <section className="relative h-[90vh] w-full min-h-[650px] flex items-center justify-center overflow-hidden -mt-20">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqf4caHpqftKcZsFX4bHMoDA3aZGwVOkcrnK5L8OFJONm--FIEzu7RZ8Q9prSOK1GbaVDbPOQTB9htSzZqbINOdWF_9N-OAUOy5koxr6JNCs-80wzzPzZPtIGBVjwxAttVa-LCptbBmgQZZuI3XtlwS-x2pfSKJdUGfJ7x18NPesHYvQ3JHf0Usp2nC6ske5Cxc8O5Fz2ohHTpTGXVETlIj2-mjdy1_D3nPApYFPmulUXqIjtnMG6VVjMeI4GEoXgkTU0"
@@ -55,9 +55,9 @@ export default async function HomePage({
           </div>
 
           {/* Booking Widget - Desktop */}
-          <div className="absolute -bottom-16 left-0 right-0 z-20 w-full max-w-[1280px] mx-auto px-6 hidden md:block">
-            <div className="bg-surface rounded-xl shadow-xl p-8 flex items-end gap-6 justify-between border border-outline-variant/20">
-              <div className="flex-1 grid grid-cols-3 gap-6">
+          <div className="absolute bottom-0 left-0 right-0 z-20 w-full max-w-[1280px] mx-auto px-6 translate-y-1/2 hidden md:block">
+            <div className="bg-surface rounded-2xl shadow-2xl p-6 md:p-8 flex items-end gap-4 md:gap-6 justify-between border border-outline-variant/20">
+              <div className="flex-1 grid grid-cols-3 gap-4 md:gap-6 min-w-0">
                 <div className="flex flex-col gap-2 cursor-pointer">
                   <label className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-on-surface-variant">
                     {t("checkIn")}
@@ -98,7 +98,7 @@ export default async function HomePage({
                   </div>
                 </div>
               </div>
-              <button className="bg-primary text-on-primary px-8 py-4 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] hover:bg-primary-container transition-all flex items-center gap-2 whitespace-nowrap shadow-md hover:shadow-lg">
+              <button className="bg-primary text-on-primary px-6 md:px-8 py-3 md:py-4 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] hover:bg-primary-container transition-all flex items-center gap-2 whitespace-nowrap shadow-md hover:shadow-lg shrink-0">
                 {t("checkAvailability")}
                 <span className="material-symbols-outlined text-[18px]">
                   arrow_forward
@@ -109,7 +109,7 @@ export default async function HomePage({
         </section>
 
         {/* Mobile Booking Widget */}
-        <section className="md:hidden px-6 mt-8">
+        <section className="md:hidden px-6 mt-12">
           <div className="bg-surface rounded-xl shadow-md p-6 flex flex-col gap-4 border border-outline-variant/20">
             <div className="flex items-center justify-between border-b border-outline-variant pb-2">
               <span className="font-body text-base text-on-surface">
@@ -129,7 +129,7 @@ export default async function HomePage({
         </section>
 
         {/* ── Rooms Section ── */}
-        <section className="pt-16 md:pt-32 pb-16 w-full max-w-[1280px] mx-auto px-6">
+        <section className="pt-24 md:pt-36 pb-16 w-full max-w-[1280px] mx-auto px-6">
           <div className="text-center mb-12">
             <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-4">
               {t("roomsLabel")}

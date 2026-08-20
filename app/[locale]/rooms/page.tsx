@@ -40,36 +40,16 @@ export default async function RoomsPage({
         </div>
       </section>
 
-      {/* ── Filter Bar ── */}
-      <section className="w-full max-w-[1280px] mx-auto px-6 py-12">
-        <div className="flex flex-wrap items-center gap-3">
-          {["All", "Deluxe", "Suite", "Standard", "Penthouse", "Family"].map(
-            (filter) => (
-              <button
-                key={filter}
-                className={`px-5 py-2.5 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] transition-all ${
-                  filter === "All"
-                    ? "bg-primary text-on-primary"
-                    : "bg-surface-container-high text-on-surface-variant hover:bg-primary hover:text-on-primary"
-                }`}
-              >
-                {filter}
-              </button>
-            )
-          )}
-        </div>
-      </section>
-
       {/* ── Room Grid ── */}
-      <section className="w-full max-w-[1280px] mx-auto px-6 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="w-full max-w-[1280px] mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto">
           {rooms.map((room) => (
             <Link
               key={room.slug}
               href={`/rooms/${room.slug}`}
               className="group flex flex-col gap-4 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high shadow-lg">
                 <Image
                   src={room.carousel[0]}
                   alt={room.name}
