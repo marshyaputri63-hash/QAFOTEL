@@ -24,7 +24,7 @@ export default async function HomePage({
         <section className="relative h-[90vh] w-full min-h-[650px] flex items-center justify-center overflow-hidden -mt-20">
           <div className="absolute inset-0 w-full h-full">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqf4caHpqftKcZsFX4bHMoDA3aZGwVOkcrnK5L8OFJONm--FIEzu7RZ8Q9prSOK1GbaVDbPOQTB9htSzZqbINOdWF_9N-OAUOy5koxr6JNCs-80wzzPzZPtIGBVjwxAttVa-LCptbBmgQZZuI3XtlwS-x2pfSKJdUGfJ7x18NPesHYvQ3JHf0Usp2nC6ske5Cxc8O5Fz2ohHTpTGXVETlIj2-mjdy1_D3nPApYFPmulUXqIjtnMG6VVjMeI4GEoXgkTU0"
+              src="/images/qafotel.jpeg"
               alt="Qafotel suite"
               fill
               priority
@@ -181,7 +181,7 @@ export default async function HomePage({
           <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQxwsKYDht56-Qpj4hZ05-pIGr8lFsdd9AEbQrouJb6jGRaieisSJiVQg9W1NLtotstwJL4O_knKgwuYYdXMCzFEkQFQa_OlLJVcFb1rHOIDNeILsR6ujRgwUltu1e8S3e_BbRbjdbbPQNyQZsg_JK_hk7XKI3vIY_hfHB3mCPlGUaHQaZpc6c9sY-EuUcgU99w0CUfBKdJ22mJ2SmHxfBeGcMwDh8kY8TL1KEIf28Hf-GoLKXKmBWg"
+                src="/images/resepionist.jpeg"
                 alt="Qafotel lobby"
                 fill
                 className="object-cover"

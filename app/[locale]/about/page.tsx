@@ -19,7 +19,7 @@ export default async function AboutPage({
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQxwsKYDht56-Qpj4hZ05-pIGr8lFsdd9AEbQrouJb6jGRaieisSJiVQg9W1NLtotstwJL4O_knKgwuYYdXMCzFEkQFQa_OlLJVcFb1rHOIDNeILsR6ujRgwUltu1e8S3e_BbRbjdbbPQNyQZsg_JK_hk7XKI3vIY_hfHB3mCPlGUaHQaZpc6c9sY-EuUcgU99w0CUfBKdJ22mJ2SmHxfBeGcMwDh8kY8TL1KEIf28Hf-GoLKXKmBWg"
+            src="/images/koridor.jpeg"
             alt="Qafotel lobby"
             fill
             className="object-cover"
@@ -50,7 +50,7 @@ export default async function AboutPage({
           <div className="md:col-span-6 relative">
             <div className="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high relative">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQxwsKYDht56-Qpj4hZ05-pIGr8lFsdd9AEbQrouJb6jGRaieisSJiVQg9W1NLtotstwJL4O_knKgwuYYdXMCzFEkQFQa_OlLJVcFb1rHOIDNeILsR6ujRgwUltu1e8S3e_BbRbjdbbPQNyQZsg_JK_hk7XKI3vIY_hfHB3mCPlGUaHQaZpc6c9sY-EuUcgU99w0CUfBKdJ22mJ2SmHxfBeGcMwDh8kY8TL1KEIf28Hf-GoLKXKmBWg"
+                src="/images/resepionist.jpeg"
                 alt={t("storyImageAlt")}
                 fill
                 className="object-cover"
@@ -93,7 +93,7 @@ export default async function AboutPage({
       <section className="flex flex-col-reverse items-center gap-10 px-6 py-16 md:flex-row md:px-16 max-w-[1280px] mx-auto">
         <div className="relative w-full md:w-1/2 aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmimwAYPwJY4PUSMXqkufpUY6KWF1OWOHqyuo_FcDvv_2WkKGqqdzJjQHJIV8fCNHz0HDSHDPPItrNoxgQLVHu58LlKusrCdODiQ1IIVvYmauwiCxBaGFPKdN3xiB7Oe96TnrALhaWOKoB5tbiVY4Jv3fIUNqezez6ufyhEKyqwI6gi0BktcbPeBYgX_SzgO-4AFA-wX75L0uN7pvPbAmk9pik8gR7jFze3AoXe5XHG3tN3-EqC6_f0A"
+            src="/images/tanaman_di_tangga.jpeg"
             alt={t("styleImageAlt")}
             fill
             className="object-cover"

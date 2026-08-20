@@ -20,7 +20,7 @@ export default async function GalleryPage({
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaBNGLu2ZBPpzxzirc2GaD4UI_PaJHvUQIkwWysaw5i_kWopsYs8jlYx0Bz8IU7FawfIAMibx5sY3AentgiaG-DTdOWn4amkc8IJgoN6WIgLZ7Gv74hSzW1vcZ-lS_SgVa6W9UqTkPSgwHSFgCHmT5C3-Ct9sdqcp_JNrw5KLLW1p7RhuMe637f1LosPAuRKK_7o3LO_P2ae8zucbIJZoitpPIzfrGBbPYYrYH83jKUnb2mpeVdQmUEA"
+            src="/images/koridor.jpeg"
             alt="Qafotel gallery"
             fill
             className="object-cover"

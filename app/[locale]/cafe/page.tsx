@@ -23,7 +23,7 @@ export default async function CafePage({
         <section className="relative w-full h-[90vh] min-h-[650px] flex items-center justify-center -mt-20 overflow-hidden bg-surface">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBFB4tKVb3ohUmRJM9XxKxyM7gOrWIgSU_uOCgCXf2AWQhsB119hEQZWMBSFePHh2UOZWRUuAEQ6iyy-bkHiTgwxIom5PTh5yaswebw1k43mkqhFdqH7C3ZpFXaQKr2PToQ9FKXeBnGXwEoHb7qjCPIg1JGz-kh8oMs4oZlU5P3ljtEyhaxAW5BSjF3QQAO1uBXtj4_Hq4Vp472utUJ9OO88mR3hP9v_cvroVtYAp7fRNWONnkXj_4uuwPMq6VTcQ7Y8"
+              src="/images/jardincoffee.jpeg"
               alt="Jardin Coffee exterior"
               fill
               priority
@@ -35,7 +35,7 @@ export default async function CafePage({
           <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-16 flex flex-col items-center text-center">
             <div className="w-32 h-32 md:w-48 md:h-48 mb-8 rounded-full overflow-hidden bg-surface-lowest shadow-2xl p-2 md:p-4">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYXAasmGiSN5SrTqAA3E9jWozElwNwlZsXuwSKJfBcDrklxFmzFh198w7o6ozuGnU4eWV_-fSWTgIA5FUmzCMe56-C9Pw1nInjQtII_AhuepVkiSP5tJ9DUDkauqbQ6kiHDbcjPNnybcP2KH5if5b3zcDKqyG8H4VoG7XdxClUnhflGbjDvRCGBJqKiLhYx7v_GHZ3KYQ-QWucbEIuO8zvA-71UAVzbXw0ZG8Qby2AC4SY0Y-m5rVrRQ"
+                src="/images/qafotel.jpeg"
                 alt="Jardin Coffee logo"
                 width={192}
                 height={192}
@@ -118,7 +118,7 @@ export default async function CafePage({
               <div className="grid grid-cols-2 gap-4 md:gap-6 relative z-10">
                 <div className="mt-12 md:mt-24">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYCQ6CZ1GhKcDaoMbZW-KeZ-N-BukILdCebt9h2YlpvYv4e4HnGMrk5f3TCGu0nlg2ndMFc-A-xn6bwbDNpf9I5C2lyJAH1aQc6tA9FCIEPO2snvScFcXBc1x0gmAxn4B3O1Iqc9nrZjPojJ3HGJxYrLmU9vumg7iSGoAv8pzIhvDbrKzstYtrsa3GFNMKf8iSE0UmrnJ0ja_sC0-gnqpc_szlxOt3AGLrNYtuqNdZZcL8pZQcp2sgkw"
+                    src="/images/jardincoffeev2.jpeg"
                     alt="Latte art"
                     width={400}
                     height={320}
@@ -127,7 +127,7 @@ export default async function CafePage({
                 </div>
                 <div>
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3qdHYljKpk_whz6uEqLUFtoLNx6owNPIOC52eCegIfPHeBRA6B96y4_q_Y2ZhvVp1-xM4fVvQ9YKRL2xmwhzRWu0i2E448g-IvwWdGSpUtNgRsxcGM90D4qv7O9BtFLDL5eg9fG8E8XttYFgescfnpIafdoGoikt2u32gih8eGpuKoUTSjzIm6U4iKDW8PoXnf0SxF1Ir9ho5Danhu2nBglGTLQKajd7MICKw_SUSSyLdZF888khhLw"
+                    src="/images/indoorv3.jpeg"
                     alt="Jardin Coffee interior"
                     width={400}
                     height={384}
