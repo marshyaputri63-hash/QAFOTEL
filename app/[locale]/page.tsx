@@ -147,7 +147,7 @@ export default async function HomePage({
                   href={`/rooms/${room.slug}`}
                   className="flex-none w-[280px] md:w-[300px] snap-start flex flex-col gap-4 group/card cursor-pointer"
                 >
-                  <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high">
+                  <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-surface-container-high">
                     <Image
                       src={room.carousel[0]}
                       alt={room.name}
