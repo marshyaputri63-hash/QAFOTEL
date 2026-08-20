@@ -21,7 +21,7 @@ export default async function HomePage({
 
       <main className="pt-20">
         {/* ── Hero Section ── */}
-        <section className="relative h-[90vh] w-full min-h-[650px] flex items-center justify-center overflow-hidden -mt-20">
+        <section className="relative h-[90vh] w-full min-h-[650px] flex items-center justify-center -mt-20">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src="/images/qafotel.jpeg"
@@ -55,7 +55,7 @@ export default async function HomePage({
           </div>
 
           {/* Booking Widget - Desktop */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 w-full max-w-[1280px] mx-auto px-6 translate-y-1/2 hidden md:block">
+          <div className="absolute bottom-8 left-0 right-0 z-20 w-full max-w-[1280px] mx-auto px-6 hidden md:block">
             <div className="bg-surface rounded-2xl shadow-2xl p-6 md:p-8 flex items-end gap-4 md:gap-6 justify-between border border-outline-variant/20">
               <div className="flex-1 grid grid-cols-3 gap-4 md:gap-6 min-w-0">
                 <div className="flex flex-col gap-2 cursor-pointer">
@@ -140,7 +140,7 @@ export default async function HomePage({
           </div>
 
           <div className="relative group">
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 justify-start md:justify-center scrollbar-hide px-6 md:px-0">
               {rooms.map((room) => (
                 <Link
                   key={room.slug}
