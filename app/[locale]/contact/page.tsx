@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
 import { contactInfo } from "@/lib/qafotel-data";
-import { MapPin, Phone, Mail, MessageCircle, Send } from "lucide-react";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
@@ -51,42 +50,58 @@ export default function ContactPage() {
       <QafotelHeader />
 
       {/* ── Hero ── */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center px-5 pt-24 pb-16 overflow-hidden bg-surface-low rounded-b-[40px] md:rounded-b-[80px] mb-[80px]">
-        <div className="relative z-10 text-center">
-          <h1 className="font-display text-5xl md:text-7xl text-olive mb-4">{t("heroTitle")}</h1>
-          <p className="text-lg text-on-surface-var max-w-lg mx-auto">{t("heroSubtitle")}</p>
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-surface-low">
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-display text-[40px] md:text-[56px] text-primary mb-4">
+            {t("heroTitle")}
+          </h1>
+          <p className="font-body text-lg text-on-surface-variant max-w-lg mx-auto">
+            {t("heroSubtitle")}
+          </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-5 md:px-16 mb-[120px]">
+      <section className="max-w-[1280px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div className="flex flex-col gap-8">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-olive-container flex items-center justify-center text-olive-on shrink-0">
-                <MapPin className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+                <span className="material-symbols-outlined text-[20px]">
+                  location_on
+                </span>
               </div>
               <div>
-                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("address")}</h3>
-                <p className="text-on-surface-var">{contactInfo.address}</p>
+                <h3 className="font-body text-sm font-semibold uppercase tracking-wider mb-1">
+                  {t("address")}
+                </h3>
+                <p className="text-on-surface-variant">{contactInfo.address}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-olive-container flex items-center justify-center text-olive-on shrink-0">
-                <Phone className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+                <span className="material-symbols-outlined text-[20px]">
+                  phone
+                </span>
               </div>
               <div>
-                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("phone")}</h3>
-                <p className="text-on-surface-var">{contactInfo.phone}</p>
+                <h3 className="font-body text-sm font-semibold uppercase tracking-wider mb-1">
+                  {t("phone")}
+                </h3>
+                <p className="text-on-surface-variant">{contactInfo.phone}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-olive-container flex items-center justify-center text-olive-on shrink-0">
-                <Mail className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+                <span className="material-symbols-outlined text-[20px]">
+                  mail
+                </span>
               </div>
               <div>
-                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("emailLabel")}</h3>
-                <p className="text-on-surface-var">{contactInfo.email}</p>
+                <h3 className="font-body text-sm font-semibold uppercase tracking-wider mb-1">
+                  {t("emailLabel")}
+                </h3>
+                <p className="text-on-surface-variant">{contactInfo.email}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -94,17 +109,21 @@ export default function ContactPage() {
                 href={contactInfo.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-olive flex items-center justify-center text-white shrink-0 hover:bg-olive-tint transition-colors"
+                className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 hover:bg-primary-container transition-colors"
               >
-                <MessageCircle className="w-5 h-5" />
+                <span className="material-symbols-outlined text-[20px]">
+                  chat
+                </span>
               </a>
               <div>
-                <h3 className="font-semibold text-sm uppercase tracking-wider mb-1">{t("whatsapp")}</h3>
+                <h3 className="font-body text-sm font-semibold uppercase tracking-wider mb-1">
+                  {t("whatsapp")}
+                </h3>
                 <a
                   href={contactInfo.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-olive hover:text-olive-tint transition-colors"
+                  className="text-primary hover:text-surface-tint transition-colors"
                 >
                   {contactInfo.phone}
                 </a>
@@ -113,25 +132,46 @@ export default function ContactPage() {
           </div>
 
           {/* Right: Form */}
-          <div className="bg-surface-highest rounded-3xl p-8">
+          <div className="bg-surface-lowest rounded-xl p-8 shadow-sm border border-outline-variant/20">
             {success ? (
               <div className="text-center py-12">
-                <h2 className="font-display text-3xl text-olive mb-4">{t("successTitle")}</h2>
-                <p className="text-on-surface-var">{t("successText")}</p>
+                <h2 className="font-display text-3xl text-primary mb-4">
+                  {t("successTitle")}
+                </h2>
+                <p className="text-on-surface-variant">{t("successText")}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div>
-                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("name")}</label>
-                  <input name="name" required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors" />
+                  <label className="block font-body text-sm font-semibold text-on-surface-variant mb-1.5 uppercase tracking-wider">
+                    {t("name")}
+                  </label>
+                  <input
+                    name="name"
+                    required
+                    className="w-full bg-surface-low border border-outline-variant rounded-lg px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none transition-colors"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("email")}</label>
-                  <input name="email" type="email" required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors" />
+                  <label className="block font-body text-sm font-semibold text-on-surface-variant mb-1.5 uppercase tracking-wider">
+                    {t("email")}
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full bg-surface-low border border-outline-variant rounded-lg px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none transition-colors"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("inquiry")}</label>
-                  <select name="inquiry" required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors">
+                  <label className="block font-body text-sm font-semibold text-on-surface-variant mb-1.5 uppercase tracking-wider">
+                    {t("inquiry")}
+                  </label>
+                  <select
+                    name="inquiry"
+                    required
+                    className="w-full bg-surface-low border border-outline-variant rounded-lg px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none transition-colors"
+                  >
                     <option value="">{t("selectInquiry")}</option>
                     <option value="general">{t("general")}</option>
                     <option value="booking">{t("booking")}</option>
@@ -140,12 +180,28 @@ export default function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-on-surface-var mb-1.5 uppercase tracking-wider">{t("message")}</label>
-                  <textarea name="message" rows={4} placeholder={t("messagePlaceholder")} required className="w-full bg-surface-low border border-outline-var rounded-xl px-4 py-3 text-sm text-on-surface focus:border-olive focus:outline-none transition-colors resize-none" />
+                  <label className="block font-body text-sm font-semibold text-on-surface-variant mb-1.5 uppercase tracking-wider">
+                    {t("message")}
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    placeholder={t("messagePlaceholder")}
+                    required
+                    className="w-full bg-surface-low border border-outline-variant rounded-lg px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none transition-colors resize-none"
+                  />
                 </div>
-                {error && <p className="text-sm text-red-600">{t("errorText")}</p>}
-                <button type="submit" disabled={sending} className="w-full flex items-center justify-center gap-2 bg-olive text-white py-4 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-olive-tint transition-colors ambient-shadow disabled:opacity-70">
-                  {sending ? t("sending") : <><Send className="w-4 h-4" /> {t("sendBtn")}</>}
+                {error && (
+                  <p className="text-sm text-error">{t("errorText")}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-4 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] hover:bg-primary-container transition-colors disabled:opacity-70"
+                >
+                  {sending
+                    ? t("sending")
+                    : t("sendBtn")}
                 </button>
               </form>
             )}

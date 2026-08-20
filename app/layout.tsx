@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import {
   Manrope,
-  Bodoni_Moda,
-  Cinzel_Decorative,
+  Libre_Caslon_Text,
 } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -19,20 +18,14 @@ export const metadata: Metadata = {
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
 });
 
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
+const libreCaslon = Libre_Caslon_Text({
+  variable: "--font-libre-caslon",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400"],
   style: ["normal", "italic"],
-});
-
-const cinzelDecorative = Cinzel_Decorative({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
 });
 
 export default async function RootLayout({
@@ -45,9 +38,13 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          rel="stylesheet"
+        />
       </head>
       <body
-        className={`${manrope.variable} ${bodoni.variable} ${cinzelDecorative.variable} antialiased`}
+        className={`${manrope.variable} ${libreCaslon.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

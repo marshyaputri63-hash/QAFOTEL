@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { getGalleryItems, getGalleryCategories } from "@/lib/qafotel-data";
 import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/routing";
-import { X } from "lucide-react";
 
 export function GalleryGrid() {
   const locale = useLocale() as Locale;
@@ -16,7 +15,8 @@ export function GalleryGrid() {
 
   const categories = getGalleryCategories(locale);
   const items = getGalleryItems(locale);
-  const visible = filter === "all" ? items : items.filter((i) => i.category === filter);
+  const visible =
+    filter === "all" ? items : items.filter((i) => i.category === filter);
 
   return (
     <>
@@ -26,10 +26,10 @@ export function GalleryGrid() {
           <button
             key={cat.id}
             onClick={() => setFilter(cat.id)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-200 ${
+            className={`px-5 py-2.5 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] transition-all ${
               filter === cat.id
-                ? "bg-olive text-white"
-                : "bg-surface-highest text-on-surface-var hover:bg-surface-mid"
+                ? "bg-primary text-on-primary"
+                : "bg-surface-container-high text-on-surface-variant hover:bg-primary hover:text-on-primary"
             }`}
           >
             {cat.label}
@@ -38,12 +38,12 @@ export function GalleryGrid() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {visible.map((item, i) => (
           <button
             key={i}
             onClick={() => setSelected(i)}
-            className="group relative aspect-[4/3] rounded-2xl overflow-hidden ambient-shadow cursor-pointer"
+            className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"
           >
             <Image
               src={item.src}
@@ -52,7 +52,7 @@ export function GalleryGrid() {
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-4 left-4 text-on-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <p className="font-display text-lg">{item.caption}</p>
             </div>
           </button>
@@ -66,12 +66,12 @@ export function GalleryGrid() {
           onClick={() => setSelected(null)}
         >
           <button
-            className="absolute top-6 right-6 text-white hover:opacity-80 transition-opacity"
+            className="absolute top-6 right-6 text-on-primary hover:opacity-80 transition-opacity"
             onClick={() => setSelected(null)}
           >
-            <X className="w-8 h-8" />
+            <span className="material-symbols-outlined text-[32px]">close</span>
           </button>
-          <div className="relative max-w-4xl w-full aspect-[4/3] rounded-3xl overflow-hidden">
+          <div className="relative max-w-4xl w-full aspect-[4/3] rounded-xl overflow-hidden">
             <Image
               src={visible[selected].src}
               alt={visible[selected].caption}
@@ -79,7 +79,7 @@ export function GalleryGrid() {
               className="object-cover"
             />
           </div>
-          <p className="absolute bottom-8 text-white font-display text-xl text-center w-full">
+          <p className="absolute bottom-8 text-on-primary font-display text-xl text-center w-full">
             {visible[selected].caption}
           </p>
         </div>

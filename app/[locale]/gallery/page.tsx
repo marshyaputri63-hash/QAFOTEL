@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
 import { GalleryGrid } from "@/components/gallery-grid";
+import Image from "next/image";
 
 export default async function GalleryPage({
   params,
@@ -16,17 +17,28 @@ export default async function GalleryPage({
       <QafotelHeader />
 
       {/* ── Hero ── */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center px-5 pt-24 pb-16 overflow-hidden bg-surface-low rounded-b-[40px] md:rounded-b-[80px] mb-[80px]">
-        <div className="relative z-10 text-center">
-          <h1 className="font-display text-5xl md:text-7xl text-olive mb-4">{t("heroTitle")}</h1>
-          <p className="text-lg text-on-surface-var max-w-lg mx-auto">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaBNGLu2ZBPpzxzirc2GaD4UI_PaJHvUQIkwWysaw5i_kWopsYs8jlYx0Bz8IU7FawfIAMibx5sY3AentgiaG-DTdOWn4amkc8IJgoN6WIgLZ7Gv74hSzW1vcZ-lS_SgVa6W9UqTkPSgwHSFgCHmT5C3-Ct9sdqcp_JNrw5KLLW1p7RhuMe637f1LosPAuRKK_7o3LO_P2ae8zucbIJZoitpPIzfrGBbPYYrYH83jKUnb2mpeVdQmUEA"
+            alt="Qafotel gallery"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/70" />
+        </div>
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-display text-[40px] md:text-[56px] text-on-primary mb-4">
+            {t("heroTitle")}
+          </h1>
+          <p className="font-body text-lg text-on-primary/80 max-w-lg mx-auto">
             {t("heroSubtitle")}
           </p>
         </div>
       </section>
 
       {/* ── Gallery Grid ── */}
-      <section className="max-w-7xl mx-auto px-5 md:px-16 mb-[120px]">
+      <section className="max-w-[1280px] mx-auto px-6 py-16">
         <GalleryGrid />
       </section>
 

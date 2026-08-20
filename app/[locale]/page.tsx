@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight } from "lucide-react";
 import { getRooms } from "@/lib/qafotel-data";
 import type { Locale } from "@/i18n/routing";
 
@@ -20,171 +19,311 @@ export default async function HomePage({
     <div className="min-h-screen bg-surface font-body text-on-surface">
       <QafotelHeader />
 
-      {/* ── Hero — Full Screen Elegant ── */}
-      <section className="relative w-full h-screen flex flex-col items-center justify-center">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-v2.jpeg"
-            alt="Qafotel interior"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
-        </div>
+      <main className="pt-20">
+        {/* ── Hero Section ── */}
+        <section className="relative h-[85vh] w-full min-h-[600px] flex items-center justify-center overflow-hidden -mt-20">
+          <div className="absolute inset-0 w-full h-full">
+            <Image
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqf4caHpqftKcZsFX4bHMoDA3aZGwVOkcrnK5L8OFJONm--FIEzu7RZ8Q9prSOK1GbaVDbPOQTB9htSzZqbINOdWF_9N-OAUOy5koxr6JNCs-80wzzPzZPtIGBVjwxAttVa-LCptbBmgQZZuI3XtlwS-x2pfSKJdUGfJ7x18NPesHYvQ3JHf0Usp2nC6ske5Cxc8O5Fz2ohHTpTGXVETlIj2-mjdy1_D3nPApYFPmulUXqIjtnMG6VVjMeI4GEoXgkTU0"
+              alt="Qafotel suite"
+              fill
+              priority
+              className="object-cover scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
+          </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl">
-          <h1 className="[font-family:var(--font-cinzel)] text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight drop-shadow-lg font-bold">
-            {t("heroTitle")}
-          </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-lg mx-auto mb-10 leading-relaxed">
-            {t("heroSubtitle")}
-          </p>
-          <Link
-            href="/rooms"
-            className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-white/20 transition-all duration-300"
-          >
-            {t("bookStay")}
-          </Link>
-        </div>
+          <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-32">
+            <div className="max-w-2xl text-on-primary">
+              <h1 className="font-display text-[40px] md:text-[64px] text-on-primary mb-6 leading-[1.2] md:leading-[72px] tracking-[-0.02em]">
+                {t("heroTitle").split("\n")[0]}
+                <br />
+                <span className="italic text-surface-low/90">
+                  {t("heroTitle").split("\n")[1]}
+                </span>
+              </h1>
+              <p className="font-body text-xs uppercase tracking-widest text-surface-low/80 mb-4">
+                {t("heroSubtitle")}
+              </p>
+              <div className="flex items-center gap-2 font-body text-xs text-surface-low/80">
+                <span className="material-symbols-outlined text-[16px]">
+                  location_on
+                </span>
+                <span>{t("heroLocation")}</span>
+              </div>
+            </div>
+          </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-          <span className="text-white/60 text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-white/40" />
-        </div>
-      </section>
+          {/* Booking Widget - Desktop */}
+          <div className="absolute -bottom-16 left-0 right-0 z-20 w-full max-w-[1280px] mx-auto px-6 hidden md:block">
+            <div className="bg-surface rounded-xl shadow-xl p-8 flex items-end gap-6 justify-between border border-outline-variant/20">
+              <div className="flex-1 grid grid-cols-3 gap-6">
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <label className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-on-surface-variant">
+                    {t("checkIn")}
+                  </label>
+                  <div className="flex items-center justify-between border-b border-outline-variant pb-2 hover:border-primary transition-colors">
+                    <span className="font-body text-lg text-on-surface">
+                      May 24, 2025
+                    </span>
+                    <span className="material-symbols-outlined text-on-surface-variant">
+                      calendar_today
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <label className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-on-surface-variant">
+                    {t("checkOut")}
+                  </label>
+                  <div className="flex items-center justify-between border-b border-outline-variant pb-2 hover:border-primary transition-colors">
+                    <span className="font-body text-lg text-on-surface">
+                      May 25, 2025
+                    </span>
+                    <span className="material-symbols-outlined text-on-surface-variant">
+                      calendar_today
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <label className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-on-surface-variant">
+                    {t("guests")}
+                  </label>
+                  <div className="flex items-center justify-between border-b border-outline-variant pb-2 hover:border-primary transition-colors">
+                    <span className="font-body text-lg text-on-surface">
+                      2 Guests
+                    </span>
+                    <span className="material-symbols-outlined text-on-surface-variant">
+                      expand_more
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button className="bg-primary text-on-primary px-8 py-4 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] hover:bg-primary-container transition-all flex items-center gap-2 whitespace-nowrap shadow-md hover:shadow-lg">
+                {t("checkAvailability")}
+                <span className="material-symbols-outlined text-[18px]">
+                  arrow_forward
+                </span>
+              </button>
+            </div>
+          </div>
+        </section>
 
-      {/* ── Intro Section ── */}
-      <section className="max-w-6xl mx-auto px-6 md:px-16 py-24 md:py-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div>
-            <h2 className="font-display text-3xl md:text-5xl text-olive-dark mb-6 leading-tight">
-              {t("welcomeTitle")}
-            </h2>
-            <p className="text-base text-on-surface-var mb-8 leading-relaxed">
-              {t("welcomeText")}
-            </p>
+        {/* Mobile Booking Widget */}
+        <section className="md:hidden px-6 mt-8">
+          <div className="bg-surface rounded-xl shadow-md p-6 flex flex-col gap-4 border border-outline-variant/20">
+            <div className="flex items-center justify-between border-b border-outline-variant pb-2">
+              <span className="font-body text-base text-on-surface">
+                {t("checkIn")}
+              </span>
+              <span className="font-body text-base text-on-surface-variant">
+                {t("mobileDates")}
+              </span>
+            </div>
             <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-oak-dark font-semibold text-sm tracking-wider uppercase hover:text-oak transition-colors"
+              href="/rooms"
+              className="bg-primary text-on-primary w-full py-3 rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] text-center"
             >
-              {t("discoverPhilosophy")} <ArrowRight className="w-4 h-4" />
+              {t("mobileBookNow")}
             </Link>
           </div>
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden ambient-shadow">
+        </section>
+
+        {/* ── Rooms Section ── */}
+        <section className="pt-16 md:pt-32 pb-16 w-full max-w-[1280px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-4">
+              {t("roomsLabel")}
+            </h3>
+            <h2 className="font-display text-[32px] leading-[40px] text-primary">
+              {t("roomsTitle")}
+            </h2>
+          </div>
+
+          <div className="relative group">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
+              {rooms.map((room) => (
+                <Link
+                  key={room.slug}
+                  href={`/rooms/${room.slug}`}
+                  className="flex-none w-[280px] md:w-[300px] snap-start flex flex-col gap-4 group/card cursor-pointer"
+                >
+                  <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high">
+                    <Image
+                      src={room.carousel[0]}
+                      alt={room.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover/card:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover/card:bg-transparent transition-colors" />
+                  </div>
+                  <div>
+                    <h4 className="font-display text-[20px] leading-[28px] text-primary mb-1 group-hover/card:text-surface-tint transition-colors">
+                      {room.name}
+                    </h4>
+                    <p className="font-body text-[14px] leading-[20px] text-on-surface-variant mb-3 line-clamp-2">
+                      {room.description}
+                    </p>
+                    <p className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-primary">
+                      {t("fromPrice")} ${room.priceUSD}{" "}
+                      <span className="text-on-surface-variant lowercase">
+                        {t("perNight")}
+                      </span>
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Story / Manifesto Section ── */}
+        <section className="py-16 md:py-32 bg-surface-low w-full">
+          <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden">
               <Image
-                src="/images/leaf.jpeg"
-                alt="Qafotel room detail"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQxwsKYDht56-Qpj4hZ05-pIGr8lFsdd9AEbQrouJb6jGRaieisSJiVQg9W1NLtotstwJL4O_knKgwuYYdXMCzFEkQFQa_OlLJVcFb1rHOIDNeILsR6ujRgwUltu1e8S3e_BbRbjdbbPQNyQZsg_JK_hk7XKI3vIY_hfHB3mCPlGUaHQaZpc6c9sY-EuUcgU99w0CUfBKdJ22mJ2SmHxfBeGcMwDh8kY8TL1KEIf28Hf-GoLKXKmBWg"
+                alt="Qafotel lobby"
                 fill
                 className="object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Jardin Coffee Section ── */}
-      <section className="w-full bg-surface-low py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div className="order-2 md:order-1 aspect-square rounded-2xl overflow-hidden ambient-shadow">
-            <Image
-              src="/images/home.jpeg"
-              alt="Jardin Coffee"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="order-1 md:order-2 space-y-6">
-            <div className="inline-block bg-oak text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full">
-              {t("jardinCoffeeTag")}
+            <div className="flex flex-col gap-6 md:pl-12">
+              <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-on-surface-variant">
+                {t("storyLabel")}
+              </h3>
+              <h2 className="font-display text-[32px] leading-[40px] text-primary max-w-md">
+                {t("storyTitle")}
+              </h2>
+              <p className="font-body text-lg leading-[28px] text-on-surface-variant max-w-lg">
+                {t("storyText")}
+              </p>
+              <div className="pt-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-widest text-primary hover:text-surface-tint transition-colors group"
+                >
+                  {t("discoverMore")}
+                  <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+                </Link>
+              </div>
             </div>
-            <h2 className="font-display text-3xl md:text-5xl text-olive-dark leading-tight">
-              {t("jardinCoffeeTitle")}
+          </div>
+        </section>
+
+        {/* ── Guest Reviews Section ── */}
+        <section className="py-16 md:py-32 w-full max-w-[1280px] mx-auto px-6 bg-surface">
+          <div className="text-center mb-12">
+            <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-4">
+              {t("reviewsLabel")}
+            </h3>
+            <h2 className="font-display text-[32px] leading-[40px] text-primary">
+              {t("reviewsTitle")}
             </h2>
-            <p className="text-base text-on-surface-var leading-relaxed">
-              {t("jardinCoffeeText")}
-            </p>
-            <Link
-              href="/cafe"
-              className="inline-block px-8 py-3 border border-olive text-olive font-semibold text-sm tracking-wider uppercase rounded-full hover:bg-olive hover:text-white transition-all duration-300"
-            >
-              {t("viewMenu")}
-            </Link>
           </div>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "SOPHIA M.",
+                location: "New York, USA",
+                text: '"A hidden gem! Beautiful rooms, amazing service, and the perfect location. The attention to natural light and greenery made our stay incredibly relaxing."',
+              },
+              {
+                name: "JAMES T.",
+                location: "London, UK",
+                text: '"The attention to detail is unmatched. Felt like a personalized experience from start to finish. The coffee shop downstairs is also fantastic."',
+              },
+              {
+                name: "PRIYA K.",
+                location: "Dubai, UAE",
+                text: '"Peaceful, stylish, and exceptionally clean. We\'ll definitely be coming back! The architecture alone is worth the visit."',
+              },
+            ].map((review) => (
+              <div
+                key={review.name}
+                className="bg-surface-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col gap-6 h-full transition-shadow hover:shadow-md"
+              >
+                <div className="flex gap-1 text-secondary-fixed-dim">
+                  {[...Array(5)].map((_, i) => (
+                    <span
+                      key={i}
+                      className="material-symbols-outlined text-[20px]"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                  ))}
+                </div>
+                <p className="font-body text-base text-on-surface italic flex-grow">
+                  {review.text}
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-surface-variant overflow-hidden flex-shrink-0" />
+                  <div>
+                    <p className="font-body text-[13px] font-semibold text-primary">
+                      {review.name}
+                    </p>
+                    <p className="font-body text-[12px] text-on-surface-variant">
+                      {review.location}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* ── Room Preview ── */}
-      <section className="max-w-6xl mx-auto px-6 md:px-16 py-24 md:py-32">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-5xl text-olive-dark mb-4">
-            {t("roomsTitle")}
-          </h2>
-          <p className="text-base text-on-surface-var">
-            {t("roomsSubtitle")}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Leaf */}
-          <div className="group bg-surface-lowest rounded-2xl overflow-hidden cursor-pointer ambient-shadow">
-            <div className="aspect-[16/10] overflow-hidden">
-              <Image
-                src="/images/leaf.jpeg"
-                alt="The Leaf Room"
-                width={800}
-                height={500}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="font-display text-2xl text-olive-dark">The Leaf Room</h3>
-                <span className="font-semibold text-lg text-oak-dark">Rp 1.300.000</span>
-              </div>
-              <p className="text-sm text-on-surface-var mb-6 leading-relaxed">
-                {rooms[0].description}
+        {/* ── Features Footer ── */}
+        <section className="py-12 bg-surface border-t border-outline-variant/20 w-full">
+          <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-[32px] mb-2 font-light">
+                bed
+              </span>
+              <h4 className="font-body text-[11px] font-semibold text-primary uppercase">
+                {t("features.comfort")}
+              </h4>
+              <p className="font-body text-[13px] text-on-surface-variant hidden md:block">
+                {t("features.comfortDesc")}
               </p>
-              <Link
-                href="/rooms/leaf"
-                className="text-olive font-semibold text-sm flex items-center justify-between group-hover:text-olive-tint transition-colors uppercase tracking-wider"
-              >
-                {t("exploreRoom")} <ArrowRight className="w-4 h-4" />
-              </Link>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-[32px] mb-2 font-light">
+                location_on
+              </span>
+              <h4 className="font-body text-[11px] font-semibold text-primary uppercase">
+                {t("features.location")}
+              </h4>
+              <p className="font-body text-[13px] text-on-surface-variant hidden md:block">
+                {t("features.locationDesc")}
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-[32px] mb-2 font-light">
+                restaurant
+              </span>
+              <h4 className="font-body text-[11px] font-semibold text-primary uppercase">
+                {t("features.experience")}
+              </h4>
+              <p className="font-body text-[13px] text-on-surface-variant hidden md:block">
+                {t("features.experienceDesc")}
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-[32px] mb-2 font-light">
+                shield
+              </span>
+              <h4 className="font-body text-[11px] font-semibold text-primary uppercase">
+                {t("features.safe")}
+              </h4>
+              <p className="font-body text-[13px] text-on-surface-variant hidden md:block">
+                {t("features.safeDesc")}
+              </p>
             </div>
           </div>
-          {/* Oase */}
-          <div className="group bg-surface-lowest rounded-2xl overflow-hidden cursor-pointer ambient-shadow">
-            <div className="aspect-[16/10] overflow-hidden">
-              <Image
-                src="/images/room-oase.jpeg"
-                alt="The Oase Room"
-                width={800}
-                height={500}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="font-display text-2xl text-olive-dark">The Oase Room</h3>
-                <span className="font-semibold text-lg text-oak-dark">Rp 1.850.000</span>
-              </div>
-              <p className="text-sm text-on-surface-var mb-6 leading-relaxed">
-                {rooms[1].description}
-              </p>
-              <Link
-                href="/rooms/oase"
-                className="text-olive font-semibold text-sm flex items-center justify-between group-hover:text-olive-tint transition-colors uppercase tracking-wider"
-              >
-                {t("exploreSuite")} <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <QafotelFooter />
     </div>

@@ -11,23 +11,40 @@
     "cafe": "Jardin Coffee",
     "gallery": "Galeri",
     "contact": "Kontak",
-    "signIn": "Masuk"
+    "signIn": "Masuk",
+    "bookNow": "Pesan Sekarang"
   },
   "home": {
-    "heroTitle": "Tempat Berlindung dari Ketenangan",
-    "heroSubtitle": "Rasakan kemewahan alami yang tenang. Tempat peristirahatan digital untuk menenangkan diri.",
+    "heroTitle": "Menginap,\ndengan cara berbeda",
+    "heroSubtitle": "Kenyamanan butik. Momen tak terlupakan.",
+    "heroLocation": "Sanctuary City, CA",
     "bookStay": "Pesan Kamar",
-    "welcomeTitle": "Selamat Datang di QAFOTEL",
-    "welcomeText": "Berakar dari filosofi kemewahan yang tenang, QAFOTEL menawarkan perjalanan yang memadukan keberlanjutan, ketenangan, dan kerajinan yang halus. Ruang kami dirancang untuk terasa setelus dan senyaman seprai linen, memadukan minimalis dengan keindahan alam.",
-    "discoverPhilosophy": "Temukan Filosofi Kami",
-    "jardinCoffeeTag": "Organik",
-    "jardinCoffeeTitle": "Secangkir Alam",
-    "jardinCoffeeText": "Nikmati Jardin Coffee, di mana setiap tegukan adalah momen ketenangan. Kami menggunakan biji kopi berkelanjutan dan fair-trade untuk menciptakan minuman yang menenangkan, dikelilingi oleh interior kami yang hijau dan alami.",
-    "viewMenu": "Lihat Menu",
-    "roomsTitle": "Tempat Peristirahatan Anda Menanti",
-    "roomsSubtitle": "Ruang yang elegan untuk pelancong yang sadar.",
-    "exploreRoom": "Lihat Kamar",
-    "exploreSuite": "Lihat Suite"
+    "checkIn": "CHECK-IN",
+    "checkOut": "CHECK-OUT",
+    "guests": "TAMU",
+    "checkAvailability": "CEK KETERSEDIAAN",
+    "mobileDates": "24 Mei - 25 Mei",
+    "mobileBookNow": "PESAN SEKARANG",
+    "roomsLabel": "Kamar Kami",
+    "roomsTitle": "Dirancang untuk istirahat. Dikurasi untuk Anda.",
+    "fromPrice": "Mulai",
+    "perNight": "/ malam",
+    "storyLabel": "Cerita Kami",
+    "storyTitle": "Oasis ketenangan di dunia modern.",
+    "storyText": "Kami percaya bahwa kemewahan sejati terletak pada ruang untuk bernapas. Qafotel dirancang sebagai tempat peristirahatan arsitektural di mana tekstur organik bertemu minimalisme yang halus. Setiap detail, dari seprai linen hingga taman yang dikurasi, dipilih untuk memulihkan dan menginspirasi.",
+    "discoverMore": "Selengkapnya",
+    "reviewsLabel": "Ulasan Tamu",
+    "reviewsTitle": "Dicintai oleh tamu kami",
+    "features": {
+      "comfort": "Kenyamanan Butik",
+      "comfortDesc": "Kamar bergaya dengan sentuhan personal.",
+      "location": "Lokasi Strategis",
+      "locationDesc": "Dekat dengan yang paling penting.",
+      "experience": "Pengalaman Lokal",
+      "experienceDesc": "Menginap terkurasi dan penemuan lokal.",
+      "safe": "Aman & Terjamin",
+      "safeDesc": "Keamanan dan privasi Anda adalah prioritas kami."
+    }
   },
   "about": {
     "storyTitle": "Cerita Kami",
@@ -54,7 +71,7 @@
     "meetingRoom": {
       "tag": "Profesional",
       "title": "Ruang Meeting",
-      "text": "Ruang pertemuan yang elegan dan lengkap, dirancang untuk gathering yang produktif. Cahaya alami, furnitur ergonomis, dan konektivitas tanpa hingga untuk hingga 30 tamu.",
+      "text": "Ruang pertemuan yang elegan dan lengkap, dirancang untuk gathering yang produktif. Cahaya alami, furnitur ergonomis, dan konektivitas tanpa hambatan untuk hingga 30 tamu.",
       "features": [
         "Cahaya Alami",
         "Peralatan AV",
@@ -76,7 +93,7 @@
     "cityView": {
       "tag": "Panorama",
       "title": "Teras Pemandangan Kota",
-      "pemandangan": "Pemandangan kota yang luas dari teras atap kami. Sempurna untuk koktail senja, relaksasi malam, atau sekadar menikmati panorama.",
+      "text": "Pemandangan kota yang luas dari teras atap kami. Sempurna untuk koktail senja, relaksasi malam, atau sekadar menikmati panorama.",
       "features": [
         "Pemandangan 360°",
         "Lounge Senja",

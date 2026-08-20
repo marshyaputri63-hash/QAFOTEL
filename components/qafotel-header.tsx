@@ -9,11 +9,10 @@ import { useLocale } from "next-intl";
 
 const navLinks = [
   { key: "home", href: "/" },
-  { key: "about", href: "/about" },
   { key: "rooms", href: "/rooms" },
-  { key: "facilities", href: "/facilities" },
   { key: "cafe", href: "/cafe" },
-  { key: "gallery", href: "/gallery" },
+  { key: "facilities", href: "/facilities" },
+  { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ];
 
@@ -38,7 +37,7 @@ export function QafotelHeader() {
         {/* Mobile: hamburger */}
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden p-2 text-olive-dark hover:opacity-80 transition-opacity"
+          className="md:hidden p-2 text-primary hover:opacity-80 transition-opacity"
           aria-label="Open menu"
         >
           <Menu className="w-6 h-6" />
@@ -47,9 +46,9 @@ export function QafotelHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-xl md:text-2xl font-bold tracking-wider text-olive-dark uppercase"
+          className="font-display text-xl md:text-2xl font-normal tracking-wider text-primary uppercase"
         >
-          QAFOTEL
+          Qafotel
         </Link>
 
         {/* Desktop nav */}
@@ -58,10 +57,10 @@ export function QafotelHeader() {
             <Link
               key={link.key}
               href={link.href}
-              className={`font-body text-xs font-semibold tracking-widest uppercase transition-colors hover:text-olive-dark ${
+              className={`font-body text-xs font-semibold tracking-widest uppercase transition-colors hover:text-primary ${
                 pathname === link.href
-                  ? "text-olive-dark"
-                  : "text-on-surface-var"
+                  ? "text-primary"
+                  : "text-on-surface-variant"
               }`}
             >
               {t(link.key)}
@@ -74,17 +73,14 @@ export function QafotelHeader() {
           <Link
             href={pathname}
             locale={nextLocale}
-            className="flex items-center gap-1.5 text-xs font-semibold text-on-surface-var hover:text-olive-dark transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors"
           >
             <Globe className="w-4 h-4" />
             {nextLocale.toUpperCase()}
           </Link>
-          <Link href="/sign-in">
-            <Button
-              variant="outline"
-              className="hidden md:flex border-olive-dark/30 text-olive-dark hover:bg-olive-dark hover:text-white rounded-full px-6 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300"
-            >
-              {t("signIn")}
+          <Link href="/rooms">
+            <Button className="hidden md:flex bg-primary text-on-primary hover:bg-primary/90 rounded-full px-6 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300">
+              {t("bookNow") || "Book Now"}
             </Button>
           </Link>
         </div>
@@ -99,12 +95,12 @@ export function QafotelHeader() {
           />
           <nav className="absolute inset-y-0 left-0 w-80 bg-surface shadow-2xl flex flex-col py-8">
             <div className="px-6 pb-8 flex justify-between items-center">
-              <span className="font-display text-xl font-bold tracking-wider text-olive-dark uppercase">
-                QAFOTEL
+              <span className="font-display text-xl font-normal tracking-wider text-primary uppercase">
+                Qafotel
               </span>
               <button
                 onClick={() => setOpen(false)}
-                className="p-2 text-on-surface-var hover:bg-surface-mid rounded-full transition-colors"
+                className="p-2 text-on-surface-variant hover:bg-surface-mid rounded-full transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -117,8 +113,8 @@ export function QafotelHeader() {
                     onClick={() => setOpen(false)}
                     className={`flex items-center gap-4 mx-4 my-1 px-4 py-3 rounded-xl transition-colors font-medium ${
                       pathname === link.href
-                        ? "bg-olive/10 text-olive-dark"
-                        : "text-on-surface-var hover:bg-surface-mid"
+                        ? "bg-primary/10 text-primary"
+                        : "text-on-surface-variant hover:bg-surface-mid"
                     }`}
                   >
                     {t(link.key)}
@@ -131,7 +127,7 @@ export function QafotelHeader() {
       )}
 
       {/* ── Mobile Bottom Nav ── */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-t border-outline-var/30">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-lowest/95 backdrop-blur-md border-t border-outline-variant/30">
         <div className="flex justify-around items-center px-4 pt-3 pb-[env(safe-area-inset-bottom,16px)]">
           {bottomNavItems.map((item) => {
             const isActive = pathname === item.href;
@@ -141,8 +137,8 @@ export function QafotelHeader() {
                 href={item.href}
                 className={`flex flex-col items-center justify-center py-1 transition-colors ${
                   isActive
-                    ? "text-olive-dark font-bold"
-                    : "text-on-surface-var hover:text-olive"
+                    ? "text-primary font-bold"
+                    : "text-on-surface-variant hover:text-primary"
                 }`}
               >
                 <span className="material-symbols-outlined text-[22px] mb-0.5" style={isActive ? { fontVariationSettings: "'FILL' 1" } : undefined}>

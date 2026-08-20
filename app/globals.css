@@ -4,53 +4,94 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ═══════════════════════════════════════════════
-   QAFOTEL BOUTIQUE — Elegant Dark Warm Design
+   QAFOTEL — Organic Elegance Design System
    ═══════════════════════════════════════════════ */
 
 @theme {
-  /* ── Brand Colors — Warm Dark Elegant ── */
-  --color-olive: #8B7355;
-  --color-olive-dark: #6B5740;
-  --color-olive-light: #A89070;
-  --color-olive-container: #A89070;
-  --color-olive-on: #FFF8F0;
-  --color-olive-tint: #7A6548;
-  --color-olive-fixed: #D4C4B0;
-  --color-olive-fixed-dim: #BBA890;
+  /* ── Brand Colors — Organic Elegance ── */
+  --color-primary: #07190a;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1b2e1d;
+  --color-on-primary-container: #819780;
+  --color-inverse-primary: #b6cdb4;
+  --color-primary-fixed: #d1e9cf;
+  --color-primary-fixed-dim: #b6cdb4;
+  --color-on-primary-fixed: #0d2010;
+  --color-on-primary-fixed-variant: #384c39;
 
-  --color-oak: #C4A77D;
-  --color-oak-light: #E8D5B8;
-  --color-oak-container: #F0E4D0;
-  --color-oak-dark: #9A7F5A;
+  --color-secondary: #7d562d;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #ffca98;
+  --color-on-secondary-container: #7a532a;
+  --color-secondary-fixed: #ffdcbd;
+  --color-secondary-fixed-dim: #f0bd8b;
+  --color-on-secondary-fixed: #2c1600;
+  --color-on-secondary-fixed-variant: #623f18;
 
-  --color-terracotta: #5C4A3A;
-  --color-terracotta-container: #7A6555;
-  --color-terracotta-on: #F5EDE4;
+  --color-tertiary: #151611;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #2a2a25;
+  --color-on-tertiary-container: #92918a;
+  --color-tertiary-fixed: #e4e2db;
+  --color-tertiary-fixed-dim: #c8c7bf;
+  --color-on-tertiary-fixed: #1b1c17;
+  --color-on-tertiary-fixed-variant: #474741;
 
-  /* ── Surfaces — Warm Whites & Creams ── */
-  --color-surface: #FAFAF5;
-  --color-surface-dim: #E8E4DC;
-  --color-surface-bright: #FFFFFF;
-  --color-surface-low: #F5F2EC;
-  --color-surface-mid: #EDE8E0;
-  --color-surface-high: #E0D8CC;
-  --color-surface-highest: #D4CABC;
-  --color-surface-lowest: #FFFFFF;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
 
-  /* ── Text — Dark Warm ── */
-  --color-on-surface: #2C2418;
-  --color-on-surface-var: #5C4A3A;
-  --color-on-inverse: #FAFAF5;
+  /* ── Surfaces — Warm Cream ── */
+  --color-surface: #fcf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fcf9f8;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f6f3f2;
+  --color-surface-mid: #f0eded;
+  --color-surface-high: #eae7e7;
+  --color-surface-highest: #e4e2e1;
+
+  /* ── Text ── */
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #434842;
+  --color-inverse-surface: #303030;
+  --color-inverse-on-surface: #f3f0f0;
 
   /* ── Outline ── */
-  --color-outline: #8B7B68;
-  --color-outline-var: #C4B8A8;
+  --color-outline: #737871;
+  --color-outline-variant: #c3c8c0;
 
-  /* ── Legacy aliases ── */
-  --color-cream: #FFFFFF;
-  --color-cream-dark: #F0E4D0;
+  /* ── Surface Tint ── */
+  --color-surface-tint: #4f644f;
 
-  --font-display: var(--font-bodoni);
+  /* ── Background ── */
+  --color-background: #fcf9f8;
+  --color-on-background: #1b1c1c;
+  --color-surface-variant: #e4e2e1;
+
+  /* ── Legacy aliases for compatibility ── */
+  --color-olive: #07190a;
+  --color-olive-dark: #07190a;
+  --color-olive-light: #1b2e1d;
+  --color-olive-container: #1b2e1d;
+  --color-olive-on: #ffffff;
+  --color-olive-tint: #4f644f;
+  --color-olive-fixed: #b6cdb4;
+  --color-olive-fixed-dim: #d1e9cf;
+  --color-oak: #7d562d;
+  --color-oak-light: #f0bd8b;
+  --color-oak-container: #ffca98;
+  --color-oak-dark: #7d562d;
+  --color-terracotta: #7d562d;
+  --color-terracotta-container: #ffca98;
+  --color-terracotta-on: #ffffff;
+  --color-cream: #fcf9f8;
+  --color-cream-dark: #f6f3f2;
+  --color-on-surface-var: #434842;
+
+  /* ── Font ── */
+  --font-display: var(--font-libre-caslon);
   --font-body: var(--font-manrope);
 }
 
@@ -64,31 +105,30 @@
   --radius-xl: 1.5rem;
 
   /* Sidebar & dashboard tokens */
-  --color-sidebar-ring: var(--color-olive);
-  --color-sidebar-border: var(--color-outline-var);
+  --color-sidebar-ring: var(--color-primary);
+  --color-sidebar-border: var(--color-outline-variant);
   --color-sidebar-accent-foreground: var(--color-on-surface);
   --color-sidebar-accent: var(--color-surface-mid);
-  --color-sidebar-primary-foreground: var(--color-surface-lowest);
-  --color-sidebar-primary: var(--color-olive);
+  --color-sidebar-primary-foreground: var(--color-on-primary);
+  --color-sidebar-primary: var(--color-primary);
   --color-sidebar-foreground: var(--color-on-surface);
   --color-sidebar: var(--color-surface-low);
-  --color-chart-5: #C4A77D;
-  --color-chart-4: #E8D5B8;
-  --color-chart-3: #8B7355;
-  --color-chart-2: #BBA890;
-  --color-chart-1: #6B5740;
-  --color-ring: var(--color-olive);
-  --color-input: var(--color-outline-var);
-  --color-border: var(--color-outline-var);
-  --color-destructive: #BA1A1A;
+  --color-chart-5: #f0bd8b;
+  --color-chart-4: #b6cdb4;
+  --color-chart-3: #07190a;
+  --color-chart-2: #7d562d;
+  --color-chart-1: #4f644f;
+  --color-ring: var(--color-primary);
+  --color-input: var(--color-outline-variant);
+  --color-border: var(--color-outline-variant);
+  --color-destructive: var(--color-error);
   --color-accent-foreground: var(--color-on-surface);
   --color-accent: var(--color-surface-mid);
   --color-muted-foreground: var(--color-outline);
   --color-muted: var(--color-surface-mid);
   --color-secondary-foreground: var(--color-on-surface);
-  --color-secondary: var(--color-oak);
-  --color-primary-foreground: var(--color-surface-lowest);
-  --color-primary: var(--color-olive);
+  --color-secondary: var(--color-secondary);
+  --color-primary-foreground: var(--color-on-primary);
   --color-popover-foreground: var(--color-on-surface);
   --color-popover: var(--color-surface-lowest);
   --color-card-foreground: var(--color-on-surface);
@@ -96,7 +136,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -111,12 +151,13 @@
 /* ── Custom utilities ── */
 @layer utilities {
   .glass-nav {
-    background: rgba(250, 250, 245, 0.9);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(252, 249, 248, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
   }
   .ambient-shadow {
-    box-shadow: 0 10px 40px rgba(107, 87, 64, 0.1);
+    box-shadow: 0 10px 40px rgba(7, 25, 10, 0.08);
   }
   .organic-shape {
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
