@@ -48,10 +48,17 @@
   },
   "about": {
     "storyTitle": "Our Story",
-    "storyText": "Founded in 2026, QAFOTEL was born from a simple belief: luxury should feel natural. Nestled in a converted botanical estate, our hotel blends contemporary design with the timeless beauty of the natural world. Every detail, from our hand-selected organic linens to our locally sourced Jardin Coffee, reflects our commitment to sustainability and refined craftsmanship.",
+    "storyText": "Founded in 2026, Qafotel was born from a simple belief: luxury should feel natural. Nestled in a converted botanical estate, our hotel blends contemporary design with the timeless beauty of the natural world.",
     "storyImageAlt": "Qafotel interior detail",
+    "visionTitle": "Our Vision",
+    "visionText": "To become a leading boutique hotel that delivers a calm, aesthetic, and sustainable stay experience with a refreshing natural ambiance in the heart of the city.",
     "missionTitle": "Our Mission",
-    "missionText": "To create a sanctuary where modern luxury and nature coexist in perfect harmony. We believe in slow travel, conscious hospitality, and the transformative power of quiet spaces.",
+    "missionItems": [
+      "Providing warm, professional, and memorable personal service for every guest.",
+      "Creating a calming atmosphere through design and green hospitality concepts.",
+      "Applying environmentally friendly and sustainable principles in every operation.",
+      "Delivering a unique, intimate stay experience that is different from conventional hotels."
+    ],
     "styleTitle": "A Botanical Soul",
     "styleText": "Our design philosophy draws from the organic textures of the natural world. Raw oak, hand-thrown ceramics, and linen textiles create an atmosphere that is both elevated and deeply grounding.",
     "styleImageAlt": "Botanical design detail",
@@ -194,7 +201,7 @@
     "enterBtn": "Enter",
     "bookBtn": "Book a Room",
     "scroll": "Scroll to explore",
-    "previewTitle": "Discover QAFOTEL",
+    "previewTitle": "Discover Qafotel",
     "previewText": "A boutique hotel and organic coffee house designed for the conscious traveler.",
     "hotel": "Hotel",
     "hotelDesc": "Leaf & Oase Rooms",

@@ -68,16 +68,16 @@ export type Room = {
 
 const roomsEn: Room[] = [
   {
-    slug: "deluxe",
-    name: "Deluxe Room",
-    tag: "Cozy Comfort",
+    slug: "leaf",
+    name: "Leaf Room",
+    tag: "Cozy & Green",
     size: "32 sqm",
     guests: "2 Adults",
     bed: "Queen",
     view: "Garden View",
     description:
-      "Cozy comfort with modern essentials. Perfect for short stays and mindful retreats.",
-    amenities: ["Free WiFi", "King Bed", "Espresso Machine", "Garden View"],
+      "A cozy green retreat wrapped in natural textures, perfect for a peaceful night surrounded by garden views.",
+    amenities: ["Free WiFi", "Queen Bed", "Espresso Machine", "Garden View"],
     features: [
       "32 sqm Living Space",
       "Queen Size Bed",
@@ -90,8 +90,8 @@ const roomsEn: Room[] = [
     carousel: [images.deluxe, images.deluxeRoom],
   },
   {
-    slug: "garden",
-    name: "Garden Suite",
+    slug: "oase",
+    name: "Oase Room",
     tag: "Best View",
     size: "45 sqm",
     guests: "2 Adults",
@@ -111,42 +111,20 @@ const roomsEn: Room[] = [
     image: images.garden,
     carousel: [images.garden, images.gardenRoom],
   },
-  {
-    slug: "executive",
-    name: "Executive Suite",
-    tag: "Elevated Luxury",
-    size: "65 sqm",
-    guests: "2 Adults",
-    bed: "King",
-    view: "Panoramic View",
-    description:
-      "Extra space. Elevated experience. Features a separate lounge area and panoramic vistas.",
-    amenities: ["Lounge Area", "Panoramic View", "Premium Service", "King Bed"],
-    features: [
-      "65 sqm Living Space",
-      "Separate Lounge",
-      "Panoramic View",
-      "Premium Service",
-    ],
-    priceUSD: 289,
-    rating: 4.9,
-    image: images.executive,
-    carousel: [images.executive, images.premium],
-  },
 ];
 
 const roomsId: Room[] = [
   {
-    slug: "deluxe",
-    name: "Deluxe Room",
-    tag: "Nyaman & Hangat",
+    slug: "leaf",
+    name: "Leaf Room",
+    tag: "Nyaman & Hijau",
     size: "32 sqm",
     guests: "2 Dewasa",
     bed: "Queen",
     view: "Pemandangan Taman",
     description:
-      "Kenyamanan modern yang hangat. Sempurna untuk menginap singkat dan retret mindful.",
-    amenities: ["WiFi Gratis", "Tempat Tidur King", "Mesin Espresso", "Pemandangan Taman"],
+      "Retret hijau yang nyaman dengan tekstur alami, cocok untuk malam yang tenang dengan pemandangan taman.",
+    amenities: ["WiFi Gratis", "Tempat Tidur Queen", "Mesin Espresso", "Pemandangan Taman"],
     features: [
       "Ruang 32 sqm",
       "Tempat Tidur Queen",
@@ -159,8 +137,8 @@ const roomsId: Room[] = [
     carousel: [images.deluxe, images.deluxeRoom],
   },
   {
-    slug: "garden",
-    name: "Garden Suite",
+    slug: "oase",
+    name: "Oase Room",
     tag: "Pemandangan Terbaik",
     size: "45 sqm",
     guests: "2 Dewasa",
@@ -179,28 +157,6 @@ const roomsId: Room[] = [
     rating: 5.0,
     image: images.garden,
     carousel: [images.garden, images.gardenRoom],
-  },
-  {
-    slug: "executive",
-    name: "Executive Suite",
-    tag: "Kemewahan Tinggi",
-    size: "65 sqm",
-    guests: "2 Dewasa",
-    bed: "King",
-    view: "Pemandangan Panorama",
-    description:
-      "Lebih banyak ruang. Pengalaman yang ditingkatkan. Fitur ruang tamu terpisah dan pemandangan panorama.",
-    amenities: ["Ruang Tamu", "Pemandangan Panorama", "Layanan Premium", "Tempat Tidur King"],
-    features: [
-      "Ruang 65 sqm",
-      "Ruang Tamu Terpisah",
-      "Pemandangan Panorama",
-      "Layanan Premium",
-    ],
-    priceUSD: 289,
-    rating: 4.9,
-    image: images.executive,
-    carousel: [images.executive, images.premium],
   },
 ];
 

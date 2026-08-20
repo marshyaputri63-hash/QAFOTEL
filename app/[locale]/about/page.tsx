@@ -60,14 +60,33 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* ── Mission ── */}
+      {/* ── Vision ── */}
       <section className="mx-6 my-10 rounded-xl bg-primary px-8 py-14 text-center text-on-primary md:mx-10">
         <h2 className="font-display text-[32px] md:text-[40px] mb-5">
+          {t("visionTitle")}
+        </h2>
+        <p className="mx-auto max-w-3xl text-lg leading-relaxed md:text-xl opacity-90">
+          {t("visionText")}
+        </p>
+      </section>
+
+      {/* ── Mission ── */}
+      <section className="max-w-[1280px] mx-auto px-6 py-16 md:py-32">
+        <h2 className="font-display text-[32px] md:text-[40px] text-primary mb-8 text-center">
           {t("missionTitle")}
         </h2>
-        <p className="mx-auto max-w-3xl text-lg italic leading-relaxed md:text-xl opacity-90">
-          {t("missionText")}
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {t.raw("missionItems").map((item: string, i: number) => (
+            <div key={i} className="flex items-start gap-4 bg-surface-low rounded-xl p-6">
+              <span className="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0 font-body text-sm font-semibold">
+                {i + 1}
+              </span>
+              <p className="font-body text-base text-on-surface-variant leading-relaxed pt-1">
+                {item}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* ── Style ── */}

@@ -48,10 +48,17 @@
   },
   "about": {
     "storyTitle": "Cerita Kami",
-    "storyText": "Didirikan pada tahun 2026, QAFOTEL lahir dari keyakinan sederhana: kemewahan harus terasa alami. Terletak di bekas estate botani, hotel kami memadukan desain kontemporer dengan keindahan alam yang abadi. Setiap detail, dari linen organik yang dipilih tangan hingga Jardin Coffee lokal, mencerminkan komitmen kami terhadap keberlanjutan dan kerajinan yang halus.",
+    "storyText": "Didirikan pada tahun 2026, Qafotel lahir dari keyakinan sederhana: kemewahan harus terasa alami. Terletak di bekas estate botani, hotel kami memadukan desain kontemporer dengan keindahan alam yang abadi.",
     "storyImageAlt": "Detail interior Qafotel",
+    "visionTitle": "Visi Kami",
+    "visionText": "Menjadi Boutique hotel unggulan yang menghadirkan pengalaman menginap yang tenang, estetik, dan berkelanjutan dengan nuansa alam yang menyegarkan di tengah kota.",
     "missionTitle": "Misi Kami",
-    "missionText": "Menciptakan tempat peristirahatan di mana kemewahan modern dan alam berdampingan dalam harmoni yang sempurna. Kami percaya pada perjalanan lambat, keramahan yang sadar, dan kekuatan transformatif ruang yang tenang.",
+    "missionItems": [
+      "Memberikan pelayanan personal yang hangat, profesional, dan berkesan bagi setiap tamu.",
+      "Menghadirkan suasana yang menenangkan melalui desain dan konsep green hospitality.",
+      "Menerapkan prinsip ramah lingkungan dan berkelanjutan dalam setiap operasional.",
+      "Menyediakan pengalaman menginap yang unik, intimate, dan berbeda dari hotel konvensional."
+    ],
     "styleTitle": "Jiwa Botani",
     "styleText": "Filosofi desain kami terinspirasi dari tekstur alami dunia. Kayu oak mentah, keramik buatan tangan, dan tekstil linen menciptakan suasana yang elegan sekaligus mendalam.",
     "styleImageAlt": "Detail desain botani",
@@ -194,7 +201,7 @@
     "enterBtn": "Masuk",
     "bookBtn": "Pesan Kamar",
     "scroll": "Gulir untuk menjelajahi",
-    "previewTitle": "Jelajahi QAFOTEL",
+    "previewTitle": "Jelajahi Qafotel",
     "previewText": "Hotel butik dan kedai kopi organik yang dirancang untuk pelancong yang sadar.",
     "hotel": "Hotel",
     "hotelDesc": "Kamar Leaf & Oase",
