@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import Image from "next/image";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "next-intl";
@@ -44,11 +45,15 @@ export function QafotelHeader() {
         </button>
 
         {/* Logo */}
-        <Link
-          href="/"
-          className="font-display text-xl md:text-2xl font-normal tracking-wider text-primary uppercase"
-        >
-          Qafotel
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo-qafotel.jpeg"
+            alt="Qafotel"
+            width={120}
+            height={48}
+            className="h-10 md:h-12 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -95,9 +100,13 @@ export function QafotelHeader() {
           />
           <nav className="absolute inset-y-0 left-0 w-80 bg-surface shadow-2xl flex flex-col py-8">
             <div className="px-6 pb-8 flex justify-between items-center">
-              <span className="font-display text-xl font-normal tracking-wider text-primary uppercase">
-                Qafotel
-              </span>
+              <Image
+                src="/images/logo-qafotel.jpeg"
+                alt="Qafotel"
+                width={100}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
               <button
                 onClick={() => setOpen(false)}
                 className="p-2 text-on-surface-variant hover:bg-surface-mid rounded-full transition-colors"

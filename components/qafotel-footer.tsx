@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { contactInfo } from "@/lib/qafotel-data";
@@ -10,9 +11,13 @@ export function QafotelFooter() {
   return (
     <footer className="w-full bg-primary px-6 py-16">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
-        <div className="font-display text-2xl font-normal tracking-wider text-on-primary uppercase">
-          Qafotel
-        </div>
+        <Image
+          src="/images/logo-qafotel.jpeg"
+          alt="Qafotel"
+          width={160}
+          height={64}
+          className="h-14 w-auto object-contain"
+        />
         <nav className="flex flex-wrap justify-center gap-8">
           <Link href="/rooms" className="text-sm font-semibold text-on-primary/70 hover:text-on-primary transition-colors uppercase tracking-wider">
             {t("rooms")}

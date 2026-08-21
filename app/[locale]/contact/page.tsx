@@ -81,14 +81,21 @@ export default function ContactPage() {
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
                 <span className="material-symbols-outlined text-[20px]">
-                  phone
+                  Instagram
                 </span>
               </div>
               <div>
                 <h3 className="font-body text-sm font-semibold uppercase tracking-wider mb-1">
-                  {t("phone")}
+                  Instagram
                 </h3>
-                <p className="text-on-surface-variant">{contactInfo.phone}</p>
+                <a
+                  href="https://www.instagram.com/qafotelboutique"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-on-surface-variant hover:text-primary transition-colors"
+                >
+                  @qafotelboutique
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4">
