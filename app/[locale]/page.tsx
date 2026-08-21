@@ -24,7 +24,7 @@ export default async function HomePage({
         <section className="relative h-[90vh] w-full min-h-[650px] flex items-center justify-center -mt-20">
           <div className="absolute inset-0 w-full h-full">
             <Image
-              src="/images/qafotel.jpeg"
+              src="/images/qafotel_landscape.jpeg"
               alt="Qafotel suite"
               fill
               priority
@@ -181,7 +181,7 @@ export default async function HomePage({
           <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden">
               <Image
-                src="/images/resepionist.jpeg"
+                src="/images/qafotel_landscape.jpeg"
                 alt="Qafotel lobby"
                 fill
                 className="object-cover"

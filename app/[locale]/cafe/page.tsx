@@ -33,22 +33,13 @@ export default async function CafePage({
           </div>
 
           <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-16 flex flex-col items-center text-center">
-            <div className="flex items-center gap-6 mb-8">
-              <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden bg-surface-lowest shadow-xl p-1">
-                <Image
-                  src="/images/logo-qafotel.jpeg"
-                  alt="Qafotel logo"
-                  width={112}
-                  height={112}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden bg-surface-lowest shadow-2xl p-1">
+            <div className="mb-8">
+              <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-surface-lowest shadow-2xl p-2 mx-auto">
                 <Image
                   src="/images/logo-jardin.jpeg"
                   alt="Jardin Coffee logo"
-                  width={112}
-                  height={112}
+                  width={144}
+                  height={144}
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>

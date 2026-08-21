@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { QafotelHeader } from "@/components/qafotel-header";
 import { QafotelFooter } from "@/components/qafotel-footer";
 import { contactInfo } from "@/lib/qafotel-data";
+import Image from "next/image";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
@@ -51,6 +52,13 @@ export default function ContactPage() {
 
       {/* ── Hero ── */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-surface-low">
+        <Image
+          src="/images/qafotel_landscape.jpeg"
+          alt="Qafotel"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/40" />
         <div className="relative z-10 text-center px-6">
           <h1 className="font-display text-[40px] md:text-[56px] text-primary mb-4">
             {t("heroTitle")}
@@ -81,7 +89,7 @@ export default function ContactPage() {
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
                 <span className="material-symbols-outlined text-[20px]">
-                  Instagram
+                  photo_camera
                 </span>
               </div>
               <div>
