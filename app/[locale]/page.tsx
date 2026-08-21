@@ -23,12 +23,21 @@ export default async function HomePage({
         {/* ── Hero Section ── */}
         <section className="relative h-[90vh] w-full min-h-[650px] flex items-center justify-center -mt-20">
           <div className="absolute inset-0 w-full h-full">
+            {/* Desktop: landscape */}
             <Image
               src="/images/qafotel_landscape.jpeg"
               alt="Qafotel suite"
               fill
               priority
-              className="object-cover scale-105"
+              className="object-cover scale-105 hidden md:block"
+            />
+            {/* Mobile: portrait */}
+            <Image
+              src="/images/qafotel.jpeg"
+              alt="Qafotel suite"
+              fill
+              priority
+              className="object-cover scale-105 block md:hidden object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
           </div>

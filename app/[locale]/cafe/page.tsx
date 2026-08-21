@@ -45,10 +45,10 @@ export default async function CafePage({
               </div>
             </div>
             <p className="font-body text-xs uppercase tracking-widest text-secondary-container mb-4">
-              An Oasis of Flavor at Qafotel
+              Oasis Rasa di Qafotel
             </p>
             <h1 className="font-display text-[40px] md:text-[64px] text-on-primary max-w-3xl mb-8 leading-[1.2]">
-              Where Modernity Meets Botanical Bliss
+              Di mana Modernitas Bertemu Kebahagiaan Botani
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <a
@@ -66,7 +66,7 @@ export default async function CafePage({
                 href="#about"
                 className="inline-flex items-center justify-center px-8 py-4 bg-surface/10 backdrop-blur-md border border-on-primary/30 text-on-primary rounded-lg font-body text-xs font-semibold uppercase tracking-[0.1em] hover:bg-surface/20 transition-all"
               >
-                DISCOVER MORE
+JELAJAHI LEBIH LANJUT
               </a>
             </div>
           </div>
@@ -80,21 +80,21 @@ export default async function CafePage({
           <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-6 items-center">
             <div className="lg:col-span-5 flex flex-col justify-center">
               <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-on-surface-variant mb-4 block">
-                The Experience
+                Pengalaman Kami
               </span>
               <h2 className="font-display text-[32px] leading-[40px] text-primary mb-6">
-                A Sanctuary for the Senses
+                Tempat Peristirahatan bagi Indra
               </h2>
               <p className="font-body text-lg leading-[28px] text-on-surface-variant mb-6">
-                Nestled within the architectural elegance of Qafotel, Jardin
-                Coffee offers a lush, organic retreat. We believe in the
-                restorative power of nature, reflected in both our verdant
-                surroundings and our carefully curated menu.
+                Tersembunyi dalam keanggunan arsitektural Qafotel, Jardin
+                Coffee menawarkan tempat peristirahatan organik yang hijau.
+                Kami percaya pada kekuatan pemulihan alam, tercermin dalam
+                lingkungan hijau dan menu yang kami kurasi dengan cermat.
               </p>
               <p className="font-body text-base leading-[24px] text-on-surface-variant mb-8">
-                Whether you&apos;re seeking a quiet morning espresso bathed in natural
-                light or a refreshing afternoon botanical infusion, our space is
-                designed to give you room to breathe and savor every moment.
+                Apakah Anda mencari espresso pagi yang tenang diterangi cahaya
+                alami atau infus botani sore yang menyegarkan, ruang kami
+                dirancang untuk memberi Anda ruang bernapas dan menikmati setiap momen.
               </p>
               <div className="flex items-center gap-6">
                 <div className="flex flex-col">
@@ -102,16 +102,16 @@ export default async function CafePage({
                     7am - 9pm
                   </span>
                   <span className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-outline">
-                    DAILY HOURS
+                    JAM BUKA
                   </span>
                 </div>
                 <div className="w-px h-12 bg-outline-variant" />
                 <div className="flex flex-col">
                   <span className="font-display text-[24px] leading-[32px] text-secondary">
-                    Lobby Level
+                    Lantai Lobby
                   </span>
                   <span className="font-body text-xs font-semibold uppercase tracking-[0.1em] text-outline">
-                    LOCATION
+                    LOKASI
                   </span>
                 </div>
               </div>
@@ -149,14 +149,14 @@ export default async function CafePage({
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
               <div className="max-w-2xl">
                 <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-4 block">
-                  Our Brews &amp; Bites
+                  Kreasi Kami
                 </span>
                 <h2 className="font-display text-[32px] leading-[40px] text-primary">
-                  Crafted with Intention
+                  Dibuat dengan Penuh Niat
                 </h2>
                 <p className="font-body text-base leading-[24px] text-on-surface-variant mt-4">
-                  Explore a selection of our signature offerings, highlighting
-                  local ingredients and masterful techniques.
+                  Jelajahi pilihan kreasi andalan kami, menonjolkan
+                  bahan-bahan lokal dan teknik yang ahli.
                 </p>
               </div>
               <a
@@ -165,7 +165,7 @@ export default async function CafePage({
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.1em] text-primary hover:text-secondary transition-colors"
               >
-                FULL MENU
+                MENU LENGKAP
                 <span className="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">
                   arrow_forward
                 </span>

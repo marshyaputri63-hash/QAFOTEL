@@ -60,10 +60,10 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-primary/40" />
         <div className="relative z-10 text-center px-6">
-          <h1 className="font-display text-[40px] md:text-[56px] text-primary mb-4">
+          <h1 className="font-display text-[40px] md:text-[56px] text-on-primary mb-4">
             {t("heroTitle")}
           </h1>
-          <p className="font-body text-lg text-on-surface-variant max-w-lg mx-auto">
+          <p className="font-body text-lg text-on-primary/80 max-w-lg mx-auto">
             {t("heroSubtitle")}
           </p>
         </div>
